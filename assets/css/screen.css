@@ -23,6 +23,7 @@ production stylesheet in assets/built/screen.css
 10. Subscribe Overlay
 11. Site Footer
 12. Dark Mode
+13. Search Page
 
 */
 
@@ -113,9 +114,12 @@ body {
     position: relative;
     margin-top: 64px;
     padding-bottom: 12px;
-    color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
-    background-size: cover;
+    color: var(--darkgrey);
+    background-color: #E1E9F0;
+    background-size: auto;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
 }
 
 .site-header-background:before {
@@ -127,7 +131,6 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
 }
 
 .site-header-background:after {
@@ -140,7 +143,6 @@ body {
     z-index: 10;
     display: block;
     height: 140px;
-    background: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0));
 }
 
 .site-header-background.no-image:before,
@@ -161,15 +163,17 @@ body {
 
 .site-title {
     z-index: 10;
-    margin: 0 0 0 -2px;
+    margin: 0 0 12px -2px;
     padding: 0;
     font-size: 5.0rem;
     line-height: 1em;
     font-weight: 600;
+    color: var(--darkgrey);
 }
 
 .site-logo {
-    max-height: 55px;
+    max-height: 120px;
+    fill: var(--darkgrey);
 }
 
 .site-description {
@@ -180,6 +184,7 @@ body {
     line-height: 1.4em;
     font-weight: 400;
     opacity: 0.8;
+    color: var(--darkgrey);
 }
 
 /* 4.1 Home header
@@ -283,7 +288,7 @@ body {
     right: 0;
     left: 0;
     z-index: 1000;
-    background: color(var(--darkgrey) l(-5%));
+    background-color: #E1E9F0;
 }
 
 .site-nav {
@@ -316,7 +321,6 @@ body {
 .site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
 .site-nav-main .site-nav-left-wrapper:after {
     right: 0;
-    background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
 }
 
 .site-nav-left {
@@ -354,7 +358,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: inline-block;
     margin-right: 32px;
-    padding: 12px 0;
     color: #fff;
     font-size: 1.7rem;
     line-height: 1.8rem;
@@ -370,7 +373,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo img {
     display: block;
     width: auto;
-    height: 21px;
+    height: 40px;
 }
 
 .site-home-header .site-nav-logo {
@@ -401,8 +404,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .nav li a {
     position: relative;
     display: block;
+    font-size: 1.4rem;
     padding: 12px 12px;
-    color: #fff;
+    color: var(--darkgrey);
     opacity: 0.8;
     transition: opacity 0.35s ease-in-out;
 }
@@ -419,14 +423,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     bottom: 8px;
     left: 12px;
     height: 1px;
-    background: #fff;
+    background: var(--darkgrey);
     opacity: 0.25;
     transition: all 0.35s ease-in-out;
 }
 
 .nav li a:hover:before {
     right: 12px;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .nav-post-title-active .nav {
@@ -439,7 +443,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     visibility: hidden;
     position: absolute;
     top: 9px;
-    color: #fff;
+    color: var(--darkgrey);
     font-size: 1.7rem;
     font-weight: 400;
     text-transform: none;
@@ -508,7 +512,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .social-link svg {
     height: 1.8rem;
-    fill: #fff;
+    fill: var(--darkgrey);
 }
 
 .social-link-fb svg {
@@ -520,7 +524,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .social-link-wb svg path {
-    stroke: #fff;
+    fill: var(--darkgrey);
 }
 
 .social-link-rss svg {
@@ -531,8 +535,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     margin: 0 0 0 10px;
     padding: 4px 10px;
-    border: #fff 1px solid;
-    color: #fff;
+    background: var(--darkgrey);
+    border: var(--darkgrey) 1px solid;
+    color: var(--whitegrey);
     line-height: 1em;
     border-radius: 10px;
     opacity: 0.8;
@@ -559,7 +564,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .rss-button svg {
     margin-bottom: 1px;
     height: 2.1rem;
-    fill: #fff;
+    fill: var(--darkgrey);
 }
 
 /* Special behaviors for home navigation */
@@ -693,7 +698,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-excerpt {
     max-width: 56em;
     color: var(--midgrey);
-    font-family: Georgia, serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .post-card-excerpt p {
@@ -986,7 +991,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-custom-excerpt {
     margin: 20px 0 0;
     color: var(--midgrey);
-    font-family: Georgia, serif;
+    font-family: 'Frank Ruhl Libre', serif;
     font-size: 2.3rem;
     line-height: 1.4em;
     font-weight: 300;
@@ -1019,7 +1024,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 auto;
     padding: 0 170px 6vw;
     min-height: 230px;
-    font-family: Georgia, serif;
+    font-family: 'Frank Ruhl Libre', serif;
     font-size: 2.0rem;
     line-height: 1.6em;
     background: #fff;
@@ -1263,7 +1268,7 @@ Usage (In Ghost editor):
 .post-full-content h5,
 .post-full-content h6 {
     color: color(var(--darkgrey) l(-5%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: 'Frank Ruhl Libre', serif;
 }
 
 .post-full-content h1 {
@@ -1341,7 +1346,7 @@ Usage (In Ghost editor):
     padding: 0.4em 1em 0.9em;
     border: 0;
     color: var(--blue);
-    font-family: Georgia,serif;
+    font-family: 'Frank Ruhl Libre',serif;
     font-size: 3.2rem;
     line-height: 1.35em;
     text-align: center;
@@ -1758,12 +1763,7 @@ Usage (In Ghost editor):
     line-height: 39px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
-    );
+    background: var(--blue);
     border-radius: 5px;
 
     -webkit-font-smoothing: subpixel-antialiased;
@@ -2636,7 +2636,7 @@ Usage (In Ghost editor):
     display: block;
     width: 32px;
     height: 1px;
-    background: #fff;
+    background: var(--darkgrey);
     opacity: 0.8;
     transform: rotate(45deg);
 }
@@ -2649,7 +2649,7 @@ Usage (In Ghost editor):
     display: block;
     width: 32px;
     height: 1px;
-    background: #fff;
+    background: var(--darkgrey);
     opacity: 0.8;
     transform: rotate(-45deg);
 }
@@ -2669,7 +2669,7 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(9,10,11,0.97);
+    background: var(--whitegrey)F5;
     opacity: 0;
     transition: opacity 0.2s ease-in;
     pointer-events: none;
@@ -2685,13 +2685,12 @@ Usage (In Ghost editor):
     position: relative;
     margin: 0 0 5vw 0;
     padding: 4vw;
-    color: #fff;
+    color: var(--darkgrey);
     text-align: center;
 }
 
 .subscribe-overlay .subscribe-form {
     border: none;
-    color: #fff;
     background: none;
 }
 
@@ -2712,8 +2711,7 @@ Usage (In Ghost editor):
 .subscribe-overlay-description {
     margin: 0 auto 50px;
     max-width: 650px;
-    color: #fff;
-    font-family: Georgia, serif;
+    font-family: 'Frank Ruhl Libre', serif;
     font-size: 2.4rem;
     line-height: 1.3em;
     font-weight: 300;
@@ -2765,12 +2763,7 @@ Usage (In Ghost editor):
     line-height: 38px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
-    );
+    background-color: var(--blue);
     border-radius: 8px;
 
     -webkit-font-smoothing: subpixel-antialiased;
@@ -2796,11 +2789,12 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .site-footer {
+    border-top: 1px solid #d4dcd8;
     position: relative;
     padding-top: 20px;
-    padding-bottom: 60px;
-    color: #fff;
-    background: color(var(--darkgrey) l(-5%));
+    padding-bottom: 20px;
+    color: Var(--darkgrey);
+    background: #F6F7F8;
 }
 
 .site-footer-content {
@@ -2808,16 +2802,17 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    color: rgba(255,255,255,0.7);
+    color: color(var(--darkgrey) l(30%));
     font-size: 1.3rem;
 }
 
 .site-footer-content a {
-    color: rgba(255,255,255,0.7);
+    font-size: 1.4rem;
+    color: color(var(--darkgrey) l(30%));
 }
 
 .site-footer-content a:hover {
-    color: rgba(255,255,255,1);
+    color: var(--darkgrey);
     text-decoration: none;
 }
 
@@ -3076,4 +3071,154 @@ Usage (In Ghost editor):
     .subscribe-form .success .message-success {
         color: color(var(--green) l(+5%) s(-5%));
     }
+}
+
+/* 13. Search Form
+/* ---------------------------------------------------------- */
+.search-form {
+    margin: 1.5em 0;
+    padding: 6.5vw 7vw 8vw;
+    border: color(var(--lightgrey) l(+10%)) 1px solid;
+    background: linear-gradient(color(var(--whitegrey) l(+6%)), color(var(--whitegrey) l(+4%)));
+    border-radius: 3px;
+    text-align: center;
+}
+
+.search-form-title {
+    margin: 0 0 3px 0;
+    padding: 0;
+    color: var(--darkgrey);
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.search-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.search-form .form-group {
+    align-self: stretch;
+    display: flex;
+}
+
+.search-term {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border: color(var(--lightgrey) l(+7%)) 1px solid;
+    color: var(--midgrey);
+    font-size: 1.8rem;
+    line-height: 1em;
+    font-weight: normal;
+    user-select: text;
+    border-radius: 5px;
+    transition: border-color 0.15s linear;
+
+    -webkit-appearance: none;
+}
+
+.search-term:focus {
+    outline: 0;
+    border-color: color(var(--lightgrey) l(-2%));
+}
+
+.search-form button {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    padding: 0 20px;
+    height: 43px;
+    outline: none;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 39px;
+    font-weight: 400;
+    text-align: center;
+    background: var(--blue);
+    border-radius: 5px;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.search-form button:active,
+.search-form button:focus {
+    background: color(var(--blue) lightness(-9%) saturation(-10%));
+}
+
+.search-form #search-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 1px rgba(0,0,0,.12), 0 1px 6px rgba(0,0,0,.03), 0 6px 10px -8px rgba(0,0,0,.1);
+    text-align: justify;   
+}
+
+.search-results-item {
+    flex: 1 1 100%;
+    background: #fff;
+    border-top: 1px solid #e5eff5;
+    margin: 0;
+    padding: 16px;
+    transition: background .3s ease;
+}
+
+.search-results-item:first-of-type {
+    border-top: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.search-results-item:last-of-type {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.search-results-item:hover {
+    background: #f8fafc;
+    transition: none;
+}
+
+.search-results-item .title {
+    margin: 0 0 .4em;
+}
+
+.search-results-item .excerpt {
+    margin: 0;
+    color: var(--midgrey);
+}
+
+.site-nav-search-button {
+    display: block;
+    margin: 0 0 0 10px;
+    padding: 4px 10px;
+    border: var(--darkgrey) 1px solid;
+    color: var(--darkgrey);
+    line-height: 1em;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.site-nav-search-button:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
+.site-nav-search-button svg {
+    height: 1.2rem;
+    fill: var(--darkgrey);
+    opacity: 0.8;
+}
+
+.site-nav-search-button svg {
+    opacity: 1;
 }

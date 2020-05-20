@@ -1,6 +1,6 @@
 {
-    "name": "casper",
-    "description": "A clean, minimal default theme for the Ghost publishing platform",
+    "name": "tmetric-blog-theme",
+    "description": "The customization of the Ghost's default blogging theme (Casper) for the TMetric blog.",
     "demo": "https://demo.ghost.io",
     "version": "3.0.12",
     "engines": {
@@ -41,7 +41,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
+        "url": "https://github.com/DevartSoftware/Casper.git"
     },
     "bugs": "https://github.com/TryGhost/Casper/issues",
     "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
