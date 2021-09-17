@@ -1,26 +1,31 @@
-/* Variables
-/* ---------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,700&subset=latin-ext');
+/* Custom fonts
+  ---------------------------------------------------------- */
 
-:root {
-    /* Colours */
-    --blue: #0066cc;
-    --green: #00BC6A;
-    --purple: #ad26b4;
-    --yellow: #EBB609;
-    --red: #F54949;
-    --darkgrey: #292E33;
-    --midgrey: #777E85;
-    --lightgrey: #c5d2d9;
-    --whitegrey: #EBEDF0;
-    --pink: #fa3a57;
-    --brown: #a3821a;
-    --darkmode: color(var(--darkgrey) l(+2%));
+@font-face {
+    font-family: 'PTRootUIMedium';
+    src: url('../fonts/PT_Root_UI_Medium.eot');
+    src: url('../fonts/PT_Root_UI_Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/PT_Root_UI_Medium.woff2') format('woff2'),
+    url('../fonts/PT_Root_UI_Medium.woff') format('woff'),
+    url('../fonts/PT_Root_UI_Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ObjectivityBold';
+    src: url('../fonts/Objectivity-Bold.eot');
+    src: url('../fonts/Objectivity-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Objectivity-Bold.woff2') format('woff2'),
+    url('../fonts/Objectivity-Bold.woff') format('woff'),
+    url('../fonts/Objectivity-Bold.ttf') format('truetype'),
+    url('../fonts/Objectivity-Bold.svg#Objectivity-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
 }
 
 /* Reset
-/* ---------------------------------------------------------- */
+  ---------------------------------------------------------- */
 
 html,
 body,
@@ -129,7 +134,9 @@ table {
     border-collapse: collapse;
 }
 img {
+    display: block;
     max-width: 100%;
+    height: auto;
 }
 html {
     box-sizing: border-box;
@@ -275,19 +282,16 @@ th {
    ========================================================================== */
 
 html {
-    overflow-x: hidden;
-    overflow-y: scroll;
     font-size: 62.5%;
 
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-    overflow-x: hidden;
-    color: color(var(--midgrey) l(-25%));
-    font-family: /*-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",*/ 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    color: #35373A;
+    font-family: PTRootUIMedium, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1.6rem;
     line-height: 1.6em;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
@@ -300,7 +304,7 @@ body {
 
 ::selection {
     text-shadow: none;
-    background: color(var(--blue) lightness(+30%));
+    background: #daf2fd;
 }
 
 hr {
@@ -311,7 +315,7 @@ hr {
     padding: 0;
     height: 1px;
     border: 0;
-    border-top: 1px solid color(var(--lightgrey) l(+10%));
+    border-top: 1px solid #f0f0f0;
 }
 
 audio,
@@ -333,11 +337,11 @@ textarea {
     resize: vertical;
 }
 
-p,
-ul,
-ol,
-dl,
-blockquote {
+::not(.gh-content) p,
+::not(.gh-content) ul,
+::not(.gh-content) ol,
+::not(.gh-content) dl,
+::not(.gh-content) blockquote {
     margin: 0 0 1.5em 0;
 }
 
@@ -368,16 +372,19 @@ ol {
 }
 
 li {
-    margin: 0.5em 0;
     padding-left: 0.3em;
     line-height: 1.6em;
+}
+
+li + li {
+    margin-top: 0.5em;
 }
 
 dt {
     float: left;
     margin: 0 20px 0 0;
     width: 120px;
-    color: var(--darkgrey);
+    color: #daf2fd;
     font-weight: 500;
     text-align: right;
 }
@@ -390,7 +397,7 @@ dd {
 blockquote {
     margin: 1.5em 0;
     padding: 0 1.6em 0 1.6em;
-    border-left: var(--whitegrey) 0.5em solid;
+    border-left: #daf2fd;
 }
 
 blockquote p {
@@ -418,12 +425,8 @@ blockquote cite a {
 }
 
 a {
-    color: color(var(--blue) l(-5%));
+    color: #15171A;
     text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 h1,
@@ -436,35 +439,38 @@ h6 {
     line-height: 1.15;
     font-weight: 700;
     text-rendering: optimizeLegibility;
+    letter-spacing: -0.01em;
+    font-family: ObjectivityBold, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;;
 }
 
 h1 {
     margin: 0 0 0.5em 0;
-    font-size: 5rem;
-    font-weight: 700;
+    font-size: 4.8rem;
+    letter-spacing: -0.015em;
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
     }
 }
 
 h2 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 2rem;
+    font-size: 2.8rem;
+    font-weight: 700;
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     h2 {
-        font-size: 1.8rem;
+        font-size: 2.3rem;
     }
 }
 
 h3 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-size: 2.4rem;
+    font-weight: 600;
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     h3 {
         font-size: 1.7rem;
     }
@@ -472,18 +478,15 @@ h3 {
 
 h4 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-size: 2.2rem;
 }
 
 h5 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 2rem;
 }
 
 h6 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 1.8rem;
 }
