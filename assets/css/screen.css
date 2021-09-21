@@ -23,8 +23,9 @@ production stylesheet in assets/built/screen.css
 12. Dark Mode
 13. Search Page
 14. Subscription Popup
+15. Sales Popup
 
- */
+*/
 
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
@@ -819,6 +820,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 .article {
     padding: 8vmin 0;
     word-break: break-word;
+    position: relative;
 }
 
 .article-header {
@@ -2197,7 +2199,7 @@ html.dark-mode .subscribe-form .success .message-success {
     height: 100%;
     background: linear-gradient(315deg , rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
     backdrop-filter: blur(2px);
-    z-index: 3999999;
+    z-index: 3999990;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -2220,4 +2222,230 @@ html.dark-mode .subscribe-form .success .message-success {
 
 #ghost-portal-root {
     display: none;
+}
+
+/* 15. Sales Popup
+/* ---------------------------------------------------------- */
+.sales-popup {
+    width: 90vw;
+    max-width: 960px;
+    padding: 30px 70px 10px 17px;
+    background: #F8F9FA;
+    z-index: 3999999;
+    left: -9999px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sales-popup.visible {
+    left: 50%;
+    opacity: 1;
+}
+
+.popup .btn-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+    padding: 0;
+    width: 22px;
+    background: none;
+}
+
+.popup .btn-popup-close svg {
+    display: block;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.popup .btn-popup-close:hover svg {
+    opacity: 1;
+}
+
+.sales-popup .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sales-popup .image {
+    width: 100%;
+    max-width: 61.627%;
+    padding-top: 65px;
+    margin-right: -1.63%;
+}
+
+.sales-popup .image svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.sales-popup .text {
+    width: 40%;
+    text-align: center;
+}
+
+.sales-popup .logo {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+.sales-popup .logo img {
+    max-width: 154px;
+}
+
+.sales-popup h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin: 0 10px 20px;
+}
+
+.sales-popup .code-row {
+    margin: 0 0 23px 14px;
+    justify-content: center;
+}
+
+.sales-popup #code-field {
+    margin-right: 20px;
+    padding: 7px;
+    width: 162px;
+    text-align: center;
+    background: #fff;
+    border: 1px dashed #E2E6EB;
+    border-radius: 5px;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+.sales-popup .btn-copy {
+    padding: 9px 26px;
+    background: none;
+    border:1px solid var(--color-blue);
+    border-radius: 5px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+    color: var(--color-blue);
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.sales-popup .btn-copy:hover {
+    background: #E7EDFC;
+}
+
+.sales-popup .tooltip {
+    visibility: hidden;
+    background-color: var(--color-blue);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 20px;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%;
+    left: 50%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sales-popup .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--color-blue) transparent transparent transparent;
+}
+
+.sales-popup .btn-copy:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sales-popup .btn-use {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 22px;
+    padding: 10px 28px;
+    background: var(--color-blue);
+    border: 0;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.sales-popup .btn-use:hover {
+    background: var(--color-blue-hover);
+}
+
+.sales-popup .notes {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    color: #4C5157;
+}
+
+.sales-anchor {
+    position: absolute;
+    left: 0;
+    top: 35%;
+    width: 0;
+    height: 0;
+}
+
+@media (max-width: 1023px) {
+    .sales-popup .row {
+        align-items: center;
+    }
+
+    .sales-popup .image {
+        margin: 0;
+        padding: 0;
+        width: 50%;
+    }
+
+    .sales-popup .text {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .sales-popup {
+        padding: 20px;
+    }
+
+    .sales-popup .row {
+        flex-wrap: wrap;
+    }
+
+    .sales-popup .image {
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    .sales-popup .text {
+        width: 100%;
+    }
+
+    .sales-popup .logo,
+    .sales-popup h2,
+    .sales-popup .btn-use {
+        margin-bottom: 10px;
+    }
+
+    .sales-popup .code-row {
+        margin: 0 auto 10px;
+        flex-wrap: nowrap;
+    }
 }

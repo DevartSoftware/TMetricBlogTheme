@@ -78,6 +78,8 @@ into the {body} tag of the default.hbs template --}}
         </section>
     --}}
 
+    <span class="sales-anchor"></span>
+
 </article>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
@@ -117,4 +119,31 @@ into the {body} tag of the default.hbs template --}}
     </div>
 </aside>
 
+<div id="sales-fader" class="fader"></div>
+<div class="popup sales-popup">
+    <button class="btn-popup-close">{{> "icons/cross"}}</button>
+    <div class="row">
+        <div class="image">
+            {{> "icons/timer"}}
+        </div>
+        <div class="text">
+            <a class="logo" href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                {{/if}}
+            </a>
+            <h2>TMetric Coupon<br>Time Saving Deal</h2>
+            <div class="row code-row">
+                <div id="code-field">BLOG10WZKX</div>
+                <button class="btn-copy">
+                    <span class="tooltip">Copy to clipboard</span>
+                    Copy
+                </button>
+            </div>
+            <a class="btn-use" href="https://app.tmetric.com/register" target="_blank">Use Coupon</a>
+            <p class="notes">The coupon is valid for New users, Free and Trial. Can be used immediately of after a 30 day Trial period</p>
+        </div>
+    </div>
+</div>
+    
 {{/post}}
