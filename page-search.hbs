@@ -27,7 +27,7 @@ into the {body} of the default.hbs template --}}
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
     {{!-- Initialize ghost-search plugin (https://github.com/HauntedThemes/ghost-search) --}}
-    <script src="https://unpkg.com/@tryghost/content-api@1.5.13/umd/content-api.min.js"></script>
+    <script src="https://unpkg.com/@tryghost/content-api@1.5.14/umd/content-api.min.js"></script>
     <script type="text/javascript" src="{{asset "js/ghost-search.min.js"}}"></script>
     <script>
         let ghostSearch = new GhostSearch({
@@ -59,13 +59,13 @@ into the {body} of the default.hbs template --}}
             options: {
                 keys: [
                     'title',
-                    'plaintext'
+                    'custom_excerpt'
                 ],
             },
             api: {
                 resource: 'posts',
                 parameters: {
-                    fields: ['title', 'slug', 'plaintext', 'custom_excerpt'],
+                    fields: ['title', 'slug', 'custom_excerpt'],
                     formats: 'plaintext',
                 },
             },
