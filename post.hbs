@@ -120,6 +120,8 @@ into the {body} tag of the default.hbs template --}}
 </aside>
 
 <div id="sales-fader" class="fader"></div>
+<!-- TMetric Coupon - 10% discount -->
+<!--
 <div class="popup sales-popup">
     <button class="btn-popup-close">{{> "icons/cross"}}</button>
     <div class="row">
@@ -144,6 +146,28 @@ into the {body} tag of the default.hbs template --}}
             <p class="notes">The coupon is valid for New users, Free and Trial. Can be used immediately or after a 30 day Trial period</p>
         </div>
     </div>
+</div>
+-->
+<!-- Black Friday - 50% off -->
+<div class="popup discount-popup">
+    <button class="btn-popup-close">{{> "icons/cross"}}</button>
+    <a class="logo" href="{{@site.url}}">
+        {{#if @site.logo}}
+            <img src="{{@site.logo}}" alt="{{@site.title}}" />
+        {{/if}}
+    </a>
+    <h2>DON’T SLEEP ON THE HOTTEST DEAL<br><strong>BLACK FRIDAY</strong></h2>
+    <div class="row">
+        <div class="text">
+            <h3>3 DAYS ONLY</h3>
+            <p>25-27 November</p>
+        </div>
+        <div class="image">
+            {{> "icons/fifty-percent-discount"}}
+        </div>
+        <a class="btn" href="https://app.tmetric.com/register" target="_blank">Start Now</a>
+    </div>
+    <p class="notes">The discount is valid for New Purchases. Any Plan, any Team Size</p>
 </div>
 
 {{/post}}

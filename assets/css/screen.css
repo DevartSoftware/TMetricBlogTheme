@@ -24,6 +24,7 @@ production stylesheet in assets/built/screen.css
 13. Search Page
 14. Subscription Popup
 15. Sales Popup
+16. Discount Popup
 
 */
 
@@ -2448,5 +2449,192 @@ html.dark-mode .subscribe-form .success .message-success {
     .sales-popup .code-row {
         margin: 0 auto 10px;
         flex-wrap: nowrap;
+    }
+}
+
+/* 16. Discount Popup
+/* ---------------------------------------------------------- */
+.discount-popup {
+    width: 90vw;
+    max-width: 960px;
+    padding: 27px 20px 15px;
+    background: #E3EDFF;
+    z-index: 3999999;
+    left: -9999px;
+    opacity: 0;
+    color: #34393D;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.discount-popup.visible {
+    left: 50%;
+    opacity: 1;
+}
+
+.popup .btn-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #F8F9FA;
+}
+
+.discount-popup .logo {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 9px;
+}
+
+.discount-popup .logo img {
+    max-width: 144px;
+}
+
+.discount-popup h2 {
+    margin: 0 0 -6px;
+    font-size: 2.3rem;
+    line-height: 1.15;
+    font-weight: 500;
+}
+
+.discount-popup h2 strong {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+}
+
+.discount-popup .row {
+    margin-bottom: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discount-popup .text {
+    margin: 15px 58px 0 19px;
+    min-width: 127px;
+    text-align: center;
+}
+
+.discount-popup .text h3 {
+    margin: 0 0 16px;
+    display: block;
+    border: 1px solid #34393D;
+    border-width: 1px 0;
+    padding: 14px 0 10px;
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+
+.discount-popup .text p {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: #000;
+}
+
+.discount-popup .image {
+    width: 100%;
+    max-width: 341px;
+}
+
+.discount-popup .image svg{
+    display: block;
+    width: 100%;
+}
+
+.discount-popup .btn {
+    margin: 0 0 12px 58px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 36px;
+    background: var(--color-blue);
+    border: 0;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #fff;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+}
+
+.discount-popup .btn:hover {
+    background: var(--color-blue-hover);
+}
+
+.discount-popup .notes {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #4C5157;
+}
+
+@media only screen and (max-width: 1024px) {
+    .discount-popup h2 {
+        margin-bottom: 0;
+    }
+
+    .discount-popup h2 strong {
+        font-size: 2.2rem;
+    }
+
+    .discount-popup .text {
+        margin-right: 30px;
+    }
+
+    .discount-popup .btn {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .discount-popup {
+        padding: 10px 15px 15px;
+    }
+
+    .discount-popup h2 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+
+    .discount-popup h2 strong {
+        padding-top: 10px;
+        letter-spacing: 0;
+        font-size: 3.9rem;
+    }
+
+    .discount-popup .row {
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+
+    .discount-popup .image {
+        width: 100%;
+        max-width: 100%;
+        order: 1;
+        margin-bottom: 15px;
+    }
+
+    .discount-popup .image svg {
+        margin: 0 auto;
+        max-width: 341px;
+    }
+
+    .discount-popup .text {
+        margin: 0 10px 0 0;
+        order: 2;
+    }
+
+    .discount-popup .text h3 {
+        margin: 0 0 10px;
+        padding: 10px 0 4px;
+    }
+
+    .discount-popup .row .btn {
+        margin: 0 0 0 10px;
+        order: 3;
     }
 }

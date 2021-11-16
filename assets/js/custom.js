@@ -56,13 +56,13 @@ $(window).on('load', function(){
     let windowHeight = $(window).height() / 2;
 
     if (topPos + windowHeight > anchorPos && !salesPopupShoved) {
-      $('#sales-fader, .sales-popup').addClass('visible');
+      $('#sales-fader, .sales-popup, .discount-popup').addClass('visible');
       salesPopupShoved = true;
     }
   }
 
   $('#sales-fader, .btn-popup-close').click(function() {
-    $('#sales-fader, .sales-popup').removeClass('visible');
+    $('#sales-fader, .sales-popup, .discount-popup').removeClass('visible');
   });
 
   // Copy sales code
