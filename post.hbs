@@ -148,7 +148,36 @@ into the {body} tag of the default.hbs template --}}
     </div>
 </div>
 -->
+
+<!-- TMetric New Year Coupon - 10% discount -->
+<div class="popup sales-popup new-year">
+    <button class="btn-popup-close">{{> "icons/red-cross"}}</button>
+    <div class="row">
+        <div class="image">
+            {{> "icons/gift"}}
+        </div>
+        <div class="text">
+            <a class="logo" href="{{@site.url}}">
+                {{> "icons/logo-white"}}
+            </a>
+            <h2>Have a Happy Winter<br>
+                WITH 10% OFF<br>
+                TMetric subscription!</h2>
+            <div class="row code-row">
+                <div id="code-field">BLOG10WZKX</div>
+                <button class="btn-copy">
+                    <span class="tooltip">Copy to clipboard</span>
+                    Copy
+                </button>
+            </div>
+            <a class="btn-use" href="https://app.tmetric.com/register" target="_blank">Use Coupon</a>
+            <p class="notes">The coupon is valid for New users, Free and Trial.<br>Can be used immediately or after a 30 day Trial period</p>
+        </div>
+    </div>
+</div>
+
 <!-- Black Friday - 50% off -->
+<!--
 <div class="popup discount-popup">
     <button class="btn-popup-close">{{> "icons/cross"}}</button>
     <a class="logo" href="{{@site.url}}">
@@ -169,5 +198,6 @@ into the {body} tag of the default.hbs template --}}
     </div>
     <p class="notes">The discount is valid for New Purchases. Any Plan, any Team Size</p>
 </div>
+-->
 
 {{/post}}

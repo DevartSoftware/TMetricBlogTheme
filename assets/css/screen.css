@@ -160,6 +160,35 @@ production stylesheet in assets/built/screen.css
     }
 }
 
+/* New Year Site Header */
+.home-template .site-header-content.new-year {
+    background-color: #880002;
+    min-height: 340px;
+    font-size: 5.1rem;
+    color: #fff;
+}
+
+.home-template .site-header-content.new-year .site-title svg {
+    width: 200px;
+    height: auto;
+}
+
+.home-template .site-header-content.new-year p {
+    color: #fff;
+    line-height: 1.2;
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .home-template .site-header-content.new-year {
+        min-height: 200px;
+    }
+
+    .home-template .site-header-content.new-year .site-title svg {
+        width: 148px;
+    }
+}
+
 /* 4.1 Home header
 /* ---------------------------------------------------------- */
 
@@ -176,8 +205,6 @@ production stylesheet in assets/built/screen.css
     color: #fff;
     background: var(--color-grey);
 }
-
-
 
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
@@ -218,6 +245,36 @@ production stylesheet in assets/built/screen.css
     grid-auto-flow: row dense;
 }
 
+/* New Year head */
+.home-template .gh-head.new-year a {
+    color: #fff;
+}
+
+.home-template #gh-head.new-year .site-nav-search-button {
+    color: var(--color-dark);
+}
+
+.home-template #gh-head.new-year .site-nav-search-button:hover {
+    color: var(--color-blue);
+}
+
+.home-template #gh-head.new-year .btn-subscribe {
+    background: #D42829;
+}
+
+.home-template #gh-head.new-year .btn-subscribe:hover {
+    background: #FC6C6D;
+}
+
+@media (max-width: 900px) {
+    .home-template.gh-head-open .gh-head.new-year a {
+        color: var(--color-dark);
+    }
+
+    .home-template.gh-head-open .gh-head.new-year a:hover {
+        color: var(--color-blue);
+    }
+}
 
 /* Brand
 /* ---------------------------------------------------------- */
@@ -529,6 +586,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     background: transparent;
 }
 
+.gh-head-open .gh-head,
 .home-template.gh-head-open .gh-head {
     background: #fff;
 }
@@ -539,7 +597,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .home-template .gh-head-menu {
     margin-left: -2.5vmin;
 }
-
 
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
@@ -2449,6 +2506,120 @@ html.dark-mode .subscribe-form .success .message-success {
     .sales-popup .code-row {
         margin: 0 auto 10px;
         flex-wrap: nowrap;
+    }
+}
+
+/* New Year Popup */
+.popup.new-year {
+    background-color: #880001;
+    color: #fff;
+    padding: 0 70px 0 89px;
+}
+
+.popup.new-year .btn-popup-close {
+    width: 26px;
+    height: 26px;
+    background: none;
+}
+
+.popup.new-year .btn-popup-close svg {
+    opacity: 1;
+}
+
+.popup.new-year .image {
+    width: 100%;
+    max-width: 48.689%;
+    padding-top: 0;
+    margin-right: 0;
+}
+
+.popup.new-year .text {
+    padding: 30px 0 10px;
+    width: 41%;
+}
+
+.popup.new-year h2 {
+    font-size: 2.5rem;
+}
+
+.popup.new-year .code-row {
+    margin-left: 0;
+}
+
+.popup.new-year  #code-field {
+    background: #7D0304;
+    color: #fff;
+    border-color: #620309;
+}
+
+.popup.new-year .btn-copy {
+    background: #9D0A0B;
+    color: #680308;
+    border-color: #6C0307;
+}
+
+.popup.new-year .btn-copy:hover {
+    background: #D42829;
+}
+
+.popup.new-year .tooltip,
+.popup.new-year .btn-use {
+    background: #D42829;
+}
+
+.popup.new-year .btn-use:hover {
+    background: #FC6C6D;
+}
+
+.popup.new-year .tooltip:after {
+    border-top-color: #D42829;
+}
+
+.popup.new-year .notes {
+    color: #fff;
+    font-size: 1rem;
+}
+
+@media (max-width: 1023px) {
+    .popup.new-year {
+        padding: 0 30px;
+    }
+
+    .popup.new-year .image {
+        width: 50%;
+        max-width: 50%;
+    }
+
+    .popup.new-year .text {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .popup.new-year .text {
+        width: 64%;
+        margin: 0;
+    }
+
+    .popup.new-year .image {
+        width: 36%;
+    }
+}
+
+@media (max-width: 600px) {
+    .popup.new-year .text {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .popup.new-year h2 {
+        font-size: 2.2rem;
+    }
+
+    .popup.new-year .image {
+        margin: 0 auto;
+        max-width: 300px;
+        padding-top: 10px;
     }
 }
 
