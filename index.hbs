@@ -2,7 +2,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<div class="site-header-content new-year">
+<div class="site-header-content">
     {{#if @site.cover_image}}
         {{!-- This is a responsive image, it loads different sizes depending on device
         https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
@@ -17,15 +17,13 @@ into the {body} of the default.hbs template --}}
         />
     {{/if}}
     <h1 class="site-title">
-        <!--
         {{#if @site.logo}}
             <a href="https://tmetric.com"><img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" /></a>
         {{else}}
             {{@site.title}}
         {{/if}}
-        -->
 
-        <a href="https://tmetric.com">{{> "icons/logo-white"}}</a>
+        {{!--<a href="https://tmetric.com">{{> "icons/logo-white"}}</a>--}}
     </h1>
     <p>{{@site.description}}</p>
 </div>
