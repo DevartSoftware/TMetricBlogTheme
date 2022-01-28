@@ -21,7 +21,7 @@
 <body class="{{body_class}}">
 <div class="viewport">
 
-    <header id="gh-head" class="gh-head {{#if @site.cover_image}}has-cover{{/if}}">
+    <header id="gh-head" class="gh-head white-text-color {{#if @site.cover_image}}has-cover{{/if}}">
         <nav class="gh-head-inner inner gh-container">
 
             <div class="gh-head-brand">
@@ -104,6 +104,9 @@ $(document).ready(function () {
     // Mobile Menu Trigger
     $('.gh-burger').click(function () {
         $('body').toggleClass('gh-head-open');
+    });
+    $('.btn-subscribe').click(function () {
+        $('body').removeClass('gh-head-open');
     });
     // FitVids - Makes video embeds responsive
     $(".gh-content").fitVids();

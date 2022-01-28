@@ -276,6 +276,45 @@ production stylesheet in assets/built/screen.css
     }
 }
 
+/* Dark banner head */
+.home-template .site-header-content.white-text-color p,
+.home-template .gh-head.white-text-color:not(.scrolled-down) a {
+    color: #fff;
+}
+
+.home-template .site-header-content.white-text-color p {
+    opacity: 1;
+}
+
+.home-template .site-header-content.white-text-color .site-title svg {
+    width: 220px;
+    height: auto;
+}
+
+.home-template #gh-head.white-text-color .site-nav-search-button {
+    color: var(--color-dark);
+}
+
+.home-template #gh-head.white-text-color .site-nav-search-button:hover {
+    color: var(--color-blue);
+}
+
+@media (max-width: 600px) {
+    .home-template .site-header-content.white-text-color .site-title svg {
+        width: 180px;
+    }
+}
+
+@media (max-width: 900px) {
+    .home-template.gh-head-open .gh-head.white-text-color a {
+        color: var(--color-dark);
+    }
+
+    .home-template.gh-head-open .gh-head.white-text-color a:hover {
+        color: var(--color-blue);
+    }
+}
+
 /* Brand
 /* ---------------------------------------------------------- */
 
@@ -2281,6 +2320,18 @@ html.dark-mode .subscribe-form .success .message-success {
 
 #ghost-portal-root {
     display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    #subscription-fader .popup {
+        width: 540px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #subscription-fader .popup {
+        width: 90vw;
+    }
 }
 
 /* 15. Sales Popup
