@@ -46,6 +46,7 @@ production stylesheet in assets/built/screen.css
     --color-darkgrey: #15171A;
     --color-midgrey: #738a94;
     --color-lightgrey: #c5d2d9;
+    --color-lightgrey2: #f4f5f7;
     --color-wash: #e5eff5;
     --color-darkmode: #151719;
     --color-whitegrey: #EBEDF0;
@@ -1110,10 +1111,10 @@ is the very first element in the post content */
 .gh-content pre {
     overflow: auto;
     padding: 16px 20px;
-    color: var(--color-wash);
     font-size: 1.4rem;
     line-height: 1.5em;
-    background: var(--color-darkgrey);
+    background: var(--color-lightgrey2);
+    color: var(--color-text);
     border-radius: 5px;
     box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
 }
