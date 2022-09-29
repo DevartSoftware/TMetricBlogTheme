@@ -25,6 +25,7 @@ production stylesheet in assets/built/screen.css
 14. Subscription Popup
 15. Sales Popup
 16. Discount Popup
+17. Post Banner
 
 */
 
@@ -2863,5 +2864,69 @@ html.dark-mode .subscribe-form .success .message-success {
     .discount-popup .row .btn {
         margin: 0 0 0 10px;
         order: 3;
+    }
+}
+
+/* 17. Post Banner
+/* ---------------------------------------------------------- */
+.post-banner {
+    position: relative;
+}
+
+.post-banner img,
+.post-banner svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.post-banner .mobile-image {
+    display: none;
+}
+
+.post-banner .button {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px 50px;
+    color: #fff;
+    font-weight: 500;
+    background: var(--ghost-accent-color);
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .post-banner .button {
+        right: 5%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .post-banner .mobile-image {
+        display: block;
+    }
+
+    .post-banner .desktop-image {
+        display: none;
+    }
+
+    .post-banner .button {
+        right: 5%;
+        transform: translate(0,-50%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .post-banner .button {
+        right: 5%;
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .post-banner .button {
+        right: 10px;
+        padding: 10px 12px;
     }
 }
