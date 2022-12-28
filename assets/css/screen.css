@@ -2896,9 +2896,21 @@ html.dark-mode .subscribe-form .success .message-success {
     border-radius: 5px;
 }
 
+.post-banner.new-year .button {
+    right: 50%;
+    top: auto;
+    bottom: 15%;
+    transform: translate(50%,0);
+}
+
 @media only screen and (max-width: 1200px) {
     .post-banner .button {
         right: 5%;
+    }
+
+    .post-banner.new-year .button {
+        right: 50%;
+        bottom: 10%;
     }
 }
 
@@ -2915,6 +2927,12 @@ html.dark-mode .subscribe-form .success .message-success {
         right: 5%;
         transform: translate(0,-50%);
     }
+
+    .post-banner.new-year .button {
+        right: 50%;
+        bottom: 23%;
+        transform: translate(50%,0);
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -2922,11 +2940,34 @@ html.dark-mode .subscribe-form .success .message-success {
         right: 5%;
         padding: 10px 20px;
     }
+
+    .post-banner.new-year .button {
+        right: 50%;
+        bottom: 17%;
+    }
 }
 
 @media only screen and (max-width: 480px) {
     .post-banner .button {
         right: 10px;
         padding: 10px 12px;
+    }
+
+    .post-banner.new-year .button {
+        right: 50%;
+        bottom: 10%;
+    }
+}
+
+/* New Year banners 2022-2023 */
+.site-header-content h1.site-title {
+    font-size: 0;
+    line-height: 0;
+    opacity: 0;
+}
+
+@media only screen and (max-width: 420px) {
+    .site-header-content {
+        min-height: 170px;
     }
 }
