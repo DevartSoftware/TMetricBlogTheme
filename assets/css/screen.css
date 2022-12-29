@@ -2958,16 +2958,3 @@ html.dark-mode .subscribe-form .success .message-success {
         bottom: 10%;
     }
 }
-
-/* New Year banners 2022-2023 */
-.site-header-content h1.site-title {
-    font-size: 0;
-    line-height: 0;
-    opacity: 0;
-}
-
-@media only screen and (max-width: 420px) {
-    .site-header-content {
-        min-height: 170px;
-    }
-}
