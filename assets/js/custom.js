@@ -29,14 +29,16 @@ $(document).ready(function () {
   });
 
   // Subscription popup
-  $('.btn-subscribe').click(function(event) {
-    event.preventDefault();
-    $('#subscription-fader').addClass('visible');
-  });
+    /*
+    $('.btn-subscribe').click(function(event) {
+      event.preventDefault();
+      $('#subscription-fader').addClass('visible');
+    });
 
-  $('#subscription-fader').click(function() {
-    $('#subscription-fader').removeClass('visible');
-  });
+    $('#subscription-fader').click(function() {
+      $('#subscription-fader').removeClass('visible');
+    });
+  */
 });
 
 $(window).on('load', function(){

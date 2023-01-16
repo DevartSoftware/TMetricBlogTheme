@@ -44,7 +44,7 @@
             <div class="gh-head-actions">
                 <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
                 {{#unless @member}}
-                    <a class="gh-head-button btn-subscribe" href="">Subscribe</a>
+                    <a class="gh-head-button btn-subscribe">Subscribe</a>
                 {{else}}
                     <a class="gh-head-button" href="#/portal/account">Account</a>
                 {{/unless}}
@@ -82,11 +82,13 @@
     <button class="btn-to-top">{{> "icons/angleUp"}}</button>
 
     {{!-- Subscription popup --}}
-    <div id="subscription-fader" class="fader">
-        <div class="popup">
-            <iframe width="540" height="550" src="https://3ab93ce2.sibforms.com/serve/MUIEABS9eu41DlGQD8ZQVuhenOizeklBio8IFJ1nrZ3CnHorWVGaHu_vIhBf8Ix-txkdF3q63qJRMn8lNWW5SplUDYGIBBZ0qVF6dm1WfHred6kzmn-aDAagIM32xPVDxStdEUYsHoeRwsh-j2Q-acioCcebe9MLzs1aqsXl4rnSqiS6JDmb4rAYLnYoVAcXOafSdAKQKtKZrzI8" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+    {{!--
+        <div id="subscription-fader" class="fader">
+            <div class="popup">
+                <iframe width="540" height="550" src="https://3ab93ce2.sibforms.com/serve/MUIEABS9eu41DlGQD8ZQVuhenOizeklBio8IFJ1nrZ3CnHorWVGaHu_vIhBf8Ix-txkdF3q63qJRMn8lNWW5SplUDYGIBBZ0qVF6dm1WfHred6kzmn-aDAagIM32xPVDxStdEUYsHoeRwsh-j2Q-acioCcebe9MLzs1aqsXl4rnSqiS6JDmb4rAYLnYoVAcXOafSdAKQKtKZrzI8" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+            </div>
         </div>
-    </div>
+    --}}
 
 </div>
 {{!-- /.viewport --}}
