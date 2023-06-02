@@ -21,35 +21,249 @@
 <body class="{{body_class}}">
 <div class="viewport">
 
-    <header id="gh-head" class="gh-head white-text-color {{#if @site.cover_image}}has-cover{{/if}}">
-        <nav class="gh-head-inner inner gh-container">
-
-            <div class="gh-head-brand">
-                <a class="gh-head-logo" href="{{@site.url}}">
-                    {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                    {{else}}
-                        {{@site.title}}
-                    {{/if}}
-                </a>
-                <a class="gh-burger" role="button">
-                    <div class="gh-burger-box">
-                        <div class="gh-burger-inner"></div>
-                    </div>
+    {{!-- The global header--}}
+    <header id="gh-head" class="gh-head product-header">
+        <div class="container">
+            <div id="logo">
+                <a href="{{@site.url}}">
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
                 </a>
             </div>
-            <div class="gh-head-menu">
-                {{navigation}}
-            </div>
-            <div class="gh-head-actions">
-                <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
-                {{#unless @member}}
-                    <a class="gh-head-button btn-subscribe">Subscribe</a>
-                {{else}}
-                    <a class="gh-head-button" href="#/portal/account">Account</a>
-                {{/unless}}
-            </div>
-        </nav>
+            {{!-- navigation begin --}}
+            <nav id="nav">
+                <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#main-menu-navbar" aria-controls="main-menu-navbar" aria-expanded="false">
+                    <span class="icon" id="menu-burger">
+                        {{> "icons/icon-menu-burger"}}
+                    </span>
+                    <span class="icon" id="cross">
+                        {{> "icons/icon-cross"}}
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu-navbar">
+                    <ul id="main-menu" class="navbar-nav">
+                        {{!-- menu items with dropdown box begin --}}
+                        <li>
+                            <a href="#"><span>Why TMetric</span> {{> "icons/arrow-down"}}</a>
+                            {{!-- dropdown box begin --}}
+                            <div class="drop">
+                                <div class="container">
+                                    {{!-- dropdown box left column begin --}}
+                                    <div class="links-column">
+                                        <div class="column">
+                                            <strong class="category">Overview</strong>
+                                            <ul class="links">
+                                                <li>
+                                                    <a href="https://tmetric.com/solutions">
+                                                        <strong class="title">Industry</strong>
+                                                        <span class="text">Made for all industries. Check benefits of usage</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/customer-stories">
+                                                        <strong class="title">Customers</strong>
+                                                        <span class="text">See why business use TMetric for time tracking and workflow management</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    {{!-- dropdown box left column end --}}
+                                    {{!-- dropdown box right column begin --}}
+                                    <div class="list-column">
+                                        <strong class="category">Features</strong>
+                                        <ul class="links with-icons">
+                                            <li>
+                                                <a href="https://tmetric.com/feature-time-tracking">
+                                                    {{> "icons/icon-timer-gray"}}
+                                                    <span class="info">
+                                                        <strong class="title">Time Tracking</strong>
+                                                        <span class="text">Capture and control every task you work on</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://tmetric.com/feature-billing">
+                                                    {{> "icons/icon-invoice-gray"}}
+                                                    <span class="info">
+                                                        <strong class="title">Billing &amp; Invoicing</strong>
+                                                        <span class="text">Set billable rates and easily create invoices</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://tmetric.com/feature-projects">
+                                                    {{> "icons/icon-project-gray"}}
+                                                    <span class="info">
+                                                        <strong class="title">Project Management</strong>
+                                                        <span class="text">Create projects, set rates and budgets</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://tmetric.com/feature-team-management">
+                                                    {{> "icons/icon-team-gray"}}
+                                                    <span class="info">
+                                                        <strong class="title">Team Management</strong>
+                                                        <span class="text">Monitor productivity and activity level of your team</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://tmetric.com/task-management">
+                                                    {{> "icons/icon-reports-gray"}}
+                                                    <span class="info">
+                                                        <strong class="title">Task Management</strong>
+                                                        <span class="text">Manage tasks and set up an effective workflow</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://tmetric.com/feature-time-off">
+                                                    {{> "icons/icon-time-off-gray"}}
+                                                    <span class="info">
+                                                        <strong class="title">Time Off</strong>
+                                                        <span class="text">Simply ask for days off and control teams attendance</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <a href="https://tmetric.com/features" class="link-more">
+                                            View All Features
+                                            {{> "icons/icon-arrow-right"}}
+                                        </a>
+                                    </div>
+                                    {{!-- dropdown box right column end --}}
+                                </div>
+                            </div>
+                            {{!-- dropdown box end --}}
+                        </li>
+                        <li>
+                            <a href="#"><span>Apps &amp; Integrations</span> {{> "icons/arrow-down"}}</a>
+                            {{!-- dropdown box begin --}}
+                            <div class="drop">
+                                <div class="container">
+                                    {{!-- dropdown box left column begin --}}
+                                    <div class="links-column">
+                                        <div class="column">
+                                            <strong class="category">Apps</strong>
+                                            <ul class="links">
+                                                <li>
+                                                    <a href="https://tmetric.com/download#browser-extensions-section">
+                                                        <strong class="title">Browser Extensions</strong>
+                                                        <span class="text">Simple time tracking extension which helps you be more productive</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/download#mobile-apps-section">
+                                                        <strong class="title">Mobile apps</strong>
+                                                        <span class="text">Install TMetric app to your phone or a tablet device. Android and iOS platforms are supported.</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/download">
+                                                        <strong class="title">Desktop apps</strong>
+                                                        <span class="text">Download TMetric app for your desktop computer or a laptop</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    {{!-- dropdown box left column end --}}
+                                    {{!-- dropdown box right column begin --}}
+                                    <div class="list-column">
+                                        <strong class="category">Integrations</strong>
+                                        <ul class="links with-icons">
+                                            <li>
+                                                <a href="https://tmetric.com/integrations/jira-time-tracking">
+                                                    {{> "icons/icon-jira-small"}}
+                                                    <span class="info">
+                                                        <strong class="title">Jira</strong>
+                                                        <span class="text">Time tracking on every task in one click</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://tmetric.com/integrations/asana-time-tracking">
+                                                    {{> "icons/icon-asana-small"}}
+                                                    <span class="info">
+                                                        <strong class="title">Asana</strong>
+                                                        <span class="text">Start to accurately track time of tasks</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://tmetric.com/integrations/todoist-time-tracking">
+                                                    {{> "icons/icon-todoist-small"}}
+                                                    <span class="info">
+                                                        <strong class="title">Todoist</strong>
+                                                        <span class="text">Track time of your lists and tasks</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://tmetric.com/integrations/microsoft-office-online-time-tracking-tmetric">
+                                                    {{> "icons/icon-ms-office-small"}}
+                                                    <span class="info">
+                                                        <strong class="title">MS Office</strong>
+                                                        <span class="text">Get plugin for tracking time in MS Office Online</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://tmetric.com/integrations/github-time-tracking">
+                                                    {{> "icons/icon-github-small"}}
+                                                    <span class="info">
+                                                        <strong class="title">GitHub</strong>
+                                                        <span class="text">Track time spent working on an issue with one mouse click</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://tmetric.com/integrations/freshdesk-time-tracking">
+                                                    {{> "icons/icon-freshdesk-small"}}
+                                                    <span class="info">
+                                                        <strong class="title">Freshdesk</strong>
+                                                        <span class="text">Track time spent on every support ticket</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <a href="https://tmetric.com/integrations" class="link-more">
+                                            View All Integrations
+                                            {{> "icons/icon-arrow-right"}}
+                                        </a>
+                                    </div>
+                                    {{!-- dropdown box right column end --}}
+                                </div>
+                            </div>
+                            {{!-- dropdown box end --}}
+                        </li>
+                        {{!-- menu items with dropdown box end --}}
+                        {{!-- menu links begin --}}
+                        <li><a href="https://tmetric.com/pricing"><span>Pricing</span></a></li>
+                        <li><a href="https://tmetric.com/support"><span>Support</span></a></li>
+                        <li class="blog-link"><a href="{{@site.url}}"><span>Blog</span></a></li>
+                        {{!-- menu links end --}}
+                    </ul>
+                    {{!-- login menu --}}
+                    <ul id="login-menu">
+                        <li class="nav-item">
+                            <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
+                        </li>
+                        {{#unless @member}}
+                            <li class="nav-item">
+                                <a class="gh-head-button btn-subscribe">Subscribe</a>
+                            </li>
+                        {{else}}
+                            <li class="nav-item">
+                                <a class="gh-head-button" href="#/portal/account">Account</a>
+                            </li>
+                        {{/unless}}
+                    </ul>
+                </div>
+            </nav>
+            {{!-- navigation end --}}
+        </div>
     </header>
 
     <main>
@@ -80,15 +294,6 @@
 
     {{!-- Scroll to top button --}}
     <button class="btn-to-top">{{> "icons/angleUp"}}</button>
-
-    {{!-- Subscription popup --}}
-    {{!--
-        <div id="subscription-fader" class="fader">
-            <div class="popup">
-                <iframe width="540" height="550" src="https://3ab93ce2.sibforms.com/serve/MUIEABS9eu41DlGQD8ZQVuhenOizeklBio8IFJ1nrZ3CnHorWVGaHu_vIhBf8Ix-txkdF3q63qJRMn8lNWW5SplUDYGIBBZ0qVF6dm1WfHred6kzmn-aDAagIM32xPVDxStdEUYsHoeRwsh-j2Q-acioCcebe9MLzs1aqsXl4rnSqiS6JDmb4rAYLnYoVAcXOafSdAKQKtKZrzI8" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
-            </div>
-        </div>
-    --}}
 
 </div>
 {{!-- /.viewport --}}

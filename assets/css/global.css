@@ -3,9 +3,7 @@
 
 @font-face {
     font-family: 'PTRootUIMedium';
-    src: url('../fonts/PT_Root_UI_Medium.eot');
-    src: url('../fonts/PT_Root_UI_Medium.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/PT_Root_UI_Medium.woff2') format('woff2'),
+    src: url('../fonts/PT_Root_UI_Medium.woff2') format('woff2'),
     url('../fonts/PT_Root_UI_Medium.woff') format('woff'),
     url('../fonts/PT_Root_UI_Medium.ttf') format('truetype');
     font-weight: 500;
@@ -13,14 +11,29 @@
 }
 
 @font-face {
+    font-family: 'PTRootUIBold';
+    src: url('../fonts/PT_Root_UI_Bold.woff2') format('woff2'),
+    url('../fonts/PT_Root_UI_Bold.woff') format('woff'),
+    url('../fonts/PT_Root_UI_Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ObjectivityMedium';
+    src: url('../fonts/Objectivity-Medium.woff2') format('woff2'),
+    url('../fonts/Objectivity-Medium.woff') format('woff'),
+    url('../fonts/Objectivity-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'ObjectivityBold';
-    src: url('../fonts/Objectivity-Bold.eot');
-    src: url('../fonts/Objectivity-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Objectivity-Bold.woff2') format('woff2'),
+    src: url('../fonts/Objectivity-Bold.woff2') format('woff2'),
     url('../fonts/Objectivity-Bold.woff') format('woff'),
-    url('../fonts/Objectivity-Bold.ttf') format('truetype'),
-    url('../fonts/Objectivity-Bold.svg#Objectivity-Bold') format('svg');
-    font-weight: bold;
+    url('../fonts/Objectivity-Bold.ttf') format('truetype');
+    font-weight: 700;
     font-style: normal;
 }
 

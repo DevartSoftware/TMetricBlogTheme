@@ -2,32 +2,27 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<div class="site-header-content white-text-color">
-    {{#if @site.cover_image}}
-        {{!-- This is a responsive image, it loads different sizes depending on device
-        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-        <img class="site-header-cover"
-            srcset="{{img_url @site.cover_image size="s"}} 300w,
+<div class="site-header-content">
+    <div class="container">
+        <div class="site-header-text">
+            <h1>{{@site.description}}</h1>
+        </div>
+        <div class="site-header-image">
+            {{#if @site.cover_image}}
+            {{!-- This is a responsive image, it loads different sizes depending on device
+            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+                <img class="site-header-cover"
+                     srcset="{{img_url @site.cover_image size="s"}} 300w,
                     {{img_url @site.cover_image size="m"}} 600w,
                     {{img_url @site.cover_image size="l"}} 1000w,
                     {{img_url @site.cover_image size="xl"}} 2000w"
-            sizes="100vw"
-            src="{{img_url @site.cover_image size="xl"}}"
-            alt=""
-        />
-    {{/if}}
-    <h1 class="site-title">
-        {{!--
-        {{#if @site.logo}}
-            <a href="https://tmetric.com"><img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" /></a>
-        {{else}}
-            {{@site.title}}
-        {{/if}}
-        --}}
-
-    <a href="https://tmetric.com">{{> "icons/logo-white"}}</a>
-    </h1>
-    <p>{{@site.description}}</p>
+                     sizes="100vw"
+                     src="{{img_url @site.cover_image size="xl"}}"
+                     alt="{{@site.title}}"
+                />
+            {{/if}}
+        </div>
+    </div>
 </div>
 
 {{!-- The main content area --}}
