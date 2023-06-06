@@ -3251,3 +3251,90 @@ html.dark-mode .subscribe-form .success .message-success {
         width: 100%;
     }
 }
+
+.no-infinite-scroll .pagination {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-infinite-scroll .pagination a {
+    padding: 5px 16px;
+    border: 1px solid #A1A7B2;
+    border-radius: 6px;
+    line-height: 1.5;
+    transition: all .3s ease;
+}
+
+.no-infinite-scroll .pagination a:hover {
+    border-color: #EBEDF0;
+    background: #EBEDF0;
+}
+
+.no-infinite-scroll .pagination a:active {
+    border-color: #D0D6DB;
+    background: #D0D6DB;
+}
+
+.no-infinite-scroll .pagination a:focus {
+    border-color: #CAD8F9;
+    outline: solid 1px #CAD8F9;
+}
+
+.no-infinite-scroll .pagination .newer-posts {
+    margin-right: 60px;
+}
+
+.no-infinite-scroll .pagination .newer-posts span {
+    margin-right: 5px;
+}
+
+.no-infinite-scroll .pagination .older-posts {
+    margin-left: 60px;
+}
+
+.no-infinite-scroll .pagination .older-posts span {
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .no-infinite-scroll .pagination {
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .no-infinite-scroll .pagination .newer-posts {
+        margin-right: 20px;
+    }
+
+    .no-infinite-scroll .pagination .older-posts {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .no-infinite-scroll .pagination {
+        flex-wrap: wrap;
+        text-align: center;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+
+    .no-infinite-scroll .pagination .newer-posts {
+        margin-bottom: 10px;
+    }
+
+    .no-infinite-scroll .pagination .older-posts {
+        margin-top: 10px;
+    }
+
+    .no-infinite-scroll .pagination .newer-posts,
+    .no-infinite-scroll .pagination .older-posts {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+}
