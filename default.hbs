@@ -248,17 +248,12 @@
                     {{!-- login menu --}}
                     <ul id="login-menu">
                         <li class="nav-item">
-                            <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
+                            <a class="nav-link login" href="https://app.tmetric.com/login">Log In</a>
                         </li>
-                        {{#unless @member}}
-                            <li class="nav-item">
-                                <a class="gh-head-button btn-subscribe">Subscribe</a>
-                            </li>
-                        {{else}}
-                            <li class="nav-item">
-                                <a class="gh-head-button" href="#/portal/account">Account</a>
-                            </li>
-                        {{/unless}}
+                        <li class="nav-item">
+                            <a class="signup btn btn-outline-primary" href="https://app.tmetric.com/register">Sign Up</a>
+                        </li>
+
                     </ul>
                 </div>
             </nav>
