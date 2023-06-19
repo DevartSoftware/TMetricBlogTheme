@@ -267,23 +267,184 @@
     </main>
 
     {{!-- The global footer at the very bottom of the screen --}}
-    <footer class="site-footer outer">
-        <div class="inner">
-            <section class="copyright">
-                <a href="{{@site.url}}">
-                    {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                    {{/if}}
-                </a>
-                <a href="https://app.tmetric.com/register">Try TMetric for free</a>
-                &copy; {{date format="YYYY"}}
-            </section>
-            <nav class="site-footer-nav">
-                {{navigation type="secondary"}}
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-logo">
+                        <a href="{{@site.url}}">
+                            <img src="{{@site.logo}}" width="147" height="54" alt="{{@site.title}}" />
+                        </a>
+                    </div>
+                </div>
 
-                {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>{{/if}}
-                {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>{{/if}}
-            </nav>
+                <div class="col offset">
+                    <div class="title">
+                        <span>Applications</span>
+                        {{> "icons/icon-angle-right"}}
+                    </div>
+                    <div class="slide">
+                        <div>
+                            <a href="https://tmetric.com/download" class="footer-link-container">
+                                {{> "icons/icon-desktop"}}
+                                <span>Desktop</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://itunes.apple.com/us/app/tmetric/id1251407402" target="_blank" class="footer-link-container">
+                                {{> "icons/icon-ios"}}
+                                <span>iOS</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://play.google.com/store/apps/details?id=com.tmetric" target="_blank" class="footer-link-container">
+                                {{> "icons/icon-android"}}
+                                <span>Android</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="title">
+                        <span>Browser Extensions</span>
+                        {{> "icons/icon-angle-right"}}
+                    </div>
+                    <div class="slide">
+                        <div>
+                            <a href="https://chrome.google.com/webstore/detail/tmetric-extension/ffijoclmniipjbhecddgkfpdafpbdnen" target="_blank" class="footer-link-container">
+                                {{> "icons/icon-chrome"}}
+                                <span>Chrome</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/tmetric-extension/" target="_blank" class="footer-link-container">
+                                {{> "icons/icon-firefox"}}
+                                <span>Firefox</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://addons.opera.com/en/extensions/details/tmetric-extension/" target="_blank" class="footer-link-container">
+                                {{> "icons/icon-opera"}}
+                                <span>Opera</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://microsoftedge.microsoft.com/addons/detail/bkohhohbfioiffcejghnjljadblbifok" target="_blank" class="footer-link-container">
+                                {{> "icons/icon-edge"}}
+                                <span>Edge</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://apps.apple.com/app/tmetric-for-safari/id1483939427" target="_blank" class="footer-link-container">
+                                {{> "icons/icon-safari"}}
+                                <span>Safari</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="title">
+                        <span>Resources</span>
+                        {{> "icons/icon-angle-right"}}
+                    </div>
+                    <div class="slide">
+                        <div>
+                            <a href="https://tmetric.com/solutions" class="footer-link-container">
+                                <span>Solutions</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://tmetric.com/integrations" class="footer-link-container">
+                                <span>Integrations</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://tmetric.com/help" class="footer-link-container">
+                                <span>Help</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://tmetric.com/time-trackers-comparison" class="footer-link-container">
+                                <span>Time Trackers Comparison</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://tmetric.com/white-papers" class="footer-link-container">
+                                <span>White Papers</span>
+                            </a>
+                        </div>
+
+                        <div class="blog-link">
+                            <a href="https://blog.tmetric.com" class="footer-link-container">
+                                <span>Blog</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="title">
+                        <span>About</span>
+                        {{> "icons/icon-angle-right"}}
+                    </div>
+                    <div class="slide">
+                        <div>
+                            <a href="https://tmetric.com/about" class="footer-link-container">
+                                <span>About TMetric</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://tmetric.com/terms-of-service" class="footer-link-container">
+                                <span>Terms of Service</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://tmetric.com/privacy-policy" class="footer-link-container">
+                                <span>Privacy Policy</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://tmetric.com/cookies-policy" class="footer-link-container">
+                                <span>Cookies Policy</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://tmetric.com/media/lymbvfck/tmetric-partnership.pdf" target="_blank" class="footer-link-container">
+                                <span>Partnership</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-row">
+            <div class="container">
+                <ul class="social-networks">
+                    {{#if @site.facebook}}
+                        <li>
+                            <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>
+                        </li>
+                    {{/if}}
+                    {{#if @site.twitter}}
+                        <li>
+                            <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>
+                        </li>
+                    {{/if}}
+                    <li>
+                        <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
+                    </li>
+                </ul>
+                <div class="copyright">
+                    <div>
+                        <span>Copyright © Devart 2023</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
