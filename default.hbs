@@ -17,6 +17,9 @@
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
 
+    {{!-- Tiny Slider styles --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css" integrity="sha512-eMxdaSf5XW3ZW1wZCrWItO2jZ7A9FhuZfjVdztr7ZsKNOmt6TUMTQgfpNoVRyfPE5S9BC0A4suXzsGSrAOWcoQ==" crossorigin="anonymous" />
+
 </head>
 <body class="{{body_class}}">
 <div class="viewport">
@@ -477,6 +480,35 @@ $(document).ready(function () {
 </script>
 
 {{{block "scripts"}}}
+
+{{!-- Tiny Slider script --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js" integrity="sha512-D/zaRVk05q6ERt1JgWB49kL6tyerY7a94egaVv6ObiGcw3OCEv0tvoPDEsVqL28HyAZhDd483ix8gkWQGDgEKw==" crossorigin="anonymous"></script>
+<script>
+    const sliderContainer = document.querySelector('.js-featured-feed');
+
+    if (sliderContainer) {
+        const slider = tns({
+            container: sliderContainer,
+            items: 3,
+            slideBy: 1,
+            loop: true,
+            autoplay: false,
+            gutter: 0,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 3,
+                }
+            }
+        });
+    }
+</script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}

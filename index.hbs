@@ -41,6 +41,34 @@ into the {body} of the default.hbs template --}}
                     {{/foreach}}
                 </div>
                 {{ pagination }}
+
+                {{!-- Authors Section --}}
+                <div class="authors-section">
+                    <h3>Featured Writters</h3>
+                    {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
+                        <div class="featured-feed js-featured-feed">
+                            {{#foreach authors}}
+                                <article class="featured-card {{#unless profile_image}} no-image{{/unless}}">
+                                    <div class="featured-item">
+                                        <a class="post-card-content-link" href="{{url}}">
+                                            {{#if profile_image}}
+                                                <span class="image">
+                                                    <img class="lazyload" src="{{profile_image}}" alt="{{name}} avatar image" />
+                                                </span>
+                                            {{/if}}
+                                            <strong class="name">{{name}}</strong>
+                                            <span class="bio">{{bio}}</span>
+                                            <span class="author-meta">
+                                                {{plural count.posts empty='No posts' singular='% Article writted' plural='% Articles writted'}}
+                                            </span>
+                                        </a>
+                                    </div>
+                                </article>
+                            {{/foreach}}
+                        </div>
+                    {{/get}}
+                </div>
+                
             </div>
             {{!-- Sidebar with menu --}}
             <aside class="sidebar">

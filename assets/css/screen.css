@@ -26,6 +26,7 @@ production stylesheet in assets/built/screen.css
 17. Post Banner
 18. Product Header
 19. Sidebar Menu
+20. Authors Section
 
 */
 
@@ -3467,7 +3468,7 @@ html.dark-mode .subscribe-form .success .message-success {
 }
 
 .no-infinite-scroll .pagination {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3515,7 +3516,6 @@ html.dark-mode .subscribe-form .success .message-success {
 @media only screen and (max-width: 1000px) {
     .no-infinite-scroll .pagination {
         padding-top: 20px;
-        margin-bottom: 20px;
     }
 }
 
@@ -3534,7 +3534,6 @@ html.dark-mode .subscribe-form .success .message-success {
         flex-wrap: wrap;
         text-align: center;
         padding-top: 0;
-        margin-bottom: 0;
     }
 
     .no-infinite-scroll .pagination .newer-posts {
@@ -3760,5 +3759,183 @@ html.dark-mode .subscribe-form .success .message-success {
 
     .sidebar .nav li a {
         padding: 14px 0 9px;
+    }
+}
+
+/* 20. Authors Section
+/* ---------------------------------------------------------- */
+
+.authors-section {
+    position: relative;
+    margin-bottom: 96px;
+}
+
+.authors-section .featured-feed {
+    display: flex;
+}
+
+.authors-section .featured-card,
+.authors-section .featured-item,
+.authors-section .post-card-content-link {
+    min-height: 100%;
+}
+
+.authors-section .tns-horizontal.tns-subpixel > .tns-item {
+    display: inline-flex;
+}
+
+.authors-section #tns1-iw {
+    margin: 0 -14px;
+}
+
+.authors-section #tns1 > .tns-item {
+    padding: 0 14px;
+}
+
+.authors-section h3 {
+    margin: 0 0 35px;
+    font: 700 32px/1.2 ObjectivityBold, sans-serif;
+}
+
+.authors-section .tns-controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+}
+
+.authors-section .tns-controls button {
+    cursor: pointer;
+    position: relative;
+    margin: 0 0 0 20px;
+    padding: 0;
+    border: 0;
+    width: 54px;
+    height: 37px;
+    background: #fff;
+    box-shadow: 0 12px 20px rgba(10, 31, 51, 0.07), 0 0 2px rgba(10, 31, 51, 0.1);
+    border-radius: 6px;
+    text-indent: -9999px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.authors-section .tns-controls button:hover {
+    box-shadow: 0 12px 20px rgba(10, 31, 51, 0.14), 0 0 2px rgba(10, 31, 51, 0.2);
+}
+
+.authors-section .tns-controls button:after {
+    display: block;
+    clear: both;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 54px;
+    height: 37px;
+    font: 700 22px/37px ObjectivityBold, sans-serif;
+    text-indent: 0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.authors-section .tns-controls button[data-controls="prev"] {
+    margin: 0;
+}
+
+.authors-section .tns-controls button[data-controls="prev"]:after {
+    content: '<';
+}
+
+.authors-section .tns-controls button[data-controls="next"]:after {
+    content: '>';
+}
+
+.authors-section .tns-controls button:hover:after {
+    color: var(--color-blue);
+}
+
+.authors-section .tns-nav {
+    display: none;
+}
+
+.authors-section .post-card-content-link {
+    display: block;
+    max-width: 285px;
+    padding: 20px;
+    background: #F6F7F8;
+    text-align: center;
+}
+
+.authors-section .image {
+    display: block;
+    margin: 0 auto 20px;
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.authors-section .image img {
+    display: block;
+    object-fit: cover;
+}
+
+.authors-section .name {
+    display: block;
+    margin-bottom: 6px;
+    font: 700 18px/1.2 ObjectivityBold, sans-serif;
+}
+
+.authors-section .bio {
+    display: block;
+    margin-bottom: 5px;
+    min-height: 54px;
+    font: 500 14px/18px ObjectivityMedium, sans-serif;
+    color: #777E85;
+}
+
+.authors-section .author-meta {
+    font: 500 12px/1.2 ObjectivityMedium, sans-serif;
+    color: #4C5157;
+}
+
+@media only screen and (max-width: 1023px) {
+    .authors-section {
+        margin-bottom: 60px;
+    }
+
+    .authors-section h3 {
+        margin: 0 0 20px;
+    }
+
+    .authors-section .tns-controls {
+        position: relative;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .authors-section {
+        margin-bottom: 40px;
+    }
+
+    .authors-section .featured-item,
+    .authors-section .post-card-content-link {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .authors-section h3 {
+        text-align: center;
+    }
+
+    .authors-section .tns-controls {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .authors-section h3 {
+        font-size: 24px;
     }
 }
