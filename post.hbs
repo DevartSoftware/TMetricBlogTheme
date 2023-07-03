@@ -9,43 +9,45 @@ into the {body} tag of the default.hbs template --}}
 
 <article class="article {{post_class}}">
 
-    <header class="article-header gh-canvas">
+    <header class="article-header article-page-header">
+        <div class="header">
 
-        {{#if primary_tag}}
-        <section class="article-tag">
-            <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-        </section>
-        {{/if}}
-
-        <h1 class="article-title">{{title}}</h1>
-
-        {{#if custom_excerpt}}
-        <p class="article-excerpt">{{custom_excerpt}}</p>
-        {{/if}}
-
-        <div class="article-byline">
-            <section class="article-byline-content">
-                <ul class="author-list">
-                    {{#foreach authors}}
-                    <li class="author-list-item">
-                        {{#if profile_image}}
-                        <a href="{{url}}" class="author-avatar">
-                            <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                        </a>
-                        {{else}}
-                        <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                        {{/if}}
-                    </li>
-                    {{/foreach}}
-                </ul>
-                <div class="article-byline-meta">
-                    <h4 class="author-name">{{authors}}</h4>
-                    <div class="byline-meta-content">
-                        <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
-                    </div>
-                </div>
+            {{#if primary_tag}}
+            <section class="article-tag">
+                <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
             </section>
+            {{/if}}
+
+            <h1 class="article-title">{{title}}</h1>
+
+            {{#if custom_excerpt}}
+            <p class="article-excerpt">{{custom_excerpt}}</p>
+            {{/if}}
+
+            <div class="article-byline">
+                <section class="article-byline-content">
+                    <ul class="author-list">
+                        {{#foreach authors}}
+                        <li class="author-list-item">
+                            {{#if profile_image}}
+                            <a href="{{url}}" class="author-avatar">
+                                <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                            </a>
+                            {{else}}
+                            <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                            {{/if}}
+                        </li>
+                        {{/foreach}}
+                    </ul>
+                    <div class="article-byline-meta">
+                        <h4 class="author-name">{{authors}}</h4>
+                        <div class="byline-meta-content">
+                            <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                            <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
 
         {{#if feature_image}}
@@ -68,8 +70,62 @@ into the {body} tag of the default.hbs template --}}
         {{/if}}
     </header>
 
-    <section class="gh-content gh-canvas">
-        {{content}}
+    <section class="article-page-container">
+
+        {{!-- article content --}}
+        <div class="gh-content article-column">
+            {{content}}
+        </div>
+
+        {{!-- Sidebar with menu --}}
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h3 class="mobile-menu-opener">Menu <span class="icon">{{> "icons/arrow-down"}}</span></h3>
+                <div class="sidebar-menu">
+                    <div class="sidebar-box subscribe-box">
+                        <div class="sidebar-subscription">
+                            <h3>Subscribe to our blog</h3>
+                            <p>Get the latest posts right to your inbox</p>
+                            <button class="btn-primary" type="button">Subscribe</button>
+                        </div>
+                        <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
+                        <div class="sidebar-banner">
+                            <a href="https://tmetric.com">{{> "icons/empower-your-team-banner"}}</a>
+                        </div>
+                    </div>
+                    <div class="sidebar-box social-box">
+                        <div class="social">
+                            <h4>Social</h4>
+                            <div class="social-list">
+                                {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>{{/if}}
+                                {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>{{/if}}
+                                <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
+                                <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-box">
+                        <div class="categories">
+                            <h4>Categories:</h4>
+                            <ul class="nav tags">
+                                {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                                    {{#foreach tags}}
+                                        <li>
+                                            <a href="{{ url }}">
+                                                <span>{{ name }}</span>
+                                                <span class="counter">{{ count.posts }}</span>
+                                            </a>
+                                        </li>
+                                    {{/foreach}}
+                                {{/get}}
+                            </ul>
+                            {{navigation}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
     </section>
 
     {{!--
