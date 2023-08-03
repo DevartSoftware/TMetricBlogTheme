@@ -78,53 +78,74 @@ into the {body} tag of the default.hbs template --}}
         </div>
 
         {{!-- Sidebar with menu --}}
-        <aside class="sidebar">
-            <div class="sidebar-content">
+        {{#has tag="software, templates"}}
+            <div class="sidebar scroll-menu-container">
                 <h3 class="mobile-menu-opener">Menu <span class="icon">{{> "icons/arrow-down"}}</span></h3>
-                <div class="sidebar-menu">
-                    <div class="sidebar-box subscribe-box">
-                        <div class="sidebar-subscription">
-                            <h3>Subscribe to our blog</h3>
-                            <p>Get the latest posts right to your inbox</p>
-                            <button class="btn-primary" type="button">Subscribe</button>
+                <div class="sidebar-menu"></div>
+            </div>
+            <script>
+                window.addEventListener('load', function () {
+                    var menuItems = parseMenuItemsFromContent({
+                        contentContainer: '.article-column',
+                        itemSelectors: ['h2', 'h3'],
+                    });
+                    initScrollMenu({
+                        menuContainer: '.scroll-menu-container .sidebar-menu',
+                        menuItems: menuItems,
+                        scrollTopOffset: 95,
+                        scrollBottomOffset: 70
+                    });
+                });
+            </script>
+        {{else}}
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h3 class="mobile-menu-opener">Menu <span class="icon">{{> "icons/arrow-down"}}</span></h3>
+                    <div class="sidebar-menu">
+                        <div class="sidebar-box subscribe-box">
+                            <div class="sidebar-subscription">
+                                <h3>Subscribe to our blog</h3>
+                                <p>Get the latest posts right to your inbox</p>
+                                <button class="btn-primary" type="button">Subscribe</button>
+                            </div>
+                            <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
+                            <div class="sidebar-banner">
+                                <a href="https://tmetric.com">{{> "icons/empower-your-team-banner"}}</a>
+                            </div>
                         </div>
-                        <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
-                        <div class="sidebar-banner">
-                            <a href="https://tmetric.com">{{> "icons/empower-your-team-banner"}}</a>
+                        <div class="sidebar-box social-box">
+                            <div class="social">
+                                <h4>Social</h4>
+                                <div class="social-list">
+                                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>{{/if}}
+                                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>{{/if}}
+                                    <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
+                                    <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="sidebar-box social-box">
-                        <div class="social">
-                            <h4>Social</h4>
-                            <div class="social-list">
-                                {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>{{/if}}
-                                {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>{{/if}}
-                                <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
-                                <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
+                        <div class="sidebar-box">
+                            <div class="categories">
+                                <h4>Categories:</h4>
+                                <ul class="nav tags">
+                                    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                                        {{#foreach tags}}
+                                            <li>
+                                                <a href="{{ url }}">
+                                                    <span>{{ name }}</span>
+                                                    <span class="counter">{{ count.posts }}</span>
+                                                </a>
+                                            </li>
+                                        {{/foreach}}
+                                    {{/get}}
+                                </ul>
+                                {{navigation}}
                             </div>
                         </div>
                     </div>
-                    <div class="sidebar-box">
-                        <div class="categories">
-                            <h4>Categories:</h4>
-                            <ul class="nav tags">
-                                {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
-                                    {{#foreach tags}}
-                                        <li>
-                                            <a href="{{ url }}">
-                                                <span>{{ name }}</span>
-                                                <span class="counter">{{ count.posts }}</span>
-                                            </a>
-                                        </li>
-                                    {{/foreach}}
-                                {{/get}}
-                            </ul>
-                            {{navigation}}
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </aside>
+            </aside>
+        {{/has}}
 
     </section>
 

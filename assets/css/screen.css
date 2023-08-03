@@ -26,7 +26,8 @@ production stylesheet in assets/built/screen.css
 17. Post Banner
 18. Product Header
 19. Sidebar Menu
-20. Authors Section
+20. Scroll Menu
+21. Authors Section
 
 */
 
@@ -771,7 +772,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 .article-page-container {
     display: flex;
     padding: 0 60px;
-    align-items: flex-start;
 }
 
 .article-column {
@@ -3854,7 +3854,79 @@ html.dark-mode .subscribe-form .success .message-success {
     }
 }
 
-/* 20. Authors Section
+/* 20. Scroll Menu
+/* ---------------------------------------------------------- */
+
+.article-page-container .scroll-menu-container {
+    padding-top: 90px;
+}
+
+.scroll-menu-container .sidebar-menu {
+    height: 100%;
+}
+
+.scroll-menu-container .scroll-menu {
+    position: sticky;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: calc(100vh - 85px);
+    overflow-y: auto;
+}
+
+.scroll-menu-container .scroll-menu a {
+    font: 500 1.6rem/1.15 ObjectivityMedium,sans-serif;
+    transition: color .3s ease;
+    color: #a4a9b2;
+}
+
+.scroll-menu-container .scroll-menu ul a {
+    font-size: 1.4rem;
+}
+
+.scroll-menu-container .scroll-menu .active > a {
+    color: #4c5157;
+}
+
+.scroll-menu-container .scroll-menu a:hover {
+    color: var(--color-blue) !important;
+}
+
+.scroll-menu-container .scroll-menu li + li {
+    margin-top: 1.2rem;
+}
+
+.scroll-menu-container .scroll-menu ul li + li {
+    margin-top: 0.8rem;
+}
+
+@media (max-width: 1000px) {
+    .article-page-container .scroll-menu-container {
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+    .article-page-container .scroll-menu-container {
+        padding-top: 35px;
+    }
+
+    .scroll-menu-container .sidebar-menu {
+        height: auto;
+    }
+
+    .scroll-menu-container .scroll-menu {
+        position: relative;
+        top: 0;
+        max-height: none;
+        padding: 10px 0 20px;
+    }
+}
+
+/* 21. Authors Section
 /* ---------------------------------------------------------- */
 
 .authors-section {
