@@ -160,6 +160,7 @@ into the {body} tag of the default.hbs template --}}
 </article>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
+{{!--
 {{#unless @member}}
 <section class="footer-cta">
     <div class="inner">
@@ -167,12 +168,13 @@ into the {body} tag of the default.hbs template --}}
         <a class="footer-cta-button btn-subscribe" href="#/portal">
             <div>Enter your email</div>
             <span>Subscribe</span>
-        </a>
+        </a>--}}
         {{!-- ^ This looks like a form element, but it's just a link to Portal,
         making the form validation and submission much simpler. --}}
-    </div>
+{{!--</div>
 </section>
 {{/unless}}
+--}}
 
 {{!-- Post banner --}}
 {{!--
@@ -187,18 +189,9 @@ into the {body} tag of the default.hbs template --}}
 </div>
 --}}
 
-<div class="post-banner">
-    <div class="desktop-image">
-        {{> "icons/tmetric-banner-desktop"}}
-    </div>
-    <div class="mobile-image">
-        {{> "icons/tmetric-banner-mobile"}}
-    </div>
-    <a class="button" href="https://tmetric.com/">Learn more</a>
-</div>
-
 {{!-- Read more links, just above the footer --}}
 <aside class="read-more-wrap">
+    <h2>Recent Articles</h2>
     <div class="read-more inner">
 
         {{!-- The {#get} helper below fetches some of the latest posts here

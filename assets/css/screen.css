@@ -625,7 +625,7 @@ a.gh-head-button:focus {
 
     .site-main .post-feed {
         padding-top: 35px;
-        grid-gap: 40px;
+        grid-gap: 50px;
     }
 }
 
@@ -676,7 +676,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .tag-template .post-card-large .post-card-excerpt p {
         margin-bottom: 1.5em;
-        font-size: 1.7rem;
+        font-size: 1.8rem;
         line-height: 1.55em;
         -webkit-line-clamp: 8;
     }
@@ -1444,7 +1444,7 @@ Ghost editor. */
 
 .read-more-wrap {
     width: 100%;
-    padding: 4vmin;
+    padding: 4vmin 4vmin 10vmin;
     margin: 0 auto;
     color: var(--color-text);
 }
@@ -1453,6 +1453,7 @@ Ghost editor. */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 4vmin;
+    max-width: 100% !important;
 }
 
 @media (max-width: 1000px) {
@@ -1479,27 +1480,25 @@ Ghost editor. */
 
 .author-template .posts {
     position: relative;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 200px 1fr 1fr;
-    grid-gap: 4vmin;
 }
 
 .author-template .posts .post-feed {
-    grid-column: 2 / 4;
+    position: relative;
+    display: grid;
+    grid-gap: 4vmin 32px;
     grid-template-columns: 1fr 1fr;
+    padding: 66px 0 4vmin;
 }
 
 .author-profile {
-    padding: 4vmin 0;
+    padding: 6vmin 0 2vmin;
 }
 
 .author-profile-content {
-    height: auto;
-    position: sticky;
     top: 4vmin;
     font-size: 1.4rem;
     line-height:  1.4em;
+    display: flex;
 }
 
 .author-profile-pic {
@@ -1507,24 +1506,34 @@ Ghost editor. */
     width: 150px;
     height: 150px;
     object-fit: cover;
-    margin: 0 0 2rem;
+    margin: 0 2rem 2rem 0;
     background: color-mod(var(--color-lightgrey) l(+10%));
     border-radius: 50%;
 }
 
+.author-profile-info {
+    flex-grow: 1;
+}
+
 .author-profile h1 {
     margin: 0 0 0.3em;
-    font-size: 2rem;
+    font-size: 3.2rem;
 }
 
 .author-profile p {
+    font-size: 1.8rem;
     margin: 0 0 1.5em;
     color: color-mod(var(--color-midgrey) l(-8%));
 }
 
 .author-profile-location {
+    font-size: 1.6rem;
     margin: 0 0 1.5em;
     font-weight: 700;
+}
+
+.author-profile-social-icons {
+    display: flex;
 }
 
 .author-profile-social-link {
@@ -1538,16 +1547,54 @@ Ghost editor. */
     white-space: nowrap;
 }
 
+.author-profile-social-icons .author-profile-social-link {
+    margin-right: 1.5rem;
+}
+
 .author-profile-social-link:hover {
     color: var(--color-darkgrey);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .author-template .posts .post-feed {
+        padding-top: 50px;
         grid-template-columns: 1fr;
     }
 }
 
+@media (max-width: 700px) {
+    .author-template .posts .post-feed {
+        padding-top: 35px;
+        grid-gap: 50px;
+    }
+
+    .author-profile-pic {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+@media (max-width: 500px) {
+    .author-profile-pic {
+        width: 60px;
+        height: 60px;
+        margin: 0 1.5rem 1.5rem 0;
+    }
+
+    .author-profile h1 {
+        font-size: 2.4rem;
+    }
+
+    .author-profile p {
+        font-size: 1.6rem;
+    }
+
+    .author-profile-location {
+        font-size: 1.4rem;
+    }
+}
+
+/*
 @media (max-width: 650px) {
     .author-template .posts {
         grid-template-columns: 1fr;
@@ -1566,7 +1613,7 @@ Ghost editor. */
         text-align: center;
     }
 }
-
+*/
 
 /* 8. Tag Template
 /* ---------------------------------------------------------- */
@@ -2159,7 +2206,6 @@ html.dark-mode .subscribe-form .success .message-success {
     user-select: text;
     border-radius: 5px;
     transition: border-color 0.15s linear;
-
     -webkit-appearance: none;
 }
 
@@ -2183,7 +2229,6 @@ html.dark-mode .subscribe-form .success .message-success {
     background: var(--color-blue);
     border-radius: 5px;
     transition: background 0.3s ease;
-
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -2194,6 +2239,22 @@ html.dark-mode .subscribe-form .success .message-success {
 .search-form button:active,
 .search-form button:focus {
     background: color-mod(var(--color-blue) lightness(-9%) saturation(-10%));
+}
+
+@media only screen and (max-width: 500px) {
+    .search-form .form-group {
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .search-form .form-group .search-term {
+        margin-bottom: 1rem;
+    }
+
+    .search-form button {
+        margin: 0 auto;
+        padding: 0 40px;
+    }
 }
 
 .search-form #search-results {

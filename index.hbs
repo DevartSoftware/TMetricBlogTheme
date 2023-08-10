@@ -27,97 +27,108 @@ into the {body} of the default.hbs template --}}
 </div>
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
-    <div class="inner posts">
-        {{!-- Post list container --}}
-        <div class="post-container">
-            <div class="post-feed-column">
-                <div class="post-feed">
-                    {{#foreach posts}}
+<main id="site-main" class="site-main">
+    <div class="outer">
+        <div class="inner posts">
+            {{!-- Post list container --}}
+            <div class="post-container">
+                <div class="post-feed-column">
+                    <div class="post-feed">
+                        {{#foreach posts}}
 
-                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                        {{> "post-card"}}
+                        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                            {{> "post-card"}}
 
-                    {{/foreach}}
-                </div>
-                {{ pagination }}
+                        {{/foreach}}
+                    </div>
+                    {{ pagination }}
 
-                {{!-- Authors Section --}}
-                <div class="authors-section">
-                    <h3>Featured Writters</h3>
-                    {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
-                        <div class="featured-feed js-featured-feed">
-                            {{#foreach authors}}
-                                <article class="featured-card {{#unless profile_image}} no-image{{/unless}}">
-                                    <div class="featured-item">
-                                        <a class="post-card-content-link" href="{{url}}">
-                                            {{#if profile_image}}
-                                                <span class="image">
-                                                    <img class="lazyload" src="{{profile_image}}" alt="{{name}} avatar image" />
+                    {{!-- Authors Section --}}
+                    <div class="authors-section">
+                        <h3>Featured Writters</h3>
+                        {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
+                            <div class="featured-feed js-featured-feed">
+                                {{#foreach authors}}
+                                    <article class="featured-card {{#unless profile_image}} no-image{{/unless}}">
+                                        <div class="featured-item">
+                                            <a class="post-card-content-link" href="{{url}}">
+                                                {{#if profile_image}}
+                                                    <span class="image">
+                                                        <img class="lazyload" src="{{profile_image}}" alt="{{name}} avatar image" />
+                                                    </span>
+                                                {{/if}}
+                                                <strong class="name">{{name}}</strong>
+                                                <span class="bio">{{bio}}</span>
+                                                <span class="author-meta">
+                                                    {{plural count.posts empty='No posts' singular='% Article writted' plural='% Articles writted'}}
                                                 </span>
-                                            {{/if}}
-                                            <strong class="name">{{name}}</strong>
-                                            <span class="bio">{{bio}}</span>
-                                            <span class="author-meta">
-                                                {{plural count.posts empty='No posts' singular='% Article writted' plural='% Articles writted'}}
-                                            </span>
-                                        </a>
-                                    </div>
-                                </article>
-                            {{/foreach}}
-                        </div>
-                    {{/get}}
+                                            </a>
+                                        </div>
+                                    </article>
+                                {{/foreach}}
+                            </div>
+                        {{/get}}
+                    </div>
                 </div>
-                
-            </div>
-            {{!-- Sidebar with menu --}}
-            <aside class="sidebar">
-                <div class="sidebar-content">
-                    <h3 class="mobile-menu-opener">Menu <span class="icon">{{> "icons/arrow-down"}}</span></h3>
-                    <div class="sidebar-menu">
-                        <div class="sidebar-box subscribe-box">
-                            <div class="sidebar-subscription">
-                                <h3>Subscribe to our blog</h3>
-                                <p>Get the latest posts right to your inbox</p>
-                                <button class="btn-primary" type="button">Subscribe</button>
+                {{!-- Sidebar with menu --}}
+                <aside class="sidebar">
+                    <div class="sidebar-content">
+                        <h3 class="mobile-menu-opener">Menu <span class="icon">{{> "icons/arrow-down"}}</span></h3>
+                        <div class="sidebar-menu">
+                            <div class="sidebar-box subscribe-box">
+                                <div class="sidebar-subscription">
+                                    <h3>Subscribe to our blog</h3>
+                                    <p>Get the latest posts right to your inbox</p>
+                                    <button class="btn-primary" type="button">Subscribe</button>
+                                </div>
+                                <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
+                                <div class="sidebar-banner">
+                                    <a href="https://tmetric.com">{{> "icons/empower-your-team-banner"}}</a>
+                                </div>
                             </div>
-                            <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
-                            <div class="sidebar-banner">
-                                <a href="https://tmetric.com">{{> "icons/empower-your-team-banner"}}</a>
+                            <div class="sidebar-box social-box">
+                                <div class="social">
+                                    <h4>Social</h4>
+                                    <div class="social-list">
+                                        {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>{{/if}}
+                                        {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>{{/if}}
+                                        <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
+                                        <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="sidebar-box social-box">
-                            <div class="social">
-                                <h4>Social</h4>
-                                <div class="social-list">
-                                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>{{/if}}
-                                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>{{/if}}
-                                    <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
-                                    <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
+                            <div class="sidebar-box">
+                                <div class="categories">
+                                    <h4>Categories:</h4>
+                                    <ul class="nav tags">
+                                        {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                                            {{#foreach tags}}
+                                                <li>
+                                                    <a href="{{ url }}">
+                                                        <span>{{ name }}</span>
+                                                        <span class="counter">{{ count.posts }}</span>
+                                                    </a>
+                                                </li>
+                                            {{/foreach}}
+                                        {{/get}}
+                                    </ul>
+                                    {{navigation}}
                                 </div>
                             </div>
                         </div>
-                        <div class="sidebar-box">
-                            <div class="categories">
-                                <h4>Categories:</h4>
-                                <ul class="nav tags">
-                                    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
-                                        {{#foreach tags}}
-                                            <li>
-                                                <a href="{{ url }}">
-                                                    <span>{{ name }}</span>
-                                                    <span class="counter">{{ count.posts }}</span>
-                                                </a>
-                                            </li>
-                                        {{/foreach}}
-                                    {{/get}}
-                                </ul>
-                                {{navigation}}
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </aside>
+                </aside>
+            </div>
         </div>
+    </div>
+    {{!-- Post banner --}}
+    <div class="post-banner">
+        <div class="desktop-image">
+            {{> "icons/tmetric-banner-desktop"}}
+        </div>
+        <div class="mobile-image">
+            {{> "icons/tmetric-banner-mobile"}}
+        </div>
+        <a class="button" href="https://tmetric.com/">Learn more</a>
     </div>
 </main>
