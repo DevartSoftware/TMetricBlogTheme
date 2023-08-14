@@ -3,55 +3,105 @@
 
 
 <section class="outer">
-    <div class="inner posts">
-        <div class="post-feed">
+    <div class="tag-heading">
+        {{#tag}}
+            <div class="post-card-content">
+                <div class="post-card-content-link">
+                    <header class="post-card-header">
+                        <div class="post-card-primary-tag">Tagged</div>
+                        <h2 class="post-card-title">{{name}}</h2>
+                    </header>
+                    <div class="post-card-excerpt">
+                        <p>
+                            {{#if description}}
+                                {{description}}
+                            {{else}}
+                                A collection of {{plural ../pagination.total empty='zero posts' singular='% post' plural='% posts'}}
+                            {{/if}}
+                        </p>
+                    </div>
+                </div>
+            </div>{{!--/.post-card-content--}}
 
-            {{#tag}}
-            <section class="post-card post-card-large">
-                {{#if feature_image}}
+            {{#if feature_image}}
                 <div class="post-card-image-link">
                     {{!-- This is a responsive image, it loads different sizes depending on device
                     https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                     <img class="post-card-image"
-                        srcset="{{img_url feature_image size="s"}} 300w,
-                                {{img_url feature_image size="m"}} 600w,
-                                {{img_url feature_image size="l"}} 1000w,
-                                {{img_url feature_image size="xl"}} 2000w"
-                        sizes="(max-width: 1000px) 400px, 800px"
-                        src="{{img_url feature_image size="m"}}"
-                        alt="{{title}}"
-                        loading="lazy"
+                         srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                         sizes="(max-width: 1000px) 400px, 800px"
+                         src="{{img_url feature_image size="m"}}"
+                         alt="{{title}}"
+                         loading="lazy"
                     />
                 </div>
-                {{/if}}
-                <div class="post-card-content">
-                    <div class="post-card-content-link">
-                        <header class="post-card-header">
-                            <div class="post-card-primary-tag">Tagged</div>
-                            <h2 class="post-card-title">{{name}}</h2>
-                        </header>
-                        <div class="post-card-excerpt">
-                            <p>
-                                {{#if description}}
-                                {{description}}
-                                {{else}}
-                                A collection of {{plural ../pagination.total empty='zero posts' singular='% post' plural='% posts'}}
-                                {{/if}}
-                            </p>
+            {{/if}}
+        {{/tag}}
+    </div>
+
+    <div class="inner posts">
+        <div class="post-container">
+            <div class="post-feed-column">
+                <div class="post-feed">
+                    {{#foreach posts}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                        {{> "post-card"}}
+                    {{/foreach}}
+                </div>
+                {{ pagination }}
+            </div>
+
+            {{!-- Sidebar with menu --}}
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h3 class="mobile-menu-opener">Menu <span class="icon">{{> "icons/arrow-down"}}</span></h3>
+                    <div class="sidebar-menu">
+                        <div class="sidebar-box subscribe-box">
+                            <div class="sidebar-subscription">
+                                <h3>Subscribe to our blog</h3>
+                                <p>Get the latest posts right to your inbox</p>
+                                <button class="btn-primary" type="button">Subscribe</button>
+                            </div>
+                            <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
+                            <div class="sidebar-banner">
+                                <a href="https://tmetric.com">{{> "icons/empower-your-team-banner"}}</a>
+                            </div>
+                        </div>
+                        <div class="sidebar-box social-box">
+                            <div class="social">
+                                <h4>Social</h4>
+                                <div class="social-list">
+                                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>{{/if}}
+                                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>{{/if}}
+                                    <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
+                                    <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-box">
+                            <div class="categories">
+                                <h4>Categories:</h4>
+                                <ul class="nav tags">
+                                    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                                        {{#foreach tags}}
+                                            <li>
+                                                <a href="{{ url }}">
+                                                    <span>{{ name }}</span>
+                                                    <span class="counter">{{ count.posts }}</span>
+                                                </a>
+                                            </li>
+                                        {{/foreach}}
+                                    {{/get}}
+                                </ul>
+                                {{navigation}}
+                            </div>
                         </div>
                     </div>
-                </div>{{!--/.post-card-content--}}
-
-            </section>
-            {{/tag}}
-
-            {{#foreach posts}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-            {{/foreach}}
-
+                </div>
+            </aside>
         </div>
     </div>
 </section>

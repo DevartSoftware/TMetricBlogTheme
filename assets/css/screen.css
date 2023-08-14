@@ -106,7 +106,7 @@ production stylesheet in assets/built/screen.css
 /* Centered content container blocks */
 .inner {
     margin: 0 auto;
-    max-width: 1712px;
+    /*max-width: 1712px;*/
     width: 100%;
 }
 
@@ -682,7 +682,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 }
 
-
 @media (max-width: 500px) {
     .post-card-title {
         font-size: 1.9rem;
@@ -692,7 +691,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         font-size: 1.6rem;
     }
 }
-
 
 /* 7. Single Post
 /* ---------------------------------------------------------- */
@@ -1491,7 +1489,7 @@ Ghost editor. */
 }
 
 .author-profile {
-    padding: 6vmin 0 2vmin;
+    padding: 10vmin 0 4vmin;
 }
 
 .author-profile-content {
@@ -1522,6 +1520,7 @@ Ghost editor. */
 
 .author-profile p {
     font-size: 1.8rem;
+    line-height: 1.5;
     margin: 0 0 1.5em;
     color: color-mod(var(--color-midgrey) l(-8%));
 }
@@ -1563,6 +1562,10 @@ Ghost editor. */
 }
 
 @media (max-width: 700px) {
+    .author-profile {
+        padding-bottom: 0;
+    }
+
     .author-template .posts .post-feed {
         padding-top: 35px;
         grid-gap: 50px;
@@ -1594,27 +1597,6 @@ Ghost editor. */
     }
 }
 
-/*
-@media (max-width: 650px) {
-    .author-template .posts {
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-    }
-    .author-template .posts .post-feed {
-        grid-column: 1 / auto;
-    }
-    .author-profile {
-        padding-right: 0;
-    }
-    .author-profile-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-}
-*/
-
 /* 8. Tag Template
 /* ---------------------------------------------------------- */
 
@@ -1627,6 +1609,89 @@ Ghost editor. */
     order: 1;
 }
 
+.tag-template .tag-heading {
+    display: flex;
+    padding: 10vmin 0 4vmin;
+}
+
+.tag-template .tag-heading .post-card-image-link {
+    width: 50%;
+    min-width: 50%;
+    padding-left: 3rem;
+}
+
+.tag-template .tag-heading .post-card-content {
+    flex-grow: 1;
+}
+
+.tag-template .tag-heading h2 {
+    font-size: 3.2rem;
+    margin: 0 0 0.3em;
+}
+
+.tag-template .tag-heading .post-card-excerpt p {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin: 0 0 1em;
+    color: #60757e;
+}
+
+.tag-template .tag-heading .post-card-image {
+    height: auto;
+}
+
+.tag-template .posts .post-feed {
+    position: relative;
+    display: grid;
+    grid-gap: 4vmin 32px;
+    grid-template-columns: 1fr 1fr;
+    padding: 66px 0 4vmin;
+}
+
+
+@media (max-width: 1000px) {
+    .tag-template .tag-heading .post-card-image-link {
+        width: 40%;
+        min-width: 40%;
+    }
+
+    .tag-template .posts .post-feed {
+        padding-top: 50px;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .tag-template .tag-heading {
+        flex-wrap: wrap;
+        padding-bottom: 0;
+    }
+
+    .tag-template .tag-heading .post-card-content {
+        width: 100%;
+    }
+
+    .tag-template .tag-heading .post-card-image-link {
+        padding: 0;
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .tag-template .posts .post-feed {
+        padding-top: 35px;
+        grid-gap: 50px;
+    }
+}
+
+@media (max-width: 500px) {
+    .tag-template .tag-heading h2 {
+        font-size: 2.4rem;
+    }
+
+    .tag-template .tag-heading .post-card-excerpt p {
+        font-size: 1.6rem;
+    }
+}
 
 /* 9. Error Template
 /* ---------------------------------------------------------- */
