@@ -79,10 +79,21 @@ into the {body} tag of the default.hbs template --}}
 
         {{!-- Sidebar with menu --}}
         {{#has tag="software, templates"}}
-            <div class="sidebar scroll-menu-container">
-                <h3 class="mobile-menu-opener">Menu <span class="icon">{{> "icons/arrow-down"}}</span></h3>
-                <div class="sidebar-menu"></div>
-            </div>
+            <aside class="sidebar scroll-menu-container">
+                <div class="sidebar-menu-sticky">
+                    <div class="sidebar-box subscribe-box">
+                        <div class="sidebar-subscription">
+                            <h3>Subscribe to our blog</h3>
+                            <p>Get the latest posts right to your inbox</p>
+                            <button class="btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                    <h3 class="mobile-menu-opener content-nav-opener">Content menu <span class="icon">{{> "icons/arrow-down"}}</span></h3>
+                    <div class="sidebar-menu">
+                        <div class="sidebar-menu-list"></div>
+                    </div>
+                </div>
+            </aside>
             <script>
                 window.addEventListener('load', function () {
                     var menuItems = parseMenuItemsFromContent({
@@ -90,7 +101,7 @@ into the {body} tag of the default.hbs template --}}
                         itemSelectors: ['h2', 'h3'],
                     });
                     initScrollMenu({
-                        menuContainer: '.scroll-menu-container .sidebar-menu',
+                        menuContainer: '.sidebar-menu-list',
                         menuItems: menuItems,
                         scrollTopOffset: 95,
                         scrollBottomOffset: 70
@@ -100,30 +111,30 @@ into the {body} tag of the default.hbs template --}}
         {{else}}
             <aside class="sidebar">
                 <div class="sidebar-content">
+                    <div class="sidebar-box subscribe-box">
+                        <div class="sidebar-subscription">
+                            <h3>Subscribe to our blog</h3>
+                            <p>Get the latest posts right to your inbox</p>
+                            <button class="btn-primary" type="button">Subscribe</button>
+                        </div>
+                        <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
+                        <div class="sidebar-banner">
+                            <a href="https://tmetric.com">{{> "icons/empower-your-team-banner"}}</a>
+                        </div>
+                    </div>
+                    <div class="sidebar-box social-box">
+                        <div class="social">
+                            <h4>Social</h4>
+                            <div class="social-list">
+                                {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>{{/if}}
+                                {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>{{/if}}
+                                <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
+                                <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
+                            </div>
+                        </div>
+                    </div>
                     <h3 class="mobile-menu-opener">Menu <span class="icon">{{> "icons/arrow-down"}}</span></h3>
                     <div class="sidebar-menu">
-                        <div class="sidebar-box subscribe-box">
-                            <div class="sidebar-subscription">
-                                <h3>Subscribe to our blog</h3>
-                                <p>Get the latest posts right to your inbox</p>
-                                <button class="btn-primary" type="button">Subscribe</button>
-                            </div>
-                            <a class="site-nav-search-button" href="/search" title="Search">{{> "icons/search"}} Search</a>
-                            <div class="sidebar-banner">
-                                <a href="https://tmetric.com">{{> "icons/empower-your-team-banner"}}</a>
-                            </div>
-                        </div>
-                        <div class="sidebar-box social-box">
-                            <div class="social">
-                                <h4>Social</h4>
-                                <div class="social-list">
-                                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>{{/if}}
-                                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>{{/if}}
-                                    <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
-                                    <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
-                                </div>
-                            </div>
-                        </div>
                         <div class="sidebar-box">
                             <div class="categories">
                                 <h4>Categories:</h4>
@@ -189,6 +200,25 @@ into the {body} tag of the default.hbs template --}}
 </div>
 --}}
 
+{{!-- Tags section --}}
+<div class="tags-section gray-container">
+    <h2>Explore more content</h2>
+    <ul class="tags-buttons">
+        {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+            {{#foreach tags}}
+                <li>
+                    <a href="{{ url }}">
+                        <span>{{ name }}</span>
+                    </a>
+                </li>
+            {{/foreach}}
+        {{/get}}
+    </ul>
+</div>
+
+
+
+
 {{!-- Read more links, just above the footer --}}
 <aside class="read-more-wrap">
     <h2>Recent Articles</h2>
@@ -200,7 +230,7 @@ into the {body} tag of the default.hbs template --}}
         This query gets the latest 3 posts on the site, but adds a filter to
         exclude the post we're currently on from being included. --}}
 
-        {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
+        {{#get "posts" filter="id:-{{id}}" include="authors,tags" limit="4" as |more_posts|}}
             {{#if more_posts}}
                 {{#foreach more_posts}}
                     {{> "post-card"}}

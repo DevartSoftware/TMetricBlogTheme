@@ -28,6 +28,7 @@ production stylesheet in assets/built/screen.css
 19. Sidebar Menu
 20. Scroll Menu
 21. Authors Section
+22. Tags Section
 
 */
 
@@ -799,10 +800,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin-top: 5vmin;
 }
 
-.article-page-container .sidebar {
-    padding-top: 100px;
-}
-
 @media only screen and (max-width: 1180px) {
     .article-page-header,
     .article-page-container {
@@ -818,7 +815,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .article-page-container .sidebar {
-        padding: 50px 0 50px 30px;
+        padding: 55px 0 50px 30px !important;
     }
 }
 
@@ -835,7 +832,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .article-page-container .sidebar {
-        padding: 35px 0 0;
+        padding: 35px 0 0 !important;
     }
 }
 
@@ -2228,30 +2225,20 @@ html.dark-mode .subscribe-form .success .message-success {
 /* 13. Search Form
 /* ---------------------------------------------------------- */
 .search-form {
-    margin: 5.25em 0 1.5em;
-    padding: 6.5vw 7vw 8vw;
-    border: color-mod(var(--color-lightgrey) l(+10%)) 1px solid;
-    background: linear-gradient(color-mod(var(--color-whitegrey) l(+6%)), color-mod(var(--color-whitegrey) l(+4%)));
-    border-radius: 5px;
-    text-align: center;
+    margin: 66px 0 1.5em;
 }
 
-.search-form-title {
-    margin: 0 0 3px 0;
-    padding: 0;
-    color: var(--color-darkgrey);
-    font-size: 3.5rem;
-    line-height: 1;
-    font-weight: 600;
+.search-title {
+    margin: 0 0 1em;
+    font-size: 4.2rem;
+    max-width: 800px;
 }
 
 .search-form form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .search-form .form-group {
@@ -2306,6 +2293,18 @@ html.dark-mode .subscribe-form .success .message-success {
     background: color-mod(var(--color-blue) lightness(-9%) saturation(-10%));
 }
 
+@media only screen and (max-width: 1024px) {
+    .search-title {
+        font-size: 3.6rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .search-title {
+        font-size: 2.8rem;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     .search-form .form-group {
         text-align: center;
@@ -2322,6 +2321,7 @@ html.dark-mode .subscribe-form .success .message-success {
     }
 }
 
+/*
 .search-form #search-results {
     display: flex;
     flex-direction: column;
@@ -2332,31 +2332,47 @@ html.dark-mode .subscribe-form .success .message-success {
     border-radius: 3px;
     box-shadow: 0 0 1px rgba(0,0,0,.12), 0 1px 6px rgba(0,0,0,.03), 0 6px 10px -8px rgba(0,0,0,.1);
     text-align: justify;
+
+
+    position: relative;
+    display: grid;
+    grid-gap: 4vmin 32px;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 0 4vmin;
 }
 
 .search-results-item {
-    flex: 1 1 100%;
-    background: var(--color-white);
-    border-top: 1px solid var(--color-wash);
-    margin: 0;
-    padding: 16px;
-    transition: background .3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    background-size: cover;
+    word-break: break-word;
 }
 
 .search-results-item:first-of-type {
-    border-top: none;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+
 }
 
 .search-results-item:last-of-type {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+
 }
 
 .search-results-item:hover {
-    background: #f8fafc;
-    transition: none;
+
+}
+
+.search-post-card-image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 240px;
+    background: var(--color-grey) no-repeat 50%;
+    border-radius: 6px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
 .search-results-item .title {
@@ -2368,6 +2384,7 @@ html.dark-mode .subscribe-form .success .message-success {
     margin: 0;
     color: var(--color-midgrey);
 }
+*/
 
 .site-nav-search-button {
     margin: 0 0 28px;
@@ -3023,14 +3040,20 @@ html.dark-mode .subscribe-form .success .message-success {
 
 .post-banner .button {
     position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    padding: 10px 50px;
+    left: 10.65%;
+    top: 79%;
+    transform: translate(0,-50%);
+    padding: 5px 50px;
+    line-height: 2.6rem;
     color: var(--color-white);
     font-weight: 500;
     background: var(--ghost-accent-color);
+    transition: all .3s ease;
     border-radius: 5px;
+}
+
+.post-banner .button:hover {
+    background: #3d7eff;
 }
 
 .post-banner.new-year .button {
@@ -3041,10 +3064,6 @@ html.dark-mode .subscribe-form .success .message-success {
 }
 
 @media only screen and (max-width: 1200px) {
-    .post-banner .button {
-        right: 5%;
-    }
-
     .post-banner.new-year .button {
         right: 50%;
         bottom: 10%;
@@ -3061,8 +3080,8 @@ html.dark-mode .subscribe-form .success .message-success {
     }
 
     .post-banner .button {
-        right: 5%;
-        transform: translate(0,-50%);
+        left: 5.5%;
+        top: 75%;
     }
 
     .post-banner.new-year .button {
@@ -3073,11 +3092,6 @@ html.dark-mode .subscribe-form .success .message-success {
 }
 
 @media only screen and (max-width: 768px) {
-    .post-banner .button {
-        right: 5%;
-        padding: 10px 20px;
-    }
-
     .post-banner.new-year .button {
         right: 50%;
         bottom: 17%;
@@ -3086,8 +3100,7 @@ html.dark-mode .subscribe-form .success .message-success {
 
 @media only screen and (max-width: 480px) {
     .post-banner .button {
-        right: 10px;
-        padding: 10px 12px;
+        padding: 3px 30px;
     }
 
     .post-banner.new-year .button {
@@ -3303,9 +3316,8 @@ html.dark-mode .subscribe-form .success .message-success {
     padding: 0 16px;
 }
 
-.home-template #main-menu .blog-link,
-.home-template #footer .blog-link {
-    display: none;
+#main-menu .blog-link a {
+    color: var(--color-blue);
 }
 
 #main-menu > li:hover a,
@@ -3790,7 +3802,7 @@ html.dark-mode .subscribe-form .success .message-success {
     display: none;
 }
 
-.sidebar-menu h3 {
+.sidebar h3 {
     margin: 0;
     font: 700 2.4rem/1.2 ObjectivityBold, sans-serif;
     color: #000;
@@ -3799,7 +3811,7 @@ html.dark-mode .subscribe-form .success .message-success {
 .sidebar .mobile-menu-opener {
     display: none;
     margin: 0;
-    font: 500 2.1rem/1.2 PTRootUIMedium, sans-serif;
+    font: 500 1.9rem/1.2 PTRootUIMedium, sans-serif;
 }
 
 .sidebar-subscription p {
@@ -3822,15 +3834,15 @@ html.dark-mode .subscribe-form .success .message-success {
     border-radius: 6px;
 }
 
-.sidebar-menu h4 {
+.sidebar h4 {
     display: inline-flex;
     align-items: center;
     margin: 0 0 16px;
-    font: 500 1.6rem/1.2 ObjectivityMedium, sans-serif;
+    font: 500 1.6rem/1.2 ObjectivityBold, sans-serif;
     color: #000;
 }
 
-.sidebar-menu .social {
+.sidebar .social {
     padding-top: 25px;
 }
 
@@ -3840,11 +3852,11 @@ html.dark-mode .subscribe-form .success .message-success {
 }
 
 .social-list a {
-    margin-left: 15%;
+    margin-left: 3.2rem;
 }
 
 .social-list a:first-child {
-    margin-left: 0;
+    margin-left: 0 !important;
 }
 
 .social-list svg {
@@ -3892,12 +3904,26 @@ html.dark-mode .subscribe-form .success .message-success {
     color: var(--color-blue);
 }
 
+@media only screen and (max-width: 1200px) {
+    .social-list a {
+        margin-left: 2.2rem;
+    }
+
+    .sidebar h3 {
+        font-size: 2.25rem;
+    }
+
+    .sidebar-subscription p {
+        font-size: 1.4rem;
+    }
+}
+
 @media (max-width: 1000px) {
     .sidebar {
         padding: 50px 0 50px 30px;
     }
 
-    .sidebar-menu h3 {
+    .sidebar h3 {
         font-size: 2.1rem;
     }
 }
@@ -3924,8 +3950,17 @@ html.dark-mode .subscribe-form .success .message-success {
     .sidebar .subscribe-box h3,
     .sidebar .subscribe-box p,
     .sidebar-banner,
-    .sidebar .social-box {
+    .sidebar .social-box h4,
+    .sidebar .categories h4 {
         display: none;
+    }
+
+    .sidebar .categories {
+        margin-top: 2rem;
+    }
+
+    .sidebar  .social-list {
+        justify-content: center;
     }
 
     .sidebar .btn-primary {
@@ -3983,23 +4018,33 @@ html.dark-mode .subscribe-form .success .message-success {
 /* 20. Scroll Menu
 /* ---------------------------------------------------------- */
 
-.article-page-container .scroll-menu-container {
+.article-page-container .sidebar {
     padding-top: 90px;
+}
+
+.article-page-container .sidebar h3 {
+    margin-top: 0;
 }
 
 .scroll-menu-container .sidebar-menu {
     height: 100%;
 }
 
-.scroll-menu-container .scroll-menu {
+.scroll-menu-container .sidebar-menu-sticky{
     position: sticky;
     top: 80px;
     left: 0;
     width: 100%;
+}
+
+.scroll-menu-container .scroll-menu {
     margin: 0;
-    padding: 0;
+    padding: 1.5rem 0 0;
     list-style: none;
-    max-height: calc(100vh - 85px);
+}
+
+.scroll-menu-container .sidebar-menu-list {
+    max-height: calc(100vh - 210px);
     overflow-y: auto;
 }
 
@@ -4040,8 +4085,20 @@ html.dark-mode .subscribe-form .success .message-success {
         padding-top: 35px;
     }
 
+    .scroll-menu-container .sidebar-menu-list {
+        max-height: calc(60vh);
+    }
+
     .scroll-menu-container .sidebar-menu {
         height: auto;
+    }
+
+    .sidebar .content-nav-opener {
+        margin-top: 2.4rem !important;
+    }
+
+    .sidebar .sidebar-menu-list {
+        margin-top: 1rem;
     }
 
     .scroll-menu-container .scroll-menu {
@@ -4068,6 +4125,10 @@ html.dark-mode .subscribe-form .success .message-success {
 .authors-section .featured-item,
 .authors-section .post-card-content-link {
     min-height: 100%;
+}
+
+.authors-section .featured-item {
+    width: 100%;
 }
 
 .authors-section .tns-horizontal.tns-subpixel > .tns-item {
@@ -4227,5 +4288,64 @@ html.dark-mode .subscribe-form .success .message-success {
 @media only screen and (max-width: 500px) {
     .authors-section h3 {
         font-size: 24px;
+    }
+}
+
+/* Search page */
+
+.page-search .inner {
+    margin-bottom: 50px;
+}
+
+
+/* 22. Tags Section
+/* ---------------------------------------------------------- */
+
+.gray-container {
+    background-color: #f9f9f9;
+}
+
+.tags-section {
+    padding: 0.6rem 4vmin 3.2rem;
+}
+
+.tags-section h2 {
+    margin-bottom: 4.6rem;
+}
+
+.tags-buttons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 750px;
+}
+
+.tags-buttons li {
+    display: inline-flex;
+    margin: 0 1.6rem 1.6rem 0;
+    padding: 0;
+}
+
+.tags-buttons a {
+    display: inline-flex;
+    padding: 0 2.7rem;
+    border: 1px solid var(--color-blue);
+    color: var(--color-blue);
+    font-size: 1.4rem;
+    line-height: 4.4rem;
+    border-radius: 2.3rem;
+    white-space: nowrap;
+    transition: all  0.3s ease;
+}
+
+.tags-buttons a:hover {
+    background-color: #E7EDFC;
+}
+
+@media only screen and (max-width: 768px) {
+    .tags-section h2 {
+        margin-bottom: 3.2rem;
     }
 }

@@ -28,7 +28,7 @@
     <header id="gh-head" class="gh-head product-header">
         <div class="container">
             <div id="logo">
-                <a href="{{@site.url}}">
+                <a href="https://tmetric.com/">
                     <img src="{{@site.logo}}" alt="{{@site.title}}" />
                 </a>
             </div>
@@ -275,7 +275,7 @@
             <div class="row">
                 <div class="col">
                     <div class="footer-logo">
-                        <a href="{{@site.url}}">
+                        <a href="https://tmetric.com/">
                             <img src="{{@site.logo}}" width="147" height="54" alt="{{@site.title}}" />
                         </a>
                     </div>
@@ -380,7 +380,7 @@
                         </div>
 
                         <div class="blog-link">
-                            <a href="https://blog.tmetric.com" class="footer-link-container">
+                            <a href="{{@site.url}}" class="footer-link-container">
                                 <span>Blog</span>
                             </a>
                         </div>
@@ -441,6 +441,9 @@
                     <li>
                         <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
                     </li>
+                    <li>
+                        <a href="https://discord.gg/x9wKqhcfaG" target="_blank" rel="noopener">{{> "icons/icon-discord"}}</a>
+                    </li>
                 </ul>
                 <div class="copyright">
                     <div>
@@ -489,7 +492,7 @@ $(document).ready(function () {
     if (sliderContainer) {
         const slider = tns({
             container: sliderContainer,
-            items: 3,
+            items: 4,
             slideBy: 1,
             loop: true,
             autoplay: false,
@@ -504,6 +507,9 @@ $(document).ready(function () {
                 },
                 992: {
                     items: 3,
+                },
+                1400: {
+                    items: 4,
                 }
             }
         });

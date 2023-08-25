@@ -9,15 +9,67 @@ into the {body} of the default.hbs template --}}
 
 <main id="site-main" class="site-main outer">
     <div class="inner">
-        <div class="search-form">
-            <h1 class="search-title">Search {{@site.title}}</h1>
-            <form>
-                <div class="form-group">
-                    <input id="search-field" class="search-term" placeholder="Enter the search term">
-                    <button type="submit" id="search-button">Search</button>
+        <div class="post-container">
+            <div class="post-feed-column">
+                <div class="search-form">
+                    <h1 class="search-title">Search {{@site.title}}</h1>
+                    <form>
+                        <div class="form-group">
+                            <input id="search-field" class="search-term" placeholder="Enter the search term">
+                            <button type="submit" id="search-button">Search</button>
+                        </div>
+                    </form>
+                    <div id="search-results" class="post-feed"></div>
                 </div>
-            </form>
-            <div id="search-results"></div>
+            </div>
+            {{!-- Sidebar with menu --}}
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-box subscribe-box">
+                        <div class="sidebar-subscription">
+                            <h3>Subscribe to our blog</h3>
+                            <p>Get the latest posts right to your inbox</p>
+                            <button class="btn-primary" type="button">Subscribe</button>
+                        </div>
+                        <div class="sidebar-banner">
+                            <a href="https://tmetric.com">{{> "icons/empower-your-team-banner"}}</a>
+                        </div>
+                    </div>
+                    <div class="sidebar-box social-box">
+                        <div class="social">
+                            <h4>Social</h4>
+                            <div class="social-list">
+                                {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>{{/if}}
+                                {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>{{/if}}
+                                <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
+                                <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
+                                <a href="https://discord.gg/x9wKqhcfaG" target="_blank" rel="noopener">{{> "icons/icon-discord"}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="mobile-menu-opener">Categories <span class="icon">{{> "icons/arrow-down"}}</span></h3>
+                    <div class="sidebar-menu">
+                        <div class="sidebar-box">
+                            <div class="categories">
+                                <h4>Categories:</h4>
+                                <ul class="nav tags">
+                                    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                                        {{#foreach tags}}
+                                            <li>
+                                                <a href="{{ url }}">
+                                                    <span>{{ name }}</span>
+                                                    <span class="counter">{{ count.posts }}</span>
+                                                </a>
+                                            </li>
+                                        {{/foreach}}
+                                    {{/get}}
+                                </ul>
+                                {{navigation}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 </main>
@@ -37,36 +89,43 @@ into the {body} of the default.hbs template --}}
             results: '#search-results',
             button: '#search-button',
             template: function(result) {
-                return '<div class="search-results-item">' +
-                    '<h3 class="title"><a href="/' + result.slug + '/">' + result.title + '</a></h3>' +
-                    '<p class="excerpt">' + (result.custom_excerpt ? result.custom_excerpt : result.plaintext.substring(0, 140)) + '</p>' +
-                    '</div>';
+                return '<a class="post-card" href="/' + result.slug + '/">' +
+                    '<div class="post-card-image-link">' +
+                    '<img class="post-card-image" src="' + result.feature_image + '" alt="' + result.title + '" />' +
+                    '</div>' +
+                    '<div class="post-card-content"><div class="post-card-content-link"><header class="post-card-header">' +
+                    '<div class="post-card-primary-tag">' + result.tags[0].name + '</div>' +
+                    '<h2 class="post-card-title">' + result.title + '</h2>' +
+                    '</header></div></div>' +
+                    '<div class="post-card-excerpt"><p>' + (result.custom_excerpt ? result.custom_excerpt : result.plaintext.substring(0, 140)) + '</p></div>' +
+                    '</a>';
             },
             on: {
                 afterDisplay: function(results){
                     if (document.getElementById('search-field').value != '') {
                         let resultsTitle = document.getElementById('search-results-title');
-                        if (!resultsTitle) {
+                        if (!resultsTitle && !results.total ) {
                             resultsTitle = document.createElement('h2');
                             resultsTitle.id = 'search-results-title';
                             let resultsElement = document.getElementById('search-results');
                             resultsTitle = resultsElement.parentNode.insertBefore(resultsTitle, resultsElement);
+                            resultsTitle.innerHTML = 'No Results';
                         }
-                        resultsTitle.innerHTML = results.total > 0 ? 'Results' : 'No Results';
                     }
                 }
             },
             options: {
                 keys: [
                     'title',
-                    'custom_excerpt'
+                    'custom_excerpt',
                 ],
             },
             api: {
                 resource: 'posts',
                 parameters: {
-                    fields: ['title', 'slug', 'custom_excerpt'],
+                    fields: ['title', 'slug', 'custom_excerpt', 'feature_image'],
                     formats: 'plaintext',
+                    include: 'tags'
                 },
             },
         })
