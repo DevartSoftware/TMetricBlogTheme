@@ -45,7 +45,7 @@ into the {body} of the default.hbs template --}}
 
                     {{!-- Authors Section --}}
                     <div class="authors-section">
-                        <h3>Featured Writters</h3>
+                        <h3>Featured Writers</h3>
                         {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
                             <div class="featured-feed js-featured-feed">
                                 {{#foreach authors}}
@@ -60,7 +60,7 @@ into the {body} of the default.hbs template --}}
                                                 <strong class="name">{{name}}</strong>
                                                 <span class="bio">{{bio}}</span>
                                                 <span class="author-meta">
-                                                    {{plural count.posts empty='No posts' singular='% Article writted' plural='% Articles writted'}}
+                                                    {{plural count.posts empty='No posts' singular='% Article written' plural='% Articles written'}}
                                                 </span>
                                             </a>
                                         </div>

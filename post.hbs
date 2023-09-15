@@ -130,6 +130,7 @@ into the {body} tag of the default.hbs template --}}
                                 {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>{{/if}}
                                 <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
                                 <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
+                                <a href="https://discord.gg/x9wKqhcfaG" target="_blank" rel="noopener">{{> "icons/icon-discord"}}</a>
                             </div>
                         </div>
                     </div>
@@ -202,42 +203,43 @@ into the {body} tag of the default.hbs template --}}
 
 {{!-- Tags section --}}
 <div class="tags-section gray-container">
-    <h2>Explore more content</h2>
-    <ul class="tags-buttons">
-        {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
-            {{#foreach tags}}
-                <li>
-                    <a href="{{ url }}">
-                        <span>{{ name }}</span>
-                    </a>
-                </li>
-            {{/foreach}}
-        {{/get}}
-    </ul>
+    <div class="outer">
+        <h2>Explore more content</h2>
+        <ul class="tags-buttons">
+            {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                {{#foreach tags}}
+                    <li>
+                        <a href="{{ url }}">
+                            <span>{{ name }}</span>
+                        </a>
+                    </li>
+                {{/foreach}}
+            {{/get}}
+        </ul>
+    </div>
 </div>
-
-
-
 
 {{!-- Read more links, just above the footer --}}
 <aside class="read-more-wrap">
-    <h2>Recent Articles</h2>
-    <div class="read-more inner">
+    <div class="outer">
+        <h2>Recent Articles</h2>
+        <div class="read-more inner">
 
-        {{!-- The {#get} helper below fetches some of the latest posts here
-        so that people have something else to read when they finish this one.
+            {{!-- The {#get} helper below fetches some of the latest posts here
+            so that people have something else to read when they finish this one.
 
-        This query gets the latest 3 posts on the site, but adds a filter to
-        exclude the post we're currently on from being included. --}}
+            This query gets the latest 3 posts on the site, but adds a filter to
+            exclude the post we're currently on from being included. --}}
 
-        {{#get "posts" filter="id:-{{id}}" include="authors,tags" limit="4" as |more_posts|}}
-            {{#if more_posts}}
-                {{#foreach more_posts}}
-                    {{> "post-card"}}
-                {{/foreach}}
-            {{/if}}
-        {{/get}}
+            {{#get "posts" filter="id:-{{id}}" include="authors,tags" limit="3" as |more_posts|}}
+                {{#if more_posts}}
+                    {{#foreach more_posts}}
+                        {{> "post-card"}}
+                    {{/foreach}}
+                {{/if}}
+            {{/get}}
 
+        </div>
     </div>
 </aside>
 {{!--
