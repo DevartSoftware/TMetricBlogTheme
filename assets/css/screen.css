@@ -3145,19 +3145,6 @@ html.dark-mode .subscribe-form .success .message-success {
     max-width: 1712px;
 }
 
-@media only screen and (max-width: 1180px) {
-    .product-header > .container {
-        padding: 0 20px;
-    }
-}
-
-@media only screen and (max-width: 1023px) {
-    .product-header > .container {
-        padding: 52px 0 0;
-        height: 52px;
-    }
-}
-
 #logo {
     position: absolute;
     top: 50%;
@@ -3172,35 +3159,6 @@ html.dark-mode .subscribe-form .success .message-success {
     display: block;
     width: 100%;
     height: 100%;
-}
-
-@media only screen and (max-width: 1460px) {
-    #logo {
-        left: 60px;
-    }
-}
-
-@media only screen and (max-width: 1180px) {
-    #logo {
-        left: 20px;
-    }
-}
-
-@media only screen and (max-width: 1024px) {
-    #logo {
-        width: 120px;
-        height: 36px;
-    }
-}
-
-@media only screen and (max-width: 1023px) {
-    #logo {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 150px;
-        height: 45px;
-    }
 }
 
 .product-header li + li {
@@ -3221,13 +3179,6 @@ html.dark-mode .subscribe-form .success .message-success {
     align-items: center;
 }
 
-@media only screen and (max-width: 1023px) {
-    #nav {
-        min-height: auto;
-        justify-content: flex-start;
-    }
-}
-
 .navbar-toggler-right {
     position: fixed;
     top: 4px;
@@ -3238,18 +3189,6 @@ html.dark-mode .subscribe-form .success .message-success {
     justify-content: center;
     align-items: center;
     transition: margin-top 0.25s ease;
-}
-
-@media only screen and (min-width: 1024px) {
-    .navbar-toggler-right {
-        right: -999px;
-    }
-}
-
-@media only screen and (max-width: 380px) {
-    .navbar-toggler-right {
-        right: 30px;
-    }
 }
 
 .navbar-toggler-right .icon {
@@ -3283,24 +3222,6 @@ html.dark-mode .subscribe-form .success .message-success {
     align-items: center;
 }
 
-@media only screen and (min-width: 1024px) {
-    .navbar-collapse {
-        display: flex !important;
-    }
-}
-
-@media only screen and (max-width: 1023px) {
-    .navbar-collapse {
-        background: var(--color-white);
-        padding: 15px 30px 0;
-        max-height: calc(100vh - 52px);
-        border-top: 1px solid #e2e7eb;
-        overflow-y: auto;
-        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-        display: none;
-    }
-}
-
 .navbar-nav {
     margin: 0;
     padding: 0;
@@ -3308,13 +3229,6 @@ html.dark-mode .subscribe-form .success .message-success {
     display: flex;
     justify-content: center;
     list-style: none;
-}
-
-@media only screen and (max-width: 1023px) {
-    .navbar-nav {
-        padding: 0 0 24px;
-        flex-direction: column;
-    }
 }
 
 #main-menu > li {
@@ -3344,50 +3258,6 @@ html.dark-mode .subscribe-form .success .message-success {
     fill: var(--color-blue);
 }
 
-@media only screen and (max-width: 1460px) {
-    #main-menu > li {
-        padding: 0 8px;
-    }
-}
-
-@media only screen and (max-width: 1023px) {
-    #main-menu > li {
-        padding: 0;
-        border-bottom: 1px solid #e2e7eb;
-    }
-
-    #main-menu > li > a {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        justify-content: space-between;
-        font: 700 1.6rem/1.4375 PTRootUIBold, sans-serif;
-        color: var(--color-dark);
-    }
-
-    #main-menu > li > a svg {
-        width: 10px;
-        height: 10px;
-        transform: rotate(-90deg);
-        fill: #888;
-        transition: all 0.5s ease;
-    }
-
-    #main-menu > li:hover > a svg {
-        fill: #888;
-    }
-
-    #main-menu > li:hover a,
-    #main-menu > li.active > a,
-    #main-menu > li.drop-visible > a {
-        color: var(--color-dark);
-    }
-
-    #main-menu > li.drop-visible > a svg {
-        transform: rotate(0deg);
-    }
-}
-
 #main-menu a {
     color: #34393d;
     transition: color 0.5s ease;
@@ -3410,12 +3280,6 @@ html.dark-mode .subscribe-form .success .message-success {
     overflow-y: auto;
 }
 
-@media only screen and (max-width: 1023px) {
-    #main-menu .drop {
-        margin-top: 0 !important;
-    }
-}
-
 #main-menu .drop.visible {
     left: 0;
     opacity: 1;
@@ -3424,7 +3288,7 @@ html.dark-mode .subscribe-form .success .message-success {
 #main-menu .drop .container {
     margin: 0 auto;
     max-width: 1444px !important;
-    padding: 39px 40px 46px;
+    padding: 30px 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -3433,41 +3297,33 @@ html.dark-mode .subscribe-form .success .message-success {
 
 #main-menu .drop .links-column {
     display: flex;
-    justify-content: center;
-    width: 38%;
+    width: 30%;
+    padding-right: 50px;
 }
 
 #main-menu .drop .links-column .column {
-    max-width: 245px;
-    padding: 0 20px;
+    max-width: 320px;
 }
 
-@media only screen and (max-width: 1024px) {
-    #main-menu .drop .links-column {
-        width: 27%;
-    }
+#main-menu .drop .links-column .links a {
+    display: flex;
+}
 
-    #main-menu .drop .links-column .column {
-        width: 100%;
-        max-width: 100%;
-    }
+#main-menu .drop .links-column svg {
+    margin-right: 11px;
+    display: block;
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
 }
 
 #main-menu .drop .list-column {
-    width: 58.5%;
-    padding-right: 20px;
-}
-
-@media only screen and (max-width: 1024px) {
-    #main-menu .drop .list-column {
-        width: 73%;
-        padding-right: 15px;
-    }
+    width: 70%;
 }
 
 #main-menu .drop .category {
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     font: 500 2rem/1.2 ObjectivityMedium,sans-serif;
     color: #a4a9b2;
 }
@@ -3480,7 +3336,7 @@ html.dark-mode .subscribe-form .success .message-success {
 
 #main-menu .drop .links li {
     padding: 0;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 #main-menu .drop .links a {
@@ -3538,6 +3394,7 @@ html.dark-mode .subscribe-form .success .message-success {
     font-family: PTRootUIBold, sans-serif;
     color: var(--color-blue);
     transition: all 0.5s ease;
+    line-height: 1.5;
 }
 
 #main-menu .link-more:hover {
@@ -3574,7 +3431,192 @@ html.dark-mode .subscribe-form .success .message-success {
     fill: #004d99;
 }
 
+#login-menu {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#login-menu .nav-item {
+    padding: 0;
+}
+
+#login-menu .nav-item .nav-link {
+    font: 700 1.6rem/1.2 PTRootUIBold, sans-serif;
+    color: #34393d;
+    transition: all .3s ease;
+    padding: 7px 15px;
+}
+
+#login-menu .nav-item .nav-link:hover {
+    color: var(--color-blue);
+}
+
+.btn-outline-primary,
+.gh-head .btn-outline-primary {
+    justify-content: center;
+    font: 700 1.6rem/1.2 PTRootUIBold, sans-serif;
+    transition: all .3s ease;
+    padding: 7px 15px;
+    margin: 0;
+    border: 1px solid #06c;
+    color: var(--color-blue);
+    border-radius: 4px;
+}
+
+.btn-outline-primary:hover,
+.gh-head .btn-outline-primary:hover {
+    background-color: #06c;
+    border-color: #06c;
+    color: var(--color-white);
+}
+
+.btn-outline-primary:focus,
+.gh-head .btn-outline-primary:focus {
+    box-shadow: 0 0 0 3px rgba(0,102,204,.5);
+}
+
+@media only screen and (max-width: 1460px) {
+    #logo {
+        left: 60px;
+    }
+
+    #main-menu > li {
+        padding: 0 8px;
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+    .product-header > .container {
+        padding: 0 20px;
+    }
+
+    #logo {
+        left: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .navbar-toggler-right {
+        right: -999px;
+    }
+
+    .navbar-collapse {
+        display: flex !important;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #logo {
+        width: 120px;
+        height: 36px;
+    }
+
+    #main-menu .drop .links-column {
+        width: 27%;
+    }
+
+    #main-menu .drop .list-column {
+        width: 73%;
+    }
+}
+
 @media only screen and (max-width: 1023px) {
+    .product-header > .container {
+        padding: 52px 0 0;
+        height: 52px;
+    }
+
+    #logo {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        height: 45px;
+    }
+
+    #nav {
+        min-height: auto;
+        justify-content: flex-start;
+    }
+
+    .navbar-collapse {
+        background: var(--color-white);
+        padding: 15px 30px 0;
+        max-height: calc(100vh - 53px);
+        border-top: 1px solid #e2e7eb;
+        overflow-y: auto;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+
+    .navbar-nav {
+        padding: 0 0 24px;
+        flex-direction: column;
+    }
+
+    #main-menu > li {
+        padding: 0;
+        border-bottom: 1px solid #e2e7eb;
+    }
+
+    #main-menu > li > a {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        justify-content: space-between;
+        font: 700 1.6rem/1.4375 PTRootUIBold, sans-serif;
+        color: var(--color-dark);
+    }
+
+    #main-menu > li > a svg {
+        width: 10px;
+        height: 10px;
+        transform: rotate(-90deg);
+        fill: #888;
+        transition: all 0.5s ease;
+    }
+
+    #main-menu > li:hover > a svg {
+        fill: #888;
+    }
+
+    #main-menu > li:hover a,
+    #main-menu > li.active > a,
+    #main-menu > li.drop-visible > a {
+        color: var(--color-dark);
+    }
+
+    #main-menu > li.drop-visible > a svg {
+        transform: rotate(0deg);
+    }
+
+    #main-menu .drop {
+        margin-top: 0 !important;
+
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    #main-menu .drop .links-column {
+        padding-right: 0;
+        width: 100%;
+    }
+
+    #main-menu .drop .links-column .column {
+        max-width: 100%;
+    }
+
+    #main-menu .drop .list-column {
+        width: 100%;
+    }
+
     #main-menu .drop {
         position: relative;
         top: 0;
@@ -3630,64 +3672,19 @@ html.dark-mode .subscribe-form .success .message-success {
         height: 24px;
     }
 
+    #main-menu>li>a svg {
+        margin: 0 2px 0 0;
+    }
+
     #main-menu .drop .link-more {
         margin-left: 5px;
         line-height: 1.5;
     }
-}
 
-#login-menu {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
+    #main-menu .drop .container .links-column .links .title {
+        margin-bottom: 0;
+    }
 
-#login-menu .nav-item {
-    padding: 0;
-}
-
-#login-menu .nav-item .nav-link {
-    font: 700 1.6rem/1.2 PTRootUIBold, sans-serif;
-    color: #34393d;
-    transition: all .3s ease;
-    padding: 7px 15px;
-}
-
-#login-menu .nav-item .nav-link:hover {
-    color: var(--color-blue);
-}
-
-.btn-outline-primary,
-.gh-head .btn-outline-primary {
-    justify-content: center;
-    font: 700 1.6rem/1.2 PTRootUIBold, sans-serif;
-    transition: all .3s ease;
-    padding: 7px 15px;
-    margin: 0;
-    border: 1px solid #06c;
-    color: var(--color-blue);
-    border-radius: 4px;
-}
-
-.btn-outline-primary:hover,
-.gh-head .btn-outline-primary:hover {
-    background-color: #06c;
-    border-color: #06c;
-    color: var(--color-white);
-}
-
-.btn-outline-primary:focus,
-.gh-head .btn-outline-primary:focus {
-    box-shadow: 0 0 0 3px rgba(0,102,204,.5);
-}
-
-@media only screen and (max-width: 1023px) {
     #login-menu {
         position: relative;
         right: 0;
@@ -3701,9 +3698,31 @@ html.dark-mode .subscribe-form .success .message-success {
         margin-bottom: 1.6rem;
     }
 
-    #login-menu .nav-item a {
-        justify-content: center;
+    #login-menu .nav-item .nav-link {
+        display: block;
         width: 100%;
+        padding: 5px 15px;
+        line-height: 1.5;
+        border: 1px solid #d0d6db;
+        outline: none;
+        border-radius: 6px;
+        transition: all .3s ease;
+        position: relative;
+        text-align: center;
+    }
+
+    #login-menu .nav-item .signup {
+        display: block;
+        width: 100%;
+        text-align: center;
+        line-height: 1.5;
+        padding: 5px 15px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .navbar-toggler-right {
+        right: 30px;
     }
 }
 
