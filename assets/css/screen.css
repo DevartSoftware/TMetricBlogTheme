@@ -4394,10 +4394,10 @@ html.dark-mode .subscribe-form .success .message-success {
 /* Contact support form popups */
 div[class^="zf_lB_Dimmer"] {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgb(0, 0, 0);
     opacity: 0.8;
     z-index: 10000000;
@@ -4409,14 +4409,14 @@ div[class^="zf_lB_Container"] {
     margin: 0;
     padding: 0;
     height: 766px;
-    width:  70%;
-    top: 50%;
+    width:  550px;
+    top: 40px;
     left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     border: 7px solid none;
     max-height: calc(100% - 60px);
     z-index: 999999;
+    border-radius: 12px;
 }
 
 div[class^="zf_lB_Dimmer"] p {
@@ -4436,6 +4436,7 @@ div[class^="zf_main_id"] {
     height: calc(100% - 0px);
     display: flex;
     overflow-y: auto;
+    border-radius: 12px;
     overflow-x: hidden;
 }
 
@@ -4511,18 +4512,12 @@ div[class^="zf_lb_closeform"]:after {
 
 @media only screen  and (min-width:501px) and (max-width:600px) {
     div[class^="zf_lB_Container"] {
-        width: 450px;
+        width: 450px !important;
     }
 }
 
 @media only screen  and (min-width:601px) and (max-width:700px) {
     div[class^="zf_lB_Container"] {
-        width: 540px;
-    }
-}
-
-@media only screen  and (min-width:701px) {
-    div[class^="zf_lB_Container"] {
-        width: 650px !important;
+        width: 500px !important;
     }
 }
