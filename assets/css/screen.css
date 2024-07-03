@@ -3122,6 +3122,7 @@ html.dark-mode .subscribe-form .success .message-success {
     border-bottom: 1px solid transparent;
     transition: background 0.5s ease;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .product-header * {
@@ -3142,13 +3143,13 @@ html.dark-mode .subscribe-form .success .message-success {
     padding: 0 60px;
     height: 64px;
     margin: 0 auto;
-    max-width: 1712px;
+    max-width: 1670px;
 }
 
 #logo {
     position: absolute;
     top: 50%;
-    left: 60px;
+    left: 40px;
     transform: translateY(-50%);
     width: 150px;
     height: 45px;
@@ -3433,7 +3434,7 @@ html.dark-mode .subscribe-form .success .message-success {
 
 #login-menu {
     position: absolute;
-    right: 0;
+    right: -20px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -3456,6 +3457,26 @@ html.dark-mode .subscribe-form .success .message-success {
 
 #login-menu .nav-item .nav-link:hover {
     color: var(--color-blue);
+}
+
+#login-menu .demo .btn {
+    margin: 0 0 0 16px;
+    justify-content: center;
+    transition: all .3s ease;
+    padding: 7px 16px;
+    border-radius: 4px;
+    line-height: 1.375;
+}
+
+#login-menu .demo .btn:hover {
+    background-color: var(--color-blue-hover);
+    border-color: #004d99;
+}
+
+#login-menu .demo .btn:active,
+#login-menu .demo .btn:focus {
+    background-color: var(--color-blue-hover);
+    box-shadow: 0 0 0 .2rem rgba(38, 125, 212, .5);
 }
 
 .btn-outline-primary,
@@ -3482,13 +3503,97 @@ html.dark-mode .subscribe-form .success .message-success {
     box-shadow: 0 0 0 3px rgba(0,102,204,.5);
 }
 
+@media only screen and (max-width: 1600px) {
+    #main-menu {
+        padding: 0 360px 0 220px;
+    }
+}
+
 @media only screen and (max-width: 1460px) {
     #logo {
         left: 60px;
     }
 
+    #main-menu {
+        padding: 0 380px 0 220px;
+    }
+
     #main-menu > li {
         padding: 0 8px;
+    }
+
+    #login-menu {
+        right: 0;
+    }
+}
+
+@media only screen and (max-width: 1360px) {
+    #main-menu {
+        font-size: 1.4rem;
+        padding: 0 305px 0 215px;
+    }
+
+    #main-menu > li > a svg {
+        width: 8px;
+        height: 8px;
+        margin: 0 1px 2px 0;
+    }
+
+    #login-menu .nav-item .nav-link {
+        display: inline-flex;
+        font-size: 1.4rem;
+        padding: 5px 8px;
+        line-height: 2.1rem;
+    }
+
+    #login-menu .btn-outline-primary {
+        display: inline-flex;
+        font-size: 1.4rem;
+        padding: 5px 8px;
+        line-height: 2.1rem;
+    }
+
+    #login-menu .demo .btn {
+        margin-left: 12px;
+        font-size: 1.4rem;
+        padding: 6px 9px;
+        line-height: 2.1rem;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #main-menu {
+        font-size: 1.3rem;
+        padding: 0 270px 0 205px;
+    }
+
+    #main-menu > li > a svg {
+        width: 7px;
+        height: 7px;
+        margin: 0 1px 2px 0;
+    }
+
+    #login-menu .nav-item .nav-link {
+        display: inline-flex;
+        font-size: 1.3rem;
+        padding: 5px;
+        line-height: 2rem;
+    }
+
+    #login-menu .btn-outline-primary {
+        display: inline-flex;
+        font-size: 1.3rem;
+        padding: 5px;
+        line-height: 2rem;
+    }
+
+    #login-menu .demo .btn {
+        margin-left: 8px;
+        font-size: 1.3rem;
+        padding: 6px;
+        line-height: 2rem;
+        height: auto;
     }
 }
 
@@ -3509,6 +3614,10 @@ html.dark-mode .subscribe-form .success .message-success {
 
     .navbar-collapse {
         display: flex !important;
+    }
+
+    #main-menu {
+        padding-left: 185px;
     }
 }
 
@@ -3559,6 +3668,11 @@ html.dark-mode .subscribe-form .success .message-success {
     .navbar-nav {
         padding: 0 0 24px;
         flex-direction: column;
+    }
+
+    #main-menu {
+        font-size: 1.6rem;
+        padding: 0 0 24px;
     }
 
     #main-menu > li {
@@ -3702,6 +3816,7 @@ html.dark-mode .subscribe-form .success .message-success {
         display: block;
         width: 100%;
         padding: 5px 15px;
+        font-size: 1.6rem;
         line-height: 1.5;
         border: 1px solid #d0d6db;
         outline: none;
@@ -3715,8 +3830,18 @@ html.dark-mode .subscribe-form .success .message-success {
         display: block;
         width: 100%;
         text-align: center;
+        font-size: 1.6rem;
         line-height: 1.5;
         padding: 5px 15px;
+    }
+
+    #login-menu .demo .btn {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        padding: 6px 15px;
     }
 }
 
