@@ -3539,6 +3539,11 @@ html.dark-mode .subscribe-form .success .message-success {
         margin: 0 1px 2px 0;
     }
 
+    #main-menu .drop,
+    #main-menu .drop .links .title {
+        font-size: 1.4rem;
+    }
+
     #login-menu .nav-item .nav-link {
         display: inline-flex;
         font-size: 1.4rem;
@@ -3572,6 +3577,11 @@ html.dark-mode .subscribe-form .success .message-success {
         width: 7px;
         height: 7px;
         margin: 0 1px 2px 0;
+    }
+
+    #main-menu .drop,
+    #main-menu .drop .links .title {
+        font-size: 1.3rem;
     }
 
     #login-menu .nav-item .nav-link {
@@ -3615,16 +3625,16 @@ html.dark-mode .subscribe-form .success .message-success {
     .navbar-collapse {
         display: flex !important;
     }
-
-    #main-menu {
-        padding-left: 185px;
-    }
 }
 
 @media only screen and (max-width: 1024px) {
     #logo {
         width: 120px;
         height: 36px;
+    }
+
+    #main-menu {
+        padding-left: 185px;
     }
 
     #main-menu .drop .links-column {
@@ -3713,9 +3723,9 @@ html.dark-mode .subscribe-form .success .message-success {
 
     #main-menu .drop {
         margin-top: 0 !important;
-
         max-height: none;
         overflow-y: visible;
+        font-size: 1.6rem;
     }
 
     #main-menu .drop .links-column {
@@ -3793,6 +3803,10 @@ html.dark-mode .subscribe-form .success .message-success {
     #main-menu .drop .link-more {
         margin-left: 5px;
         line-height: 1.5;
+    }
+
+    #main-menu .drop .links .title {
+        font-size: 1.6rem;
     }
 
     #main-menu .drop .container .links-column .links .title {
