@@ -25,16 +25,16 @@
 <div class="viewport">
 
     {{!-- The global header--}}
-    <header id="gh-head" class="gh-head product-header">
+    <header id="gh-head" class="gh-head product-header fixed-top">
         <div class="container">
             <div id="logo">
                 <a href="https://tmetric.com/">
                     <img src="{{@site.logo}}" alt="{{@site.title}}" />
                 </a>
             </div>
-            {{!-- navigation begin --}}
-            <nav id="nav">
-                <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#main-menu-navbar" aria-controls="main-menu-navbar" aria-expanded="false">
+            <!-- navigation begin -->
+            <nav id="nav" class="navbar navbar-expand-md">
+                <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#main-menu-navbar" aria-controls="main-menu-navbar" aria-label="Toggle main dropdown menu">
                     <span class="icon" id="menu-burger">
                         {{> "icons/icon-menu-burger"}}
                     </span>
@@ -42,327 +42,922 @@
                         {{> "icons/icon-cross"}}
                     </span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="main-menu-navbar">
                     <ul id="main-menu" class="navbar-nav">
-                        {{!-- menu items with dropdown box begin --}}
-                        <li>
-                            <a href="#"><span>Why TMetric</span> {{> "icons/arrow-down"}}</a>
-                            {{!-- dropdown box begin --}}
+                        <!-- menu items with dropdown box begin -->
+                        <!-- menu Product -->
+                        <li class="parent">
+                            <a href="#">Product{{> "icons/v4/icon-arrow-down"}}</a>
+                            <!-- dropdown box begin -->
                             <div class="drop">
-                                <div class="container">
-                                    {{!-- dropdown box left column begin --}}
-                                    <div class="links-column">
-                                        <div class="column">
-                                            <strong class="category">Overview</strong>
-                                            <ul class="links">
-                                                <li>
-                                                    <a href="https://tmetric.com/solutions">
-                                                        <div class="info">
-                                                            <strong class="title">Industry</strong>
-                                                            <span class="text">Made for all industries. Check benefits of usage</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://tmetric.com/customer-stories">
-                                                        <div class="info">
-                                                            <strong class="title">Customers</strong>
-                                                            <span class="text">See why business use TMetric for time tracking and workflow management</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    {{!-- dropdown box left column end --}}
-                                    {{!-- dropdown box right column begin --}}
-                                    <div class="list-column">
-                                        <strong class="category">Features</strong>
-                                        <ul class="links with-icons">
-                                            <li>
-                                                <a href="https://tmetric.com/feature-time-tracking">
-                                                    {{> "icons/icon-timer-gray"}}
-                                                    <span class="info">
-                                                        <strong class="title">Time Tracking</strong>
-                                                        <span class="text">Capture and control every task you work on</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/feature-billing">
-                                                    {{> "icons/icon-invoice-gray"}}
-                                                    <span class="info">
-                                                        <strong class="title">Billing &amp; Invoicing</strong>
-                                                        <span class="text">Set billable rates and easily create invoices</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/feature-projects">
-                                                    {{> "icons/icon-project-gray"}}
-                                                    <span class="info">
-                                                        <strong class="title">Project Management</strong>
-                                                        <span class="text">Create projects, set rates and budgets</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/feature-team-management">
-                                                    {{> "icons/icon-team-gray"}}
-                                                    <span class="info">
-                                                        <strong class="title">Team Management</strong>
-                                                        <span class="text">Monitor productivity and activity level of your team</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/task-management">
-                                                    {{> "icons/icon-reports-gray"}}
-                                                    <span class="info">
-                                                        <strong class="title">Task Management</strong>
-                                                        <span class="text">Manage tasks and set up an effective workflow</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/feature-time-off">
-                                                    {{> "icons/icon-time-off-gray"}}
-                                                    <span class="info">
-                                                        <strong class="title">Time Off</strong>
-                                                        <span class="text">Simply ask for days off and control teams attendance</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <a href="https://tmetric.com/features" class="link-more">
-                                            View All Features
-                                            {{> "icons/icon-arrow-right"}}
-                                        </a>
-                                    </div>
-                                    {{!-- dropdown box right column end --}}
-                                </div>
-                            </div>
-                            {{!-- dropdown box end --}}
-                        </li>
-                        <li>
-                            <a href="#"><span>Apps &amp; Integrations</span> {{> "icons/arrow-down"}}</a>
-                            {{!-- dropdown box begin --}}
-                            <div class="drop">
-                                <div class="container">
-                                    {{!-- dropdown box left column begin --}}
-                                    <div class="links-column">
-                                        <div class="column">
-                                            <strong class="category">Apps</strong>
-                                            <ul class="links">
+                                <div class="drop-content tabs-row">
+                                    <ul class="nav nav-tabs drop-tabset">
+                                        <li class="nav-item">
+                                            <div class="nav-link active" data-toggle="tab" data-target="#productAppsTab">Apps{{> "icons/v4/arrow-right-blue"}}</div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="nav-link" data-toggle="tab" data-target="#productIntegrationsTab">Integrations{{> "icons/v4/arrow-right-blue"}}</div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="nav-link" data-toggle="tab" data-target="#productFeaturesTab">Features{{> "icons/v4/arrow-right-blue"}}</div>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="productAppsTab" class="tab-pane fade show active">
+                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
+                                            <h3 class="mobile-title">Apps</h3>
+                                            <ul class="drop-apps-list">
                                                 <li>
                                                     <a href="https://tmetric.com/download#browser-extensions-section">
-                                                        <div class="info">
-                                                            <strong class="title">Browser Extensions</strong>
-                                                            <span class="text">Simple time tracking extension which helps you be more productive</span>
-                                                        </div>
+                                                        {{> "icons/v4/icon-extensions"}}
+                                                        <h4>Browser Extensions</h4>
+                                                        <p>Simple time tracking extension which helps you be more productive.</p>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/download#mobile-apps-section">
-                                                        <div class="info">
-                                                            <strong class="title">Mobile apps</strong>
-                                                            <span class="text">Install TMetric app to your phone or a tablet device. Android and iOS platforms are supported.</span>
-                                                        </div>
+                                                        {{> "icons/v4/icon-mobile"}}
+                                                        <h4>Mobile apps</h4>
+                                                        <p>Install TMetric app to your phone or a tablet device. Android and iOS platforms are supported.</p>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/download">
-                                                        <div class="info">
-                                                            <strong class="title">Desktop apps</strong>
-                                                            <span class="text">Download TMetric app for your desktop computer or a laptop</span>
-                                                        </div>
+                                                        {{> "icons/v4/icon-desktop"}}
+                                                        <h4>Desktop apps</h4>
+                                                        <p>Download TMetric app for your desktop computer or a laptop.</p>
                                                     </a>
                                                 </li>
                                             </ul>
+                                            <div class="drop-solution">
+                                                <div class="wrap">
+                                                    <div class="text">
+                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <p>TMetric is developed to help any business to achieve better results.</p>
+                                                    </div>
+                                                    <div class="image">
+                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="productIntegrationsTab" class="tab-pane fade">
+                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
+                                            <h3 class="mobile-title">Integrations</h3>
+                                            <div>
+                                                <ul class="drop-integration-list">
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/jira-time-tracking">
+                                                            {{> "icons/v4/icon-jira"}}
+                                                            Jira
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/asana-time-tracking">
+                                                            {{> "icons/v4/icon-asana"}}
+                                                            Asana
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/todoist-time-tracking">
+                                                            {{> "icons/v4/icon-todoist"}}
+                                                            Todoist
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/github-time-tracking">
+                                                            {{> "icons/v4/icon-github"}}
+                                                            GitHub
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/freshdesk-time-tracking">
+                                                            {{> "icons/v4/icon-freshdesk"}}
+                                                            Freshdesk
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/google-apps-time-tracking">
+                                                            {{> "icons/v4/icon-gmail"}}
+                                                            Gmail
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/excel-time-tracking-tmetric">
+                                                            {{> "icons/v4/icon-excel"}}
+                                                            MS Excel
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/outlook-time-tracking-tmetric">
+                                                            {{> "icons/v4/icon-outlook"}}
+                                                            MS Outlook
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/slack-time-tracking">
+                                                            {{> "icons/v4/icon-slack"}}
+                                                            Slack
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/monday-time-tracking">
+                                                            {{> "icons/v4/icon-monday"}}
+                                                            Monday
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/quickbooks-time-tracking">
+                                                            {{> "icons/v4/icon-quickbooks"}}
+                                                            QuickBooks
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/notion-time-tracking">
+                                                            {{> "icons/v4/icon-notion"}}
+                                                            Notion
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/trello-time-tracking">
+                                                            {{> "icons/v4/icon-trello"}}
+                                                            Trello
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/microsoft-to-do-time-tracking">
+                                                            {{> "icons/v4/icon-ms-to-do"}}
+                                                            MS To Do
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/azure-devops-time-tracking">
+                                                            {{> "icons/v4/icon-azure"}}
+                                                            Azure
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/integrations/hubspot-time-tracking">
+                                                            {{> "icons/v4/icon-hubspot"}}
+                                                            HubSpot
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="more-link-holder">
+                                                    <a href="https://tmetric.com/integrations" class="more-link">
+                                                        View All Integrations{{> "icons/v4/arrow-right-blue"}}
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div id="productFeaturesTab" class="tab-pane fade">
+                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
+                                            <h3 class="mobile-title">Features</h3>
+                                            <div>
+                                                <ul class="drop-apps-list features">
+                                                    <li>
+                                                        <a href="https://tmetric.com/free-time-tracking">
+                                                            {{> "icons/v4/icon-time-tracking"}}
+                                                            <h4>Time Tracking</h4>
+                                                            <p>Effortlessly track work  hours online.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/feature-reporting">
+                                                            {{> "icons/v4/icon-time-reporting"}}
+                                                            <h4>Time Reporting</h4>
+                                                            <p>Create detailed and actionable time reports.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/automated-employee-timesheet-app">
+                                                            {{> "icons/v4/icon-team-timesheets"}}
+                                                            <h4>Team Timesheets</h4>
+                                                            <p>Automate and manage team timesheets.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/attendance-tracking-software">
+                                                            {{> "icons/v4/icon-attendance-tracking"}}
+                                                            <h4>Attendance Tracking</h4>
+                                                            <p>Monitor employee attendance with ease.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/feature-time-off">
+                                                            {{> "icons/v4/icon-pto-tracking"}}
+                                                            <h4>PTO Tracking</h4>
+                                                            <p>Simplify paid  time-off management.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/overtime-for-salaried-employees">
+                                                            {{> "icons/v4/icon-overtime-tracking"}}
+                                                            <h4>Overtime Tracking</h4>
+                                                            <p>Create detailed and actionable time reports.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/task-management">
+                                                            {{> "icons/v4/icon-task-management"}}
+                                                            <h4>Task Management</h4>
+                                                            <p>Organize tasks and track progress.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/employee-monitoring">
+                                                            {{> "icons/v4/icon-employee-monitoring"}}
+                                                            <h4>Employee Monitoring</h4>
+                                                            <p>Track activity levels and work habits.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/team-dashboard">
+                                                            {{> "icons/v4/icon-team-dashboard"}}
+                                                            <h4>Team Dashboard</h4>
+                                                            <p>Visualize team performance at a glance.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/employee-scheduling-software">
+                                                            {{> "icons/v4/icon-scheduling"}}
+                                                            <h4>Scheduling</h4>
+                                                            <p>Plan and optimize employee schedules.</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="more-link-holder">
+                                                    <a href="https://tmetric.com/integrations" class="more-link">
+                                                        View All Features{{> "icons/v4/arrow-right-blue"}}
+                                                    </a>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
-                                    {{!-- dropdown box left column end --}}
-                                    {{!-- dropdown box right column begin --}}
-                                    <div class="list-column">
-                                        <strong class="category">Integrations</strong>
-                                        <ul class="links with-icons">
-                                            <li>
-                                                <a href="https://tmetric.com/integrations/jira-time-tracking">
-                                                    {{> "icons/icon-jira-small"}}
-                                                    <span class="info">
-                                                        <strong class="title">Jira</strong>
-                                                        <span class="text">Time tracking on every task in one click</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/integrations/asana-time-tracking">
-                                                    {{> "icons/icon-asana-small"}}
-                                                    <span class="info">
-                                                        <strong class="title">Asana</strong>
-                                                        <span class="text">Start to accurately track time of tasks</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/integrations/todoist-time-tracking">
-                                                    {{> "icons/icon-todoist-small"}}
-                                                    <span class="info">
-                                                        <strong class="title">Todoist</strong>
-                                                        <span class="text">Track time of your lists and tasks</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/integrations/microsoft-office-online-time-tracking-tmetric">
-                                                    {{> "icons/icon-ms-office-small"}}
-                                                    <span class="info">
-                                                        <strong class="title">MS Office</strong>
-                                                        <span class="text">Get plugin for tracking time in MS Office Online</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/integrations/github-time-tracking">
-                                                    {{> "icons/icon-github-small"}}
-                                                    <span class="info">
-                                                        <strong class="title">GitHub</strong>
-                                                        <span class="text">Track time spent working on an issue with one mouse click</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/integrations/freshdesk-time-tracking">
-                                                    {{> "icons/icon-freshdesk-small"}}
-                                                    <span class="info">
-                                                        <strong class="title">Freshdesk</strong>
-                                                        <span class="text">Track time spent on every support ticket</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <a href="https://tmetric.com/integrations" class="link-more">
-                                            View All Integrations
-                                            {{> "icons/icon-arrow-right"}}
-                                        </a>
-                                    </div>
-                                    {{!-- dropdown box right column end --}}
                                 </div>
+                                <div class="drop-footer">
+                                    <a href="https://tmetric.com/download" class="link">Download apps</a>
+                                    <ul class="links">
+                                        <li><a class="contact-sales-link" href="#" style="display: inline;">Contact Sales</a></li>
+                                        <li><a href="https://tmetric.zohobookings.eu/#/77">Book a Demo</a></li>
+                                    </ul>
+                                </div>
+
                             </div>
-                            {{!-- dropdown box end --}}
                         </li>
-                        <li>
-                            <a href="#"><span>Support</span> {{> "icons/arrow-down"}}</a>
+                        <!-- menu Solutions -->
+                        <li class="parent">
+                            <a href="#">Solutions{{> "icons/v4/icon-arrow-down"}}</a>
                             <!-- dropdown box begin -->
                             <div class="drop">
-                                <div class="container">
-                                    <!-- dropdown box left column begin -->
-                                    <div class="links-column">
-                                        <div class="column">
-                                            <strong class="category">Contact Us</strong>
-                                            <ul class="links">
+                                <div class="drop-content tabs-row">
+                                    <ul class="nav nav-tabs drop-tabset">
+                                        <li class="nav-item">
+                                            <div class="nav-link active" data-toggle="tab" data-target="#solutionsCasesTab">Use Cases{{> "icons/v4/arrow-right-blue"}}</div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="nav-link" data-toggle="tab" data-target="#solutionsIndustriesTab">Industries{{> "icons/v4/arrow-right-blue"}}</div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="nav-link" data-toggle="tab" data-target="#solutionsSizeTab">Company Size{{> "icons/v4/arrow-right-blue"}}</div>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="solutionsCasesTab" class="tab-pane fade show active">
+                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
+                                            <h3 class="mobile-title">Use Cases</h3>
+                                            <ul class="drop-apps-list">
                                                 <li>
-                                                    <a href="" id="zf_button_33737">
-                                                        {{> "icons/icon-talk-to-sales"}}
-                                                        <div class="info">
-                                                            <strong class="title">Talk to Sales</strong>
-                                                            <span class="text">Schedule a product tour with the TMetric expert</span>
-                                                        </div>
+                                                    <a href="https://tmetric.com/feature-time-tracking">
+                                                        {{> "icons/v4/icon-time-tracking"}}
+                                                        <h4>Time Tracking</h4>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="" id="zf_button_420282">
-                                                        {{> "icons/icon-contact-support"}}
-                                                        <div class="info">
-                                                            <strong class="title">Contact Support</strong>
-                                                            <span class="text">If you need help, please reach out to the TMetric product specialist</span>
-                                                        </div>
+                                                    <a href="https://tmetric.com/feature-projects">
+                                                        {{> "icons/v4/icon-task-management"}}
+                                                        <h4>Project Management</h4>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="https://app.tmetric.com/register">
-                                                        {{> "icons/icon-try-a-free-trial"}}
-                                                        <div class="info">
-                                                            <strong class="title">Try a Free Trial</strong>
-                                                            <span class="text">Experience a complete set of features with a 30-day trial</span>
-                                                        </div>
+                                                    <a href="https://tmetric.com/feature-billing">
+                                                        {{> "icons/v4/icon-billing-invoicing"}}
+                                                        <h4>Billing &amp; Invoicing</h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/productivity-tracker">
+                                                        {{> "icons/v4/icon-productivity-tracking"}}
+                                                        <h4>Productivity Tracking</h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/feature-team-management">
+                                                        {{> "icons/v4/icon-workforce-management"}}
+                                                        <h4>Workforce Management</h4>
                                                     </a>
                                                 </li>
                                             </ul>
+                                            <div class="drop-solution">
+                                                <div class="wrap">
+                                                    <div class="text">
+                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <p>TMetric is developed to help any business to achieve better results.</p>
+                                                    </div>
+                                                    <div class="image">
+                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="solutionsIndustriesTab" class="tab-pane fade">
+                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
+                                            <h3 class="mobile-title">Industries</h3>
+                                            <div>
+                                                <ul class="drop-apps-list features">
+                                                    <li>
+                                                        <a href="https://tmetric.com/developer-time-tracking">
+                                                            {{> "icons/v4/icon-software-developers"}}
+                                                            <h4>Software Developers</h4>
+                                                            <p>Measure project progress, set billable rates, send detailed reports and invoice clients.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/marketing-time-tracking">
+                                                            {{> "icons/v4/icon-marketing-agencies"}}
+                                                            <h4>Marketing Agencies</h4>
+                                                            <p>Free yourself from issues of remote teams/freelancers management, complete any project in time and get paid.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/designer-time-tracking">
+                                                            {{> "icons/v4/icon-designers"}}
+                                                            <h4>Designers</h4>
+                                                            <p>Concentrate on making great designs and leave time management issues to TMetric.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/support-staff-time-tracking">
+                                                            {{> "icons/v4/icon-customer-support"}}
+                                                            <h4>Customer Support</h4>
+                                                            <p>Track time allocated by engineers to their support tickets, categorize time spent on various support activities.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/consultant-time-tracking">
+                                                            {{> "icons/v4/icon-consultants"}}
+                                                            <h4>Consultants</h4>
+                                                            <p>Automate tracking time for consulting services and generate invoices for clients.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/lawyer-time-tracking">
+                                                            {{> "icons/v4/icon-lawyers"}}
+                                                            <h4>Lawyers</h4>
+                                                            <p>Accurately track billable hours and streamline case management time tracking.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/accountant-time-tracking-software">
+                                                            {{> "icons/v4/icon-accountants"}}
+                                                            <h4>Accountants</h4>
+                                                            <p>Simplify time tracking and automate billing for financial services.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/contractor-time-tracking">
+                                                            {{> "icons/v4/icon-contractors"}}
+                                                            <h4>Contractors</h4>
+                                                            <p>Manage project hours, track expenses, and ensure accurate client invoicing.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/nonprofit-time-tracking">
+                                                            {{> "icons/v4/icon-non-profit"}}
+                                                            <h4>Non-profit</h4>
+                                                            <p>Efficiently track nonprofit mission-driven work.</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="more-link-holder">
+                                                    <a href="https://tmetric.com/solutions" class="more-link">
+                                                        View All Industries{{> "icons/v4/arrow-right-blue"}}
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div id="solutionsSizeTab" class="tab-pane fade">
+                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
+                                            <h3 class="mobile-title">Company Size</h3>
+                                            <ul class="drop-apps-list">
+                                                <li>
+                                                    <a href="https://tmetric.com/freelance-time-tracking">
+                                                        {{> "icons/v4/icon-contractors"}}
+                                                        <h4>For freelancers  and solo users</h4>
+                                                        <p>For solo entrepreneurs with a growing list of clients.</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/employee-monitoring">
+                                                        {{> "icons/v4/icon-workforce-management"}}
+                                                        <h4>For small teams</h4>
+                                                        <p>For teams of less than 10 that need to track projects and bill clients.</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="drop-solution">
+                                                <div class="wrap">
+                                                    <div class="text">
+                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <p>TMetric is developed to help any business to achieve better results.</p>
+                                                    </div>
+                                                    <div class="image">
+                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <!-- dropdown box left column end -->
-                                    <!-- dropdown box right column begin -->
-                                    <div class="list-column">
-                                        <strong class="category">Support Center</strong>
-                                        <ul class="links with-icons">
-                                            <li>
-                                                <a href="https://tmetric.com/help">
-                                                    {{> "icons/icon-tmetric-help"}}
-                                                    <span class="info">
-                                                        <strong class="title">TMetric Help</strong>
-                                                        <span class="text">Get how-to help and step-by-step instructions for specific features in Help</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/quick-start-videos">
-                                                    {{> "icons/icon-how-to-videos"}}
-                                                    <span class="info">
-                                                        <strong class="title">How to Videos</strong>
-                                                        <span class="text">Watch quick videos to learn the basics of TMetric</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/user-guide">
-                                                    {{> "icons/icon-user-guide"}}
-                                                    <span class="info">
-                                                        <strong class="title">User Guide</strong>
-                                                        <span class="text">This guide provides detailed instructions, tips, and best practices</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://tmetric.com/admin-guide">
-                                                    {{> "icons/icon-admin-guide"}}
-                                                    <span class="info">
-                                                        <strong class="title">Admin Guide</strong>
-                                                        <span class="text">Learn how to configure and maintain the software</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- dropdown box right column end -->
                                 </div>
-                            </div>
-                            <!-- dropdown box end -->
-                        </li>
-                        {{!-- menu items with dropdown box end --}}
-                        {{!-- menu links begin --}}
-                        <li><a href="https://tmetric.com/pricing"><span>Pricing</span></a></li>
-                        <li class="blog-link"><a href="{{@site.url}}"><span>Blog</span></a></li>
-                        {{!-- menu links end --}}
-                    </ul>
+                                <div class="drop-footer">
+                                    <a href="https://tmetric.com/download" class="link">Download apps</a>
+                                    <ul class="links">
+                                        <li><a class="contact-sales-link" href="#" style="display: inline;">Contact Sales</a></li>
+                                        <li><a href="https://tmetric.zohobookings.eu/#/77">Book a Demo</a></li>
+                                    </ul>
+                                </div>
 
-                    {{!-- login menu --}}
-                    <ul id="login-menu">
-                        <li class="nav-item">
-                            <a class="nav-link login" href="https://app.tmetric.com/login">Log In</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="signup btn btn-outline-primary" href="https://app.tmetric.com/register">Sign Up</a>
+                        <!-- menu Resources -->
+                        <li class="parent">
+                            <a href="#">Resources{{> "icons/v4/icon-arrow-down"}}</a>
+                            <!-- dropdown box begin -->
+                            <div class="drop">
+                                <div class="drop-content tabs-row">
+                                    <ul class="nav nav-tabs drop-tabset">
+                                        <li class="nav-item">
+                                            <div class="nav-link active" data-toggle="tab" data-target="#resourcesLearnTab">Learn{{> "icons/v4/arrow-right-blue"}}</div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="nav-link" data-toggle="tab" data-target="#resourcesConnectTab">Connect{{> "icons/v4/arrow-right-blue"}}</div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="nav-link" data-toggle="tab" data-target="#resourcesExploreTab">Explore{{> "icons/v4/arrow-right-blue"}}</div>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="resourcesLearnTab" class="tab-pane fade show active">
+                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
+                                            <h3 class="mobile-title">Learn</h3>
+                                            <ul class="drop-apps-list">
+                                                <li>
+                                                    <a href="https://tmetric.com/user-guide">
+                                                        {{> "icons/v4/icon-user-guide"}}
+                                                        <h4>User Guide</h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/admin-guide">
+                                                        {{> "icons/v4/icon-admin-guide"}}
+                                                        <h4>Admin Guide</h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/quick-start-videos">
+                                                        {{> "icons/v4/icon-videos"}}
+                                                        <h4>How to Videos</h4>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="drop-solution">
+                                                <div class="wrap">
+                                                    <div class="text">
+                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <p>TMetric is developed to help any business to achieve better results.</p>
+                                                    </div>
+                                                    <div class="image">
+                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="resourcesConnectTab" class="tab-pane fade">
+                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
+                                            <h3 class="mobile-title">Connect</h3>
+                                            <ul class="drop-apps-list">
+                                                <li>
+                                                    <a href="https://tmetric.com/help">
+                                                        {{> "icons/v4/icon-customer-support"}}
+                                                        <h4>TMetric Help</h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a id="zf_button_420282" href="#" style="display: block;">
+                                                        {{> "icons/v4/icon-contact-support"}}
+                                                        <h4>Contact Support</h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/privacy-policy">
+                                                        {{> "icons/v4/icon-security-privacy"}}
+                                                        <h4>Security &amp; Privacy</h4>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="drop-solution">
+                                                <div class="wrap">
+                                                    <div class="text">
+                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <p>TMetric is developed to help any business to achieve better results.</p>
+                                                    </div>
+                                                    <div class="image">
+                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="resourcesExploreTab" class="tab-pane fade">
+                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
+                                            <h3 class="mobile-title">Explore</h3>
+                                            <ul class="drop-apps-list">
+                                                <li>
+                                                    <a href="https://blog.tmetric.com/">
+                                                        {{> "icons/v4/icon-blog"}}
+                                                        <h4>Blog</h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/white-papers">
+                                                        {{> "icons/v4/icon-task-management"}}
+                                                        <h4>White Papers</h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/customer-stories">
+                                                        {{> "icons/v4/icon-success-stories"}}
+                                                        <h4>Success Stories</h4>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="drop-solution">
+                                                <div class="wrap">
+                                                    <div class="text">
+                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <p>TMetric is developed to help any business to achieve better results.</p>
+                                                    </div>
+                                                    <div class="image">
+                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drop-footer">
+                                    <a href="https://tmetric.com/download" class="link">Download apps</a>
+                                    <ul class="links">
+                                        <li><a class="contact-sales-link" href="#" style="display: inline;">Contact Sales</a></li>
+                                        <li><a href="https://tmetric.zohobookings.eu/#/77">Book a Demo</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
                         </li>
-                        <li class="nav-item demo">
-                            <a class="btn btn-primary" href="https://tmetric.zohobookings.eu/#/77" target="_blank">Book a Demo</a>
-                        </li>
+                        <!-- menu items with dropdown box end -->
+
+                        <!-- menu links begin -->
+                        <li class=""><a href="https://tmetric.com/pricing"><span>Pricing</span></a></li>
+
+                        <!-- menu links end -->
                     </ul>
+                    <!-- login menu begin -->
+                    <div id="login-menu" class="navbar-buttons">
+                        <ul>
+                            <li class="nav-item demo">
+                                <a class="nav-link" href="https://tmetric.zohobookings.eu/#/77" target="_blank">Book a Demo</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link login" href="https://app.tmetric.com/login">Log In</a>
+                            </li>
+                        </ul>
+                        <a class="btn btn-primary" href="https://app.tmetric.com/register">Try TMetric for free</a>
+                    </div>
+                    <!-- login menu end -->
                 </div>
             </nav>
-            {{!-- navigation end --}}
+            <!-- navigation end -->
         </div>
     </header>
+    <div class="header-fader"></div>
+
+    <!-- request demo form popup -->
+    <script type="text/javascript">(function() {
+        try{
+
+            if( document.readyState == "complete" ){
+                onloadActions_33737();
+            }  else {
+                window.addEventListener('load', function (){
+                    onloadActions_33737();
+                }, false);
+            }
+
+            function onloadActions_33737(){
+                constructDiv_33737();
+            }
+
+            function constructDiv_33737(){
+                var iframeDiv = document.createElement("div");
+                iframeDiv.setAttribute('id','TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737');
+                iframeDiv.setAttribute('class','zf_main_id_33737');
+
+                var closeFormDiv = document.createElement("div");
+                closeFormDiv.setAttribute('id','deleteform_33737');
+                closeFormDiv.setAttribute('class','zf_lb_closeform_33737');
+
+                var containerDiv = document.createElement("div");
+                containerDiv.setAttribute('id','containerDiv_33737');
+                containerDiv.setAttribute('class','zf_lB_Container_33737 fadeIn');
+                containerDiv.appendChild(iframeDiv);
+                containerDiv.appendChild(closeFormDiv);
+
+                var wrapperDiv = document.createElement("div");
+                wrapperDiv.setAttribute('class','zf_lB_Wrapper_33737');
+                wrapperDiv.appendChild(containerDiv);
+
+                var dimmerDiv = document.createElement("div");
+                dimmerDiv.setAttribute('class','zf_lB_Dimmer_33737');
+                dimmerDiv.setAttribute('elname','popup_box');
+
+                var mainDiv = document.createElement("div");
+                mainDiv.setAttribute('id','formsLightBox_33737');
+                mainDiv.style.display = "none";
+                mainDiv.appendChild(wrapperDiv);
+                mainDiv.appendChild(dimmerDiv);
+
+                document.body.appendChild(mainDiv);
+            }
+
+            function showZForm_33737(){
+                var iframe = document.getElementById("TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737").getElementsByTagName("iframe")[0];
+                if(iframe == undefined ||iframe.length == 0){
+                    loadZForm_33737();
+                }
+                document.getElementById("formsLightBox_33737").style.display = "block";
+                document.body.style.overflow = "hidden";
+            }
+
+            function loadZForm_33737() {
+                var iframe = document.getElementById("TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737").getElementsByTagName("iframe")[0];
+                if(iframe == undefined ||iframe.length == 0){
+                    var f = document.createElement("iframe");
+                    f.src = getsrcurlZForm_33737('https://forms.zohopublic.eu/tmetric/form/RequestforDemo/formperma/TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ?zf_rszfm=1');
+
+                    f.style.border="none";
+                    f.style.minWidth="100%";
+                    f.style.overflow="hidden";
+                    var d = document.getElementById("TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737");
+                    d.appendChild(f);
+
+                    var deleteForm = document.getElementById("deleteform_33737");
+                    deleteForm.onclick = function deleteZForm_33737() {
+                        var divCont = document.getElementById("formsLightBox_33737");
+                        divCont.style.display="none";
+                        document.body.style.overflow = "";
+
+                        var iframe = document.getElementById("TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737").getElementsByTagName("iframe")[0];
+                        iframe.remove();
+                    }
+
+                    window.addEventListener('message', function (){
+                        var evntData = event.data;
+                        if( evntData && evntData.constructor == String ){
+                            var zf_ifrm_data = evntData.split("|");
+                            if ( zf_ifrm_data.length == 2 ) {
+                                var zf_perma = zf_ifrm_data[0];
+                                var zf_ifrm_ht_nw = ( parseInt(zf_ifrm_data[1], 10) + 15 ) + "px";
+                                var iframe = document.getElementById("TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737").getElementsByTagName("iframe")[0];
+                                if ( (iframe.src).indexOf('formperma') > 0 && (iframe.src).indexOf(zf_perma) > 0 ) {
+                                    var prevIframeHeight = iframe.style.height;
+                                    if ( prevIframeHeight != zf_ifrm_ht_nw ) {
+                                        iframe.style.minHeight = zf_ifrm_ht_nw;
+                                        var containerDiv = document.getElementById("containerDiv_33737");
+                                        containerDiv.style.height=zf_ifrm_ht_nw;
+                                    }
+                                }
+                            }
+                        }
+                    }, false);
+                }
+            }
+
+            function getsrcurlZForm_33737(zf_src) {
+                try {
+
+                    if ( typeof ZFAdvLead !== "undefined" && typeof zfutm_zfAdvLead !== "undefined" ) {
+                        for( var prmIdx = 0 ; prmIdx < ZFAdvLead.utmPNameArr.length ; prmIdx ++ ) {
+                            var utmPm = ZFAdvLead.utmPNameArr[ prmIdx ];
+                            var utmVal = zfutm_zfAdvLead.zfautm_gC_enc( ZFAdvLead.utmPNameArr[ prmIdx ] );
+                            if ( typeof utmVal !== "undefined" ) {
+                                if ( utmVal != "" ){
+                                    if(zf_src.indexOf('?') > 0){
+                                        zf_src = zf_src+'&'+utmPm+'='+utmVal;//No I18N
+                                    }else{
+                                        zf_src = zf_src+'?'+utmPm+'='+utmVal;//No I18N
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if ( typeof ZFLead !== "undefined" && typeof zfutm_zfLead !== "undefined" ) {
+                        for( var prmIdx = 0 ; prmIdx < ZFLead.utmPNameArr.length ; prmIdx ++ ) {
+                            var utmPm = ZFLead.utmPNameArr[ prmIdx ];
+                            var utmVal = zfutm_zfLead.zfutm_gC_enc( ZFLead.utmPNameArr[ prmIdx ] );
+                            if ( typeof utmVal !== "undefined" ) {
+                                if ( utmVal != "" ){
+                                    if(zf_src.indexOf('?') > 0){
+                                        zf_src = zf_src+'&'+utmPm+'='+utmVal;//No I18N
+                                    }else{
+                                        zf_src = zf_src+'?'+utmPm+'='+utmVal;//No I18N
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }catch(e){}
+                return zf_src;
+            }
+
+            var buttonElements = document.querySelectorAll(".contact-sales-link");
+
+            for (let elem of buttonElements) {
+                elem.style.display = "inline";
+                elem.addEventListener('click',function(e){
+                    e.preventDefault();
+                    showZForm_33737();
+                });
+            }
+        }catch(e){}
+    })();
+    </script>
+
+    <!-- contact us form popup -->
+    <script type="text/javascript">(function() {
+        try{
+
+            if( document.readyState == "complete" ){
+                onloadActions_420282();
+            }  else {
+                window.addEventListener('load', function (){
+                    onloadActions_420282();
+                }, false);
+            }
+
+            function onloadActions_420282(){
+                constructDiv_420282();
+            }
+
+            function constructDiv_420282(){
+                var iframeDiv = document.createElement("div");
+                iframeDiv.setAttribute('id','dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282');
+                iframeDiv.setAttribute('class','zf_main_id_420282');
+
+                var closeFormDiv = document.createElement("div");
+                closeFormDiv.setAttribute('id','deleteform_420282');
+                closeFormDiv.setAttribute('class','zf_lb_closeform_420282');
+
+                var containerDiv = document.createElement("div");
+                containerDiv.setAttribute('id','containerDiv_420282');
+                containerDiv.setAttribute('class','zf_lB_Container_420282 fadeIn');
+                containerDiv.appendChild(iframeDiv);
+                containerDiv.appendChild(closeFormDiv);
+
+                var wrapperDiv = document.createElement("div");
+                wrapperDiv.setAttribute('class','zf_lB_Wrapper_420282');
+                wrapperDiv.appendChild(containerDiv);
+
+                var dimmerDiv = document.createElement("div");
+                dimmerDiv.setAttribute('class','zf_lB_Dimmer_420282');
+                dimmerDiv.setAttribute('elname','popup_box');
+
+                var mainDiv = document.createElement("div");
+                mainDiv.setAttribute('id','formsLightBox_420282');
+                mainDiv.style.display = "none";
+                mainDiv.appendChild(wrapperDiv);
+                mainDiv.appendChild(dimmerDiv);
+
+                document.body.appendChild(mainDiv);
+            }
+
+            function showZForm_420282(){
+                var iframe = document.getElementById("dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282").getElementsByTagName("iframe")[0];
+                if(iframe == undefined ||iframe.length == 0){
+                    loadZForm_420282();
+
+                }
+                document.getElementById("formsLightBox_420282").style.display = "block";
+                document.body.style.overflow = "hidden";
+            }
+
+            function loadZForm_420282() {
+                var iframe = document.getElementById("dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282").getElementsByTagName("iframe")[0];
+                if(iframe == undefined ||iframe.length == 0){
+                    var f = document.createElement("iframe");
+                    f.src = getsrcurlZForm_420282('https://forms.zohopublic.eu/tmetric/form/Contactus4/formperma/dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0?zf_rszfm=1');
+
+                    f.style.border="none";
+                    f.style.minWidth="100%";
+                    f.style.overflow="hidden";
+                    var d = document.getElementById("dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282");
+                    d.appendChild(f);
+
+                    var deleteForm = document.getElementById("deleteform_420282");
+                    deleteForm.onclick = function deleteZForm_420282() {
+                        var divCont = document.getElementById("formsLightBox_420282");
+                        divCont.style.display="none";
+                        document.body.style.overflow = "";
+
+                        var iframe = document.getElementById("dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282").getElementsByTagName("iframe")[0];
+                        iframe.remove();
+                    }
+
+                    window.addEventListener('message', function (){
+                        var evntData = event.data;
+                        if( evntData && evntData.constructor == String ){
+                            var zf_ifrm_data = evntData.split("|");
+                            if ( zf_ifrm_data.length == 2 ) {
+                                var zf_perma = zf_ifrm_data[0];
+                                var zf_ifrm_ht_nw = ( parseInt(zf_ifrm_data[1], 10) + 15 ) + "px";
+                                var iframe = document.getElementById("dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282").getElementsByTagName("iframe")[0];
+                                if ( (iframe.src).indexOf('formperma') > 0 && (iframe.src).indexOf(zf_perma) > 0 ) {
+                                    var prevIframeHeight = iframe.style.height;
+                                    if ( prevIframeHeight != zf_ifrm_ht_nw ) {
+                                        iframe.style.minHeight = zf_ifrm_ht_nw;
+                                        var containerDiv = document.getElementById("containerDiv_420282");
+                                        containerDiv.style.height=zf_ifrm_ht_nw;
+                                    }
+                                }
+                            }
+                        }
+                    }, false);
+                }
+            }
+
+            function getsrcurlZForm_420282(zf_src) {
+                try {
+
+                    if ( typeof ZFAdvLead !== "undefined" && typeof zfutm_zfAdvLead !== "undefined" ) {
+                        for( var prmIdx = 0 ; prmIdx < ZFAdvLead.utmPNameArr.length ; prmIdx ++ ) {
+                            var utmPm = ZFAdvLead.utmPNameArr[ prmIdx ];
+                            var utmVal = zfutm_zfAdvLead.zfautm_gC_enc( ZFAdvLead.utmPNameArr[ prmIdx ] );
+                            if ( typeof utmVal !== "undefined" ) {
+                                if ( utmVal != "" ){
+                                    if(zf_src.indexOf('?') > 0){
+                                        zf_src = zf_src+'&'+utmPm+'='+utmVal;//No I18N
+                                    }else{
+                                        zf_src = zf_src+'?'+utmPm+'='+utmVal;//No I18N
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if ( typeof ZFLead !== "undefined" && typeof zfutm_zfLead !== "undefined" ) {
+                        for( var prmIdx = 0 ; prmIdx < ZFLead.utmPNameArr.length ; prmIdx ++ ) {
+                            var utmPm = ZFLead.utmPNameArr[ prmIdx ];
+                            var utmVal = zfutm_zfLead.zfutm_gC_enc( ZFLead.utmPNameArr[ prmIdx ] );
+                            if ( typeof utmVal !== "undefined" ) {
+                                if ( utmVal != "" ){
+                                    if(zf_src.indexOf('?') > 0){
+                                        zf_src = zf_src+'&'+utmPm+'='+utmVal;//No I18N
+                                    }else{
+                                        zf_src = zf_src+'?'+utmPm+'='+utmVal;//No I18N
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }catch(e){}
+                return zf_src;
+            }
+
+            var buttonElem = document.getElementById("zf_button_420282");
+            buttonElem.style.display = "block";
+            buttonElem.addEventListener('click',function(e){
+                e.preventDefault();
+                showZForm_420282();
+            });
+
+        }catch(e){}
+    })();
+    </script>
 
     <main>
         {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
@@ -370,171 +965,197 @@
     </main>
 
     {{!-- The global footer at the very bottom of the screen --}}
-    <footer id="footer">
+    <footer id="footer-section" class="lazy animate">
         <div class="container">
-            <div class="row">
+            <div class="navigation row">
                 <div class="col">
-                    <div class="footer-logo">
-                        <a href="https://tmetric.com/">
-                            <img src="{{@site.logo}}" width="147" height="54" alt="{{@site.title}}" />
-                        </a>
-                    </div>
+                    <h4>Product</h4>
+                    <ul class="nav">
+                        <li>
+                            <a href="https://tmetric.com/about">About Us</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/features">Overview</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/download">Download</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/customer-stories">Customers</a>
+                        </li>
+                    </ul>
+                    <h4>Integrations</h4>
+                    <ul class="nav">
+                        <li>
+                            <a href="https://tmetric.com/integrations/notion-time-tracking">Notion</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/integrations/asana-time-tracking">Asana</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/integrations/jira-time-tracking">Jira</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/integrations/quickbooks-time-tracking">QuickBooks</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/integrations/trello-time-tracking">Trello</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/integrations/google-calendar-time-tracking">Google Calendar</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/integrations">All integrations</a>
+                        </li>
+                    </ul>
                 </div>
-
-                <div class="col offset">
-                    <div class="title">
-                        <span>Applications</span>
-                        {{> "icons/icon-angle-right"}}
-                    </div>
-                    <div class="slide">
-                        <div>
-                            <a href="https://tmetric.com/download" class="footer-link-container">
-                                {{> "icons/icon-desktop"}}
-                                <span>Desktop</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://itunes.apple.com/us/app/tmetric/id1251407402" target="_blank" class="footer-link-container">
-                                {{> "icons/icon-ios"}}
-                                <span>iOS</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://play.google.com/store/apps/details?id=com.tmetric" target="_blank" class="footer-link-container">
-                                {{> "icons/icon-android"}}
-                                <span>Android</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="col">
-                    <div class="title">
-                        <span>Browser Extensions</span>
-                        {{> "icons/icon-angle-right"}}
-                    </div>
-                    <div class="slide">
-                        <div>
-                            <a href="https://chrome.google.com/webstore/detail/tmetric-extension/ffijoclmniipjbhecddgkfpdafpbdnen" target="_blank" class="footer-link-container">
-                                {{> "icons/icon-chrome"}}
-                                <span>Chrome</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://addons.mozilla.org/en-US/firefox/addon/tmetric-extension/" target="_blank" class="footer-link-container">
-                                {{> "icons/icon-firefox"}}
-                                <span>Firefox</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://addons.opera.com/en/extensions/details/tmetric-extension/" target="_blank" class="footer-link-container">
-                                {{> "icons/icon-opera"}}
-                                <span>Opera</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://microsoftedge.microsoft.com/addons/detail/bkohhohbfioiffcejghnjljadblbifok" target="_blank" class="footer-link-container">
-                                {{> "icons/icon-edge"}}
-                                <span>Edge</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://apps.apple.com/app/tmetric-for-safari/id1483939427" target="_blank" class="footer-link-container">
-                                {{> "icons/icon-safari"}}
-                                <span>Safari</span>
-                            </a>
-                        </div>
-                    </div>
+                    <h4>Features</h4>
+                    <ul class="nav">
+                        <li>
+                            <a href="https://tmetric.com/automated-employee-timesheet-app">Auto Tracker</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/attendance-tracking-software">Attendance</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/employee-time-tracking">Employee Activity</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/feature-time-off">Time Off</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/employee-monitoring">Monitoring</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/feature-billing">Billing</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/task-management">Task Management</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/team-dashboard">Dashboards</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/automated-employee-timesheet-app">Timesheets</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/feature-reporting">Reports</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/feature-projects">Project</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/productivity-tracker">Productivity</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/overtime-for-salaried-employees">Overtimes</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/features">All features</a>
+                        </li>
+                    </ul>
                 </div>
-
                 <div class="col">
-                    <div class="title">
-                        <span>Resources</span>
-                        {{> "icons/icon-angle-right"}}
-                    </div>
-                    <div class="slide">
-                        <div>
-                            <a href="https://tmetric.com/solutions" class="footer-link-container">
-                                <span>Solutions</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://tmetric.com/integrations" class="footer-link-container">
-                                <span>Integrations</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://tmetric.com/help" class="footer-link-container">
-                                <span>Help</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://tmetric.com/time-trackers-comparison" class="footer-link-container">
-                                <span>Time Trackers Comparison</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://tmetric.com/white-papers" class="footer-link-container">
-                                <span>White Papers</span>
-                            </a>
-                        </div>
-
-                        <div class="blog-link">
-                            <a href="{{@site.url}}" class="footer-link-container">
-                                <span>Blog</span>
-                            </a>
-                        </div>
-                    </div>
+                    <h4>Industries</h4>
+                    <ul class="nav">
+                        <li>
+                            <a href="https://tmetric.com/freelance-time-tracking">Freelancers</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/developer-time-tracking">Developers</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/marketing-time-tracking">Agencies</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/designer-time-tracking">Designer</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/lawyer-time-tracking">Lawyers</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/contractor-time-tracking">Contractors</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/employee-time-tracking">Employees</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/solutions">All industries</a>
+                        </li>
+                    </ul>
                 </div>
-
                 <div class="col">
-                    <div class="title">
-                        <span>About</span>
-                        {{> "icons/icon-angle-right"}}
-                    </div>
-                    <div class="slide">
-                        <div>
-                            <a href="https://tmetric.com/about" class="footer-link-container">
-                                <span>About TMetric</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://tmetric.com/terms-of-service" class="footer-link-container">
-                                <span>Terms of Service</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://tmetric.com/privacy-policy" class="footer-link-container">
-                                <span>Privacy Policy</span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://tmetric.com/cookies-policy" class="footer-link-container">
-                                <span>Cookies Policy</span>
-                            </a>
-                        </div>
-                        <div>
+                    <h4>Compare</h4>
+                    <ul class="nav">
+                        <li>
+                            <a href="https://tmetric.com/alternative-toggl">vs Toggl</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/alternative-clockify">vs Clockify</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/alternative-hubstaff">vs Hubstaff</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/alternative-timecamp">vs TimeCamp</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/alternative-harvest">vs Harvest</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/alternative-timely">vs Timely</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/alternative-myhours">vs MyHours</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/time-trackers-comparison">All tools</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Learn</h4>
+                    <ul class="nav">
+                        <li>
+                            <a href="https://tmetric.com/help">Help Docs</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/user-guide">Users Guide</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/admin-guide">Admin Guide</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/quick-start-videos">How to Videos</a>
+                        </li>
+                        <li>
+                            <a href="https://tmetric.com/white-papers">White papers</a>
+                        </li>
+                        <li>
+                            <a href="https://blog.tmetric.com">Blog</a>
+                        </li>
+                        <li>
                             <a href="https://tmetric.com/media/lymbvfck/tmetric-partnership.pdf" target="_blank" class="footer-link-container">
                                 <span>Partnership</span>
                             </a>
-                        </div>
-                    </div>
+
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="copyright-row">
-            <div class="container">
+            <div class="copyright-row">
+                <a class="logo" href="https://tmetric.com">
+                    <img src="{{@site.logo}}" width="148" height="44" alt="{{@site.title}}" />
+                </a>
+                <p>You can write us an <a href="mailto:sales@tmetrick.com">email</a> or post questions to our <a href="mailto:help@tmetric.com">support team</a>. We'll be glad to help you personally.</p>
                 <ul class="social-networks">
-                    {{#if @site.facebook}}
-                        <li>
-                            <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>
-                        </li>
-                    {{/if}}
-                    {{#if @site.twitter}}
-                        <li>
-                            <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>
-                        </li>
-                    {{/if}}
+                    <li>
+                        <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>
+                    </li>
+                    <li>
+                        <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>
+                    </li>
                     <li>
                         <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
                     </li>
@@ -546,9 +1167,7 @@
                     </li>
                 </ul>
                 <div class="copyright">
-                    <div>
-                        <span>Copyright © Devart 2025</span>
-                    </div>
+                    <p>Copyright © Devart 2025</p>
                 </div>
             </div>
         </div>
@@ -567,6 +1186,9 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous">
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
 <script src="{{asset "built/casper.js"}}"></script>
 <script>
 $(document).ready(function () {
@@ -618,307 +1240,6 @@ $(document).ready(function () {
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
-
-{{!-- Request Demo form popup --}}
-<script type="text/javascript">(function() {
-    try{
-
-        if( document.readyState == "complete" ){
-            onloadActions_33737();
-        }  else {
-            window.addEventListener('load', function (){
-                onloadActions_33737();
-            }, false);
-        }
-
-        function onloadActions_33737(){
-            constructDiv_33737();
-        }
-
-        function constructDiv_33737(){
-            var iframeDiv = document.createElement("div");
-            iframeDiv.setAttribute('id','TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737');
-            iframeDiv.setAttribute('class','zf_main_id_33737');
-
-            var closeFormDiv = document.createElement("div");
-            closeFormDiv.setAttribute('id','deleteform_33737');
-            closeFormDiv.setAttribute('class','zf_lb_closeform_33737');
-
-            var containerDiv = document.createElement("div");
-            containerDiv.setAttribute('id','containerDiv_33737');
-            containerDiv.setAttribute('class','zf_lB_Container_33737 fadeIn');
-            containerDiv.appendChild(iframeDiv);
-            containerDiv.appendChild(closeFormDiv);
-
-            var wrapperDiv = document.createElement("div");
-            wrapperDiv.setAttribute('class','zf_lB_Wrapper_33737');
-            wrapperDiv.appendChild(containerDiv);
-
-            var dimmerDiv = document.createElement("div");
-            dimmerDiv.setAttribute('class','zf_lB_Dimmer_33737');
-            dimmerDiv.setAttribute('elname','popup_box');
-
-            var mainDiv = document.createElement("div");
-            mainDiv.setAttribute('id','formsLightBox_33737');
-            mainDiv.style.display = "none";
-            mainDiv.appendChild(wrapperDiv);
-            mainDiv.appendChild(dimmerDiv);
-
-            document.body.appendChild(mainDiv);
-        }
-
-        function showZForm_33737(){
-            var iframe = document.getElementById("TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737").getElementsByTagName("iframe")[0];
-            if(iframe == undefined ||iframe.length == 0){
-                loadZForm_33737();
-            }
-            document.getElementById("formsLightBox_33737").style.display = "block";
-            document.body.style.overflow = "hidden";
-        }
-
-        function loadZForm_33737() {
-            var iframe = document.getElementById("TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737").getElementsByTagName("iframe")[0];
-            if(iframe == undefined ||iframe.length == 0){
-                var f = document.createElement("iframe");
-                f.src = getsrcurlZForm_33737('https://forms.zohopublic.eu/tmetric/form/RequestforDemo/formperma/TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ?zf_rszfm=1');
-
-                f.style.border="none";
-                f.style.minWidth="100%";
-                f.style.overflow="hidden";
-                var d = document.getElementById("TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737");
-                d.appendChild(f);
-
-                var deleteForm = document.getElementById("deleteform_33737");
-                deleteForm.onclick = function deleteZForm_33737() {
-                    var divCont = document.getElementById("formsLightBox_33737");
-                    divCont.style.display="none";
-                    document.body.style.overflow = "";
-
-                    var iframe = document.getElementById("TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737").getElementsByTagName("iframe")[0];
-                    iframe.remove();
-                }
-
-                window.addEventListener('message', function (){
-                    var evntData = event.data;
-                    if( evntData && evntData.constructor == String ){
-                        var zf_ifrm_data = evntData.split("|");
-                        if ( zf_ifrm_data.length == 2 ) {
-                            var zf_perma = zf_ifrm_data[0];
-                            var zf_ifrm_ht_nw = ( parseInt(zf_ifrm_data[1], 10) + 15 ) + "px";
-                            var iframe = document.getElementById("TyTxK3yxLnvfOV9oPqUBFs3gd_JfURQcxRClkeIlxeQ_33737").getElementsByTagName("iframe")[0];
-                            if ( (iframe.src).indexOf('formperma') > 0 && (iframe.src).indexOf(zf_perma) > 0 ) {
-                                var prevIframeHeight = iframe.style.height;
-                                if ( prevIframeHeight != zf_ifrm_ht_nw ) {
-                                    iframe.style.minHeight = zf_ifrm_ht_nw;
-                                    var containerDiv = document.getElementById("containerDiv_33737");
-                                    containerDiv.style.height=zf_ifrm_ht_nw;
-                                }
-                            }
-                        }
-                    }
-                }, false);
-            }
-        }
-
-        function getsrcurlZForm_33737(zf_src) {
-            try {
-
-                if ( typeof ZFAdvLead !== "undefined" && typeof zfutm_zfAdvLead !== "undefined" ) {
-                    for( var prmIdx = 0 ; prmIdx < ZFAdvLead.utmPNameArr.length ; prmIdx ++ ) {
-                        var utmPm = ZFAdvLead.utmPNameArr[ prmIdx ];
-                        var utmVal = zfutm_zfAdvLead.zfautm_gC_enc( ZFAdvLead.utmPNameArr[ prmIdx ] );
-                        if ( typeof utmVal !== "undefined" ) {
-                            if ( utmVal != "" ){
-                                if(zf_src.indexOf('?') > 0){
-                                    zf_src = zf_src+'&'+utmPm+'='+utmVal;//No I18N
-                                }else{
-                                    zf_src = zf_src+'?'+utmPm+'='+utmVal;//No I18N
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if ( typeof ZFLead !== "undefined" && typeof zfutm_zfLead !== "undefined" ) {
-                    for( var prmIdx = 0 ; prmIdx < ZFLead.utmPNameArr.length ; prmIdx ++ ) {
-                        var utmPm = ZFLead.utmPNameArr[ prmIdx ];
-                        var utmVal = zfutm_zfLead.zfutm_gC_enc( ZFLead.utmPNameArr[ prmIdx ] );
-                        if ( typeof utmVal !== "undefined" ) {
-                            if ( utmVal != "" ){
-                                if(zf_src.indexOf('?') > 0){
-                                    zf_src = zf_src+'&'+utmPm+'='+utmVal;//No I18N
-                                }else{
-                                    zf_src = zf_src+'?'+utmPm+'='+utmVal;//No I18N
-                                }
-                            }
-                        }
-                    }
-                }
-            }catch(e){}
-            return zf_src;
-        }
-
-        var buttonElem = document.getElementById("zf_button_33737");
-        buttonElem.style.display = "flex";
-        buttonElem.addEventListener('click',function(e){
-            e.preventDefault();
-            showZForm_33737();
-        });
-
-    }catch(e){}
-})();
-</script>
-
-{{!-- Contact Us form popup --}}
-<script type="text/javascript">(function() {
-    try{
-
-        if( document.readyState == "complete" ){
-            onloadActions_420282();
-        }  else {
-            window.addEventListener('load', function (){
-                onloadActions_420282();
-            }, false);
-        }
-
-        function onloadActions_420282(){
-            constructDiv_420282();
-        }
-
-        function constructDiv_420282(){
-            var iframeDiv = document.createElement("div");
-            iframeDiv.setAttribute('id','dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282');
-            iframeDiv.setAttribute('class','zf_main_id_420282');
-
-            var closeFormDiv = document.createElement("div");
-            closeFormDiv.setAttribute('id','deleteform_420282');
-            closeFormDiv.setAttribute('class','zf_lb_closeform_420282');
-
-            var containerDiv = document.createElement("div");
-            containerDiv.setAttribute('id','containerDiv_420282');
-            containerDiv.setAttribute('class','zf_lB_Container_420282 fadeIn');
-            containerDiv.appendChild(iframeDiv);
-            containerDiv.appendChild(closeFormDiv);
-
-            var wrapperDiv = document.createElement("div");
-            wrapperDiv.setAttribute('class','zf_lB_Wrapper_420282');
-            wrapperDiv.appendChild(containerDiv);
-
-            var dimmerDiv = document.createElement("div");
-            dimmerDiv.setAttribute('class','zf_lB_Dimmer_420282');
-            dimmerDiv.setAttribute('elname','popup_box');
-
-            var mainDiv = document.createElement("div");
-            mainDiv.setAttribute('id','formsLightBox_420282');
-            mainDiv.style.display = "none";
-            mainDiv.appendChild(wrapperDiv);
-            mainDiv.appendChild(dimmerDiv);
-
-            document.body.appendChild(mainDiv);
-        }
-
-        function showZForm_420282(){
-            var iframe = document.getElementById("dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282").getElementsByTagName("iframe")[0];
-            if(iframe == undefined ||iframe.length == 0){
-                loadZForm_420282();
-
-            }
-            document.getElementById("formsLightBox_420282").style.display = "block";
-            document.body.style.overflow = "hidden";
-        }
-
-        function loadZForm_420282() {
-            var iframe = document.getElementById("dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282").getElementsByTagName("iframe")[0];
-            if(iframe == undefined ||iframe.length == 0){
-                var f = document.createElement("iframe");
-                f.src = getsrcurlZForm_420282('https://forms.zohopublic.eu/tmetric/form/Contactus4/formperma/dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0?zf_rszfm=1');
-
-                f.style.border="none";
-                f.style.minWidth="100%";
-                f.style.overflow="hidden";
-                var d = document.getElementById("dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282");
-                d.appendChild(f);
-
-                var deleteForm = document.getElementById("deleteform_420282");
-                deleteForm.onclick = function deleteZForm_420282() {
-                    var divCont = document.getElementById("formsLightBox_420282");
-                    divCont.style.display="none";
-                    document.body.style.overflow = "";
-
-                    var iframe = document.getElementById("dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282").getElementsByTagName("iframe")[0];
-                    iframe.remove();
-                }
-
-                window.addEventListener('message', function (){
-                    var evntData = event.data;
-                    if( evntData && evntData.constructor == String ){
-                        var zf_ifrm_data = evntData.split("|");
-                        if ( zf_ifrm_data.length == 2 ) {
-                            var zf_perma = zf_ifrm_data[0];
-                            var zf_ifrm_ht_nw = ( parseInt(zf_ifrm_data[1], 10) + 15 ) + "px";
-                            var iframe = document.getElementById("dl0qGGht-WTaUASDfpz5mMfRYHndclmFY-4uAJ1kxk0_420282").getElementsByTagName("iframe")[0];
-                            if ( (iframe.src).indexOf('formperma') > 0 && (iframe.src).indexOf(zf_perma) > 0 ) {
-                                var prevIframeHeight = iframe.style.height;
-                                if ( prevIframeHeight != zf_ifrm_ht_nw ) {
-                                    iframe.style.minHeight = zf_ifrm_ht_nw;
-                                    var containerDiv = document.getElementById("containerDiv_420282");
-                                    containerDiv.style.height=zf_ifrm_ht_nw;
-                                }
-                            }
-                        }
-                    }
-                }, false);
-            }
-        }
-
-        function getsrcurlZForm_420282(zf_src) {
-            try {
-
-                if ( typeof ZFAdvLead !== "undefined" && typeof zfutm_zfAdvLead !== "undefined" ) {
-                    for( var prmIdx = 0 ; prmIdx < ZFAdvLead.utmPNameArr.length ; prmIdx ++ ) {
-                        var utmPm = ZFAdvLead.utmPNameArr[ prmIdx ];
-                        var utmVal = zfutm_zfAdvLead.zfautm_gC_enc( ZFAdvLead.utmPNameArr[ prmIdx ] );
-                        if ( typeof utmVal !== "undefined" ) {
-                            if ( utmVal != "" ){
-                                if(zf_src.indexOf('?') > 0){
-                                    zf_src = zf_src+'&'+utmPm+'='+utmVal;//No I18N
-                                }else{
-                                    zf_src = zf_src+'?'+utmPm+'='+utmVal;//No I18N
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if ( typeof ZFLead !== "undefined" && typeof zfutm_zfLead !== "undefined" ) {
-                    for( var prmIdx = 0 ; prmIdx < ZFLead.utmPNameArr.length ; prmIdx ++ ) {
-                        var utmPm = ZFLead.utmPNameArr[ prmIdx ];
-                        var utmVal = zfutm_zfLead.zfutm_gC_enc( ZFLead.utmPNameArr[ prmIdx ] );
-                        if ( typeof utmVal !== "undefined" ) {
-                            if ( utmVal != "" ){
-                                if(zf_src.indexOf('?') > 0){
-                                    zf_src = zf_src+'&'+utmPm+'='+utmVal;//No I18N
-                                }else{
-                                    zf_src = zf_src+'?'+utmPm+'='+utmVal;//No I18N
-                                }
-                            }
-                        }
-                    }
-                }
-            }catch(e){}
-            return zf_src;
-        }
-
-        var buttonElem = document.getElementById("zf_button_420282");
-        buttonElem.style.display = "flex";
-        buttonElem.addEventListener('click',function(e){
-            e.preventDefault();
-            showZForm_420282();
-        });
-
-    }catch(e){}
-})();
-</script>
 
 </body>
 </html>
