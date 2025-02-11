@@ -3297,6 +3297,7 @@ html.dark-mode .subscribe-form .success .message-success {
 #main-menu>li {
     padding: 0;
     line-height: 1.5;
+    margin-right: 1px;
 }
 
 #main-menu>li+li {
@@ -3675,6 +3676,7 @@ html.dark-mode .subscribe-form .success .message-success {
 }
 
 .product-header #login-menu ul a {
+    display: block;
     padding: 0 5px;
     color: #3070f0;
     font-family: InterMedium, sans-serif;
@@ -3799,7 +3801,7 @@ html.dark-mode .subscribe-form .success .message-success {
     }
 
     .product-header #nav {
-        padding-left: 170px;
+        padding-left: 165px;
     }
 
     .product-header .drop-tabset {
@@ -3828,6 +3830,14 @@ html.dark-mode .subscribe-form .success .message-success {
     #login-menu,
     #login-menu .nav-link {
         font-size: 1.3rem;
+    }
+
+    .product-header #login-menu ul li {
+        padding-right: 7px;
+    }
+
+    .product-header #login-menu ul li:not(:last-child) {
+        margin-right: 7px;
     }
 
     .product-header #login-menu .btn {
@@ -3934,6 +3944,7 @@ html.dark-mode .subscribe-form .success .message-success {
     #main-menu>li {
         padding: 0;
         border-bottom: 1px solid #e2e6eb;
+        margin-right: 0;
     }
 
     #main-menu>li:last-child {
@@ -4124,7 +4135,7 @@ html.dark-mode .subscribe-form .success .message-success {
     }
 
     .product-header #login-menu ul li {
-        padding-right: 10px;
+        padding-right: 7px;
     }
 
     .product-header #login-menu .demo {
