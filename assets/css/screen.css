@@ -85,10 +85,11 @@ production stylesheet in assets/built/screen.css
 
 .viewport > main {
     flex-grow: 1;
-    padding-top: 60px;
+    padding-top: 100px;
 }
 
-.home-template .viewport > main {
+.home-template .viewport > main,
+.paged .viewport > main {
     padding-top: 0;
 }
 
@@ -3796,6 +3797,14 @@ html.dark-mode .subscribe-form .success .message-success {
         font-size: 1.3rem;
     }
 
+    .product-header #main-menu>li.parent>a {
+        padding-right: 25px;
+    }
+
+    .product-header #main-menu>li.parent>a svg {
+        right: 5px;
+    }
+
     .product-header #logo {
         left: 10px;
     }
@@ -3964,6 +3973,10 @@ html.dark-mode .subscribe-form .success .message-success {
     #gh-head.product-header #main-menu>li.drop-visible>a,
     #gh-head.product-header #main-menu>li:hover>a {
         background-color: #fff !important;
+    }
+
+    .product-header #main-menu>li.parent>a svg {
+        right: 12px;
     }
 
     .product-header #main-menu > li.parent > a svg {
@@ -4170,6 +4183,92 @@ html.dark-mode .subscribe-form .success .message-success {
     .product-header #main-menu .more-link {
         margin: 0 0 2rem;
         padding: 10px 26px 10px 0;
+    }
+}
+
+/* Pagination */
+.no-infinite-scroll .pagination {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-infinite-scroll .pagination a {
+    padding: 5px 16px;
+    border: 1px solid #A1A7B2;
+    border-radius: 6px;
+    line-height: 1.5;
+    transition: all .3s ease;
+}
+
+.no-infinite-scroll .pagination a:hover {
+    border-color: #EBEDF0;
+    background: #EBEDF0;
+}
+
+.no-infinite-scroll .pagination a:active {
+    border-color: #D0D6DB;
+    background: #D0D6DB;
+}
+
+.no-infinite-scroll .pagination a:focus {
+    border-color: #CAD8F9;
+    outline: solid 1px #CAD8F9;
+}
+
+.no-infinite-scroll .pagination .newer-posts {
+    margin-right: 60px;
+}
+
+.no-infinite-scroll .pagination .newer-posts span {
+    margin-right: 5px;
+}
+
+.no-infinite-scroll .pagination .older-posts {
+    margin-left: 60px;
+}
+
+.no-infinite-scroll .pagination .older-posts span {
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .no-infinite-scroll .pagination {
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .no-infinite-scroll .pagination .newer-posts {
+        margin-right: 20px;
+    }
+
+    .no-infinite-scroll .pagination .older-posts {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .no-infinite-scroll .pagination {
+        flex-wrap: wrap;
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .no-infinite-scroll .pagination .newer-posts {
+        margin-bottom: 10px;
+    }
+
+    .no-infinite-scroll .pagination .older-posts {
+        margin-top: 10px;
+    }
+
+    .no-infinite-scroll .pagination .newer-posts,
+    .no-infinite-scroll .pagination .older-posts {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
     }
 }
 
