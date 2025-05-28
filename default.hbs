@@ -221,7 +221,7 @@
                                                         <a href="https://tmetric.com/free-time-tracking">
                                                             {{> "icons/v4/icon-time-tracking"}}
                                                             <h4>Time Tracking</h4>
-                                                            <p>Effortlessly track work  hours online.</p>
+                                                            <p>Effortlessly track work hours online.</p>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -253,10 +253,10 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="https://tmetric.com/overtime-for-salaried-employees">
-                                                            {{> "icons/v4/icon-overtime-tracking"}}
-                                                            <h4>Overtime Tracking</h4>
-                                                            <p>Create detailed and actionable time reports.</p>
+                                                        <a href="https://tmetric.com/feature-billing">
+                                                            {{> "icons/v4/icon-billing-invoicing"}}
+                                                            <h4>Billing &amp; Invoicing</h4>
+                                                            <p>Manage invoices and convenient billing</p>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -340,12 +340,6 @@
                                                     <a href="https://tmetric.com/feature-projects">
                                                         {{> "icons/v4/icon-task-management"}}
                                                         <h4>Project Management</h4>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://tmetric.com/feature-billing">
-                                                        {{> "icons/v4/icon-billing-invoicing"}}
-                                                        <h4>Billing &amp; Invoicing</h4>
                                                     </a>
                                                 </li>
                                                 <li>
@@ -498,22 +492,10 @@
                             <a href="#">Resources{{> "icons/v4/icon-arrow-down"}}</a>
                             <!-- dropdown box begin -->
                             <div class="drop">
-                                <div class="drop-content tabs-row">
-                                    <ul class="nav nav-tabs drop-tabset">
-                                        <li class="nav-item">
-                                            <div class="nav-link active" data-toggle="tab" data-target="#resourcesLearnTab">Learn{{> "icons/v4/arrow-right-blue"}}</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link" data-toggle="tab" data-target="#resourcesConnectTab">Connect{{> "icons/v4/arrow-right-blue"}}</div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link" data-toggle="tab" data-target="#resourcesExploreTab">Explore{{> "icons/v4/arrow-right-blue"}}</div>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div id="resourcesLearnTab" class="tab-pane fade show active">
-                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
-                                            <h3 class="mobile-title">Learn</h3>
+                                <div class="drop-content columns-row">
+                                    <div class="columns">
+                                        <div class="col">
+                                            <h3>Learn</h3>
                                             <ul class="drop-apps-list">
                                                 <li>
                                                     <a href="https://tmetric.com/user-guide">
@@ -534,21 +516,9 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                            <div class="drop-solution">
-                                                <div class="wrap">
-                                                    <div class="text">
-                                                        <h4>Time tracking solution for any business specifics</h4>
-                                                        <p>TMetric is developed to help any business to achieve better results.</p>
-                                                    </div>
-                                                    <div class="image">
-                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
-                                        <div id="resourcesConnectTab" class="tab-pane fade">
-                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
-                                            <h3 class="mobile-title">Connect</h3>
+                                        <div class="col">
+                                            <h3>Connect</h3>
                                             <ul class="drop-apps-list">
                                                 <li>
                                                     <a href="https://tmetric.com/help">
@@ -569,21 +539,9 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                            <div class="drop-solution">
-                                                <div class="wrap">
-                                                    <div class="text">
-                                                        <h4>Time tracking solution for any business specifics</h4>
-                                                        <p>TMetric is developed to help any business to achieve better results.</p>
-                                                    </div>
-                                                    <div class="image">
-                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
-                                        <div id="resourcesExploreTab" class="tab-pane fade">
-                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
-                                            <h3 class="mobile-title">Explore</h3>
+                                        <div class="col">
+                                            <h3>Explore</h3>
                                             <ul class="drop-apps-list">
                                                 <li>
                                                     <a href="https://blog.tmetric.com/">
@@ -603,17 +561,23 @@
                                                         <h4>Success Stories</h4>
                                                     </a>
                                                 </li>
+                                                <li>
+                                                    <a href="https://tmetric.com/referral-program">
+                                                        {{> "icons/v4/icon-referral"}}
+                                                        <h4>Referral Program</h4>
+                                                    </a>
+                                                </li>
                                             </ul>
-                                            <div class="drop-solution">
-                                                <div class="wrap">
-                                                    <div class="text">
-                                                        <h4>Time tracking solution for any business specifics</h4>
-                                                        <p>TMetric is developed to help any business to achieve better results.</p>
-                                                    </div>
-                                                    <div class="image">
-                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
-                                                    </div>
-                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="drop-solution">
+                                        <div class="wrap">
+                                            <div class="text">
+                                                <h4>Time tracking solution for any business specifics</h4>
+                                                <p>TMetric is developed to help any business to achieve better results.</p>
+                                            </div>
+                                            <div class="image">
+                                                <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
                                             </div>
                                         </div>
                                     </div>
@@ -625,7 +589,6 @@
                                         <li><a href="https://tmetric.zohobookings.eu/#/77">Book a Demo</a></li>
                                     </ul>
                                 </div>
-
                             </div>
                         </li>
                         <!-- menu items with dropdown box end -->
