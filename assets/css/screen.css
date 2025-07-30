@@ -3593,10 +3593,10 @@ html.dark-mode .subscribe-form .success .message-success {
 .drop-solution {
     width: 40.3%;
     min-width: 40.3%;
-    padding-left: 60px;
+    padding: 20px;
     background-color: #f9f9fb;
     border-radius: 18px;
-    font: 1.2rem / 1.6 Inter, sans-serif;
+    font: 1.6rem/1.5 Inter, sans-serif;
 }
 
 .product-header #main-menu .drop-content.columns-row .drop-solution {
@@ -3606,36 +3606,39 @@ html.dark-mode .subscribe-form .success .message-success {
 
 .drop-solution .wrap {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     height: 100%;
 }
 
-.drop-solution .text {
-    padding: 30px 0;
-    width: 40%;
-    min-width: 40px;
-}
-
-.drop-solution h4 {
-    margin: 0 0 10px;
-    font: 500 1.6rem / 1.5 InterMedium, sans-serif;
-    letter-spacing: 0;
-}
-
-.drop-solution p {
-    margin: 0;
-    color: #4f4f4f;
-}
-
 .drop-solution .image {
-    width: 56.5%;
-    min-width: 56.5%;
+    width: 100%;
+    max-width: 332px;
 }
 
 .drop-solution .image svg {
     display: block;
     max-width: 100%;
+}
+
+.drop-solution .text {
+    padding: 30px 0 0;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.drop-solution h4 {
+    margin: 0 0 10px;
+    font: 500 2.2rem/1.5 InterMedium, sans-serif;
+    letter-spacing: 0;
+    color: #121525;
+}
+
+.drop-solution p {
+    margin: 0;
+    color: #6C6C6C;
 }
 
 .drop-integration-list {
@@ -3871,14 +3874,8 @@ html.dark-mode .subscribe-form .success .message-success {
     }
 
     .drop-solution {
-        padding-left: 30px;
         width: 38%;
         min-width: 38%;
-    }
-
-    .drop-solution .image {
-        width: 59%;
-        min-width: 59%;
     }
 }
 
@@ -3943,6 +3940,14 @@ html.dark-mode .subscribe-form .success .message-success {
     .product-header #login-menu .btn {
         padding: 12px 15px 10px;
         font-size: 1.3rem;
+    }
+
+    .drop-solution {
+        font-size: 1.4rem;
+    }
+
+    .drop-solution h4 {
+        font-size: 1.8rem;
     }
 }
 
@@ -5073,3 +5078,103 @@ div[class^="zf_lb_closeform"]:after {
         width: 500px !important;
     }
 }
+
+/* Cookies policy bar */
+.cookies-policy {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2147483100;
+    background-color: #d0d6db;
+    color: #212529;
+}
+
+.cookies-policy .container {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    min-width: 320px !important;
+    max-width: 1712px !important;
+}
+
+@media only screen and (max-width: 1024px) {
+    .cookies-policy .container {
+        align-items: flex-end;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .cookies-policy .container {
+        height: auto;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}
+
+.cookies-policy .notification-text {
+    flex: 1 1 auto;
+}
+
+.cookies-policy p {
+    margin: 0;
+}
+
+.cookies-policy p a {
+    color: #3070f0;
+}
+
+.cookies-policy p a:hover {
+    color: #004080;
+    text-decoration: underline;
+}
+
+.cookies-policy .notification-action {
+    flex: 0 0 auto;
+    height: 44px;
+}
+
+.cookies-policy button {
+    margin: 0;
+    color: #fff;
+    background-color: #00bc6a;
+    border: 1px solid #00bc6a;
+    transition: all .3s ease;
+    padding: 9px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 100px;
+    text-align: center;
+}
+
+.cookies-policy button:hover {
+    color: #fff;
+    background-color: #009654;
+    border-color: #00894d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -92,12 +92,12 @@
                                             </ul>
                                             <div class="drop-solution">
                                                 <div class="wrap">
-                                                    <div class="text">
-                                                        <h4>Time tracking solution for any business specifics</h4>
-                                                        <p>TMetric is developed to help any business to achieve better results.</p>
-                                                    </div>
                                                     <div class="image">
-                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                    </div>
+                                                    <div class="text">
+                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <p>TMetric is developed to help any business to achieve better results.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -221,7 +221,7 @@
                                                         <a href="https://tmetric.com/free-time-tracking">
                                                             {{> "icons/v4/icon-time-tracking"}}
                                                             <h4>Time Tracking</h4>
-                                                            <p>Effortlessly track work hours online.</p>
+                                                            <p>Effortlessly track work hours online.</p>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -249,7 +249,7 @@
                                                         <a href="https://tmetric.com/feature-time-off">
                                                             {{> "icons/v4/icon-pto-tracking"}}
                                                             <h4>PTO Tracking</h4>
-                                                            <p>Simplify paid  time-off management.</p>
+                                                            <p>Simplify paid time-off management.</p>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -270,7 +270,7 @@
                                                         <a href="https://tmetric.com/employee-monitoring">
                                                             {{> "icons/v4/icon-employee-monitoring"}}
                                                             <h4>Employee Monitoring</h4>
-                                                            <p>Track activity levels and work habits.</p>
+                                                            <p>Track activity levels and work habits.</p>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -357,12 +357,12 @@
                                             </ul>
                                             <div class="drop-solution">
                                                 <div class="wrap">
-                                                    <div class="text">
-                                                        <h4>Time tracking solution for any business specifics</h4>
-                                                        <p>TMetric is developed to help any business to achieve better results.</p>
-                                                    </div>
                                                     <div class="image">
-                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                    </div>
+                                                    <div class="text">
+                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <p>TMetric is developed to help any business to achieve better results.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -451,7 +451,7 @@
                                                 <li>
                                                     <a href="https://tmetric.com/freelance-time-tracking">
                                                         {{> "icons/v4/icon-contractors"}}
-                                                        <h4>For freelancers  and solo users</h4>
+                                                        <h4>For freelancers and solo users</h4>
                                                         <p>For solo entrepreneurs with a growing list of clients.</p>
                                                     </a>
                                                 </li>
@@ -465,12 +465,12 @@
                                             </ul>
                                             <div class="drop-solution">
                                                 <div class="wrap">
-                                                    <div class="text">
-                                                        <h4>Time tracking solution for any business specifics</h4>
-                                                        <p>TMetric is developed to help any business to achieve better results.</p>
-                                                    </div>
                                                     <div class="image">
-                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                        <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                    </div>
+                                                    <div class="text">
+                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <p>TMetric is developed to help any business to achieve better results.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -572,12 +572,12 @@
                                     </div>
                                     <div class="drop-solution">
                                         <div class="wrap">
-                                            <div class="text">
-                                                <h4>Time tracking solution for any business specifics</h4>
-                                                <p>TMetric is developed to help any business to achieve better results.</p>
-                                            </div>
                                             <div class="image">
-                                                <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                                <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
+                                            </div>
+                                            <div class="text">
+                                                <h4>Time tracking solution for any business specifics</h4>
+                                                <p>TMetric is developed to help any business to achieve better results.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1139,9 +1139,37 @@
     {{!-- Scroll to top button --}}
     <button class="btn-to-top">{{> "icons/angleUp"}}</button>
 
+    {{!-- Cookie policy bar --}}
+    <div id="cookies-policy-notification" class="cookies-policy" style="display: none">
+        <div class="container container-normal">
+            <div class="notification-text">
+                <p>We use cookies on this website. By using this site you agree that we may store and access cookies on your device as explained in our <a href="https://tmetric.com/cookies-policy" title="Cookies Policy">Cookies Policy</a>.</p>
+            </div>
+            <div class="notification-action">
+                <button onclick="acceptNotification('cookies-policy-notification')">Got It</button>
+            </div>
+        </div>
+    </div>
+
 </div>
 {{!-- /.viewport --}}
 
+{{!-- Scripts - Cookie policy --}}
+<script>
+    window.addEventListener('load', function () {
+        var item = JSON.parse(localStorage.getItem("cookies-policy-notification"));
+        if (!item) {
+            var element = document.getElementById("cookies-policy-notification");
+            element.removeAttribute('style');
+        }
+    });
+
+    function acceptNotification(id) {
+        localStorage.setItem(id, JSON.stringify(true));
+        document.getElementById(id).setAttribute('style', 'display: none');
+        window.dispatchEvent(new Event('resize'));
+    }
+</script>
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
 <script
