@@ -934,224 +934,256 @@
     </main>
 
     {{!-- The global footer at the very bottom of the screen --}}
-    <footer id="footer-section" class="lazy animate">
+    <footer id="footer-section" class="lazy">
         <div class="container">
-            <div class="navigation row">
-                <div class="col">
-                    <h4>Product</h4>
-                    <ul class="nav">
+            <div class="row">
+                <div class="text-column">
+                    <a class="logo" href="https://tmetric.com">
+                        <img src="{{@site.logo}}" width="176" height="56" alt="{{@site.title}}" />
+                    </a>
+                    <p>The best time tracker for teams to measure work, manage projects, and bill clients with confidance</p>
+                    <ul class="app-list">
                         <li>
-                            <a href="https://tmetric.com/about">About Us</a>
+                            <a href="https://tmetric.com/iphone-time-tracking">
+                                {{> "icons/v4/icon-button-app-store"}}
+                            </a>
                         </li>
                         <li>
-                            <a href="https://tmetric.com/features">Overview</a>
+                            <a href="https://tmetric.com/android-time-tracking">
+                                {{> "icons/v4/icon-button-google-play"}}
+                            </a>
                         </li>
                         <li>
-                            <a href="https://tmetric.com/download">Download</a>
+                            <a href="https://tmetric.com/windows-time-tracking">
+                                {{> "icons/v4/icon-button-get-from-microsoft"}}
+                            </a>
                         </li>
                         <li>
-                            <a href="https://tmetric.com/customer-stories">Customers</a>
+                            <a href="https://tmetric.com/download">
+                                {{> "icons/v4/icon-button-chrome-web-store"}}
+                            </a>
                         </li>
                         <li>
-                            <a href="https://tmetric.com/referral-program">Referral Program</a>
-                        </li>
-                    </ul>
-                    <h4>Integrations</h4>
-                    <ul class="nav">
-                        <li>
-                            <a href="https://tmetric.com/integrations/notion-time-tracking">Notion</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/integrations/asana-time-tracking">Asana</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/integrations/jira-time-tracking">Jira</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/integrations/quickbooks-time-tracking">QuickBooks</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/integrations/trello-time-tracking">Trello</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/integrations/google-calendar-time-tracking">Google Calendar</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/integrations">All integrations</a>
+                            <a href="https://tmetric.com/time-tracking-app-for-mac-os">
+                                {{> "icons/v4/icon-button-mac-app-store"}}
+                            </a>
                         </li>
                     </ul>
-                </div>
-                <div class="col">
-                    <h4>Features</h4>
-                    <ul class="nav">
+                    <h4>Follow us</h4>
+                    <ul class="social-networks">
                         <li>
-                            <a href="https://tmetric.com/automated-employee-timesheet-app">Auto Tracker</a>
+                            <a href="https://www.facebook.com/tmetrictimer/" target="_blank" aria-label="TMetric on Facebook">
+                                {{> "icons/v4/icon-facebook"}}
+                            </a>
                         </li>
                         <li>
-                            <a href="https://tmetric.com/attendance-tracking-software">Attendance</a>
+                            <a href="https://twitter.com/TMetric_Timer" target="_blank" aria-label="TMetric on X">
+                                {{> "icons/v4/icon-twitter"}}
+                            </a>
                         </li>
                         <li>
-                            <a href="https://tmetric.com/employee-time-tracking">Employee Activity</a>
+                            <a href="https://discord.gg/x9wKqhcfaG" target="_blank" aria-label="TMetric in Discord">
+                                {{> "icons/v4/icon-discord"}}
+                            </a>
                         </li>
                         <li>
-                            <a href="https://tmetric.com/feature-time-off">Time Off</a>
+                            <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" aria-label="TMetric on YouTube">
+                                {{> "icons/v4/icon-youtube"}}</a>
+                            </a>
                         </li>
                         <li>
-                            <a href="https://tmetric.com/employee-monitoring">Monitoring</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/feature-billing">Billing</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/task-management">Task Management</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/team-dashboard">Dashboards</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/automated-employee-timesheet-app">Timesheets</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/feature-reporting">Reports</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/feature-projects">Project</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/productivity-tracker">Productivity</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/overtime-for-salaried-employees">Overtimes</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/features">All features</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h4>Industries</h4>
-                    <ul class="nav">
-                        <li>
-                            <a href="https://tmetric.com/freelance-time-tracking">Freelancers</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/developer-time-tracking">Developers</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/marketing-time-tracking">Agencies</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/designer-time-tracking">Designers</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/lawyer-time-tracking">Lawyers</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/contractor-time-tracking">Contractors</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/employee-time-tracking">Employees</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/solutions">All industries</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h4>Compare</h4>
-                    <ul class="nav">
-                        <li>
-                            <a href="https://tmetric.com/alternative-toggl">vs Toggl</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/alternative-clockify">vs Clockify</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/alternative-hubstaff">vs Hubstaff</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/alternative-timecamp">vs TimeCamp</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/alternative-harvest">vs Harvest</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/alternative-timely">vs Timely</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/alternative-myhours">vs MyHours</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/time-trackers-comparison">All tools</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h4>Learn</h4>
-                    <ul class="nav">
-                        <li>
-                            <a href="https://tmetric.com/help">Help Docs</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/user-guide">User Guide</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/admin-guide">Admin Guide</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/quick-start-videos">How to Videos</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/white-papers">White papers</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/privacy-policy">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/cookies-policy">Cookies Policy</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/terms-of-service">Terms of Service</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/free-time-card-calculator">Free Time Card Calculator</a>
-                        </li>
-                        <li>
-                            <a href="https://blog.tmetric.com">Blog</a>
-                        </li>
-                        <li>
-                            <a href="https://tmetric.com/media/lymbvfck/tmetric-partnership.pdf" target="_blank" class="footer-link-container">
-                                <span>Partnership</span>
+                            <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" aria-label="TMetric on Linkedin">
+                                {{> "icons/v4/icon-linkedin"}}
                             </a>
                         </li>
                     </ul>
                 </div>
+                <div class="navigation">
+                    <div class="col">
+                        <h4>Features</h4>
+                        <ul class="nav">
+                            <li>
+                                <a href="https://tmetric.com/feature-time-tracking">Time Tracking</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/attendance-tracking-software">Attendance Tracker</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/employee-monitoring">Activity Monitoring</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/automated-employee-timesheet-app">Timesheets</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/task-management">Task Management</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/financial-reporting-software">Budgeting</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/time-and-expense-tracking-app-software">Expenses</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/feature-billing">Invoicing</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/feature-reporting">Reporting</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/feature-time-off">Time Off</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/features">All features</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4>Industries</h4>
+                        <ul class="nav">
+                            <li>
+                                <a href="https://tmetric.com/developer-time-tracking">Developers</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/marketing-time-tracking">Agencies</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/designer-time-tracking">Designers</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/lawyer-time-tracking">Lawyers</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/contractor-time-tracking">Contractors</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/employee-time-tracking">Employees</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/solutions">All industries</a>
+                            </li>
+                        </ul>
+                        <h4>Integrations</h4>
+                        <ul class="nav">
+                            <li>
+                                <a href="https://tmetric.com/integrations/notion-time-tracking">Notion</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/integrations/asana-time-tracking">Asana</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/integrations/jira-time-tracking">Jira</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/integrations/quickbooks-time-tracking">QuickBooks</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/integrations/trello-time-tracking">Trello</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/integrations/google-calendar-time-tracking">Google Calendar</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/integrations">All integrations</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4>Resources</h4>
+                        <ul class="nav">
+                            <li>
+                                <a href="https://tmetric.com/help">Help Docs</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/user-guide">User Guide</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/quick-start-videos">How to Video</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/glossary">Glossary</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/best-software">Best Software</a>
+                            </li>
+                            <li>
+                                <a href="https://blog.tmetric.com">Blog</a>
+                            </li>
+                        </ul>
+                        <h4>Compare</h4>
+                        <ul class="nav">
+                            <li>
+                                <a href="https://tmetric.com/alternative-toggl">vs Toggl</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/alternative-clockify">vs Clockify</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/alternative-hubstaff">vs Hubstaff</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/alternative-timecamp">vs TimeCamp</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/alternative-harvest">vs Harvest</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/alternative-timely">vs Timely</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/alternative-myhours">vs MyHours</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/time-trackers-comparison">All tools</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4>Company</h4>
+                        <ul class="nav">
+                            <li>
+                                <a href="https://tmetric.com/about">About Us</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/features">Overview</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/download">Download</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/customer-stories">Customers</a>
+                            </li>
+                            <li>
+                                <a href="https://tmetric.com/referral-program">Referral Program</a>
+                            </li>
+                            <li><a href="https://support.tmetric.com/portal/en/community">Community</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="copyright-row">
-                <a class="logo" href="https://tmetric.com">
-                    <img src="{{@site.logo}}" width="148" height="44" alt="{{@site.title}}" />
-                </a>
-                <p>You can write us an <a href="mailto:sales@tmetric.com">email</a> or post questions to our <a href="mailto:help@tmetric.com">support team</a>. We'll be glad to help you personally.</p>
-                <ul class="social-networks">
+            <div class="policy-row">
+                <!-- language dropdown begin -->
+                <div></div>
+                <!-- language dropdown end -->
+                <ul class="nav">
                     <li>
-                        <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/icon-facebook"}}</a>
+                        <a href="https://tmetric.com/privacy-policy">Privacy Policy</a>
                     </li>
                     <li>
-                        <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/icon-twitter"}}</a>
+                        <a href="https://tmetric.com/cookies-policy">Cookies Policy</a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/company/tmetric-time-tracking-app" target="_blank" rel="noopener">{{> "icons/icon-linkedin"}}</a>
+                        <a href="https://tmetric.com/terms-of-service">Terms of Service</a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/channel/UCPmbWbH2xUKdmVwVcQMOxaw" target="_blank" rel="noopener">{{> "icons/icon-youtube"}}</a>
-                    </li>
-                    <li>
-                        <a href="https://discord.gg/x9wKqhcfaG" target="_blank" rel="noopener">{{> "icons/icon-discord"}}</a>
+                        <a href="https://tmetric.com/sitemap-html">Sitemap</a>
                     </li>
                 </ul>
+            </div>
+            <div class="copyright-row">
                 <div class="copyright">
                     <p>Copyright © Devart 2025</p>
                 </div>
+                <span><p>You can write us an <a href="mailto:sales@tmetric.com">email</a> or post questions to our <a href="mailto:help@tmetric.com">support team</a>. We'll be glad to help you personally.</p></span>
             </div>
         </div>
     </footer>
