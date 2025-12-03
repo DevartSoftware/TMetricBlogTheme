@@ -3675,13 +3675,16 @@ html.dark-mode .subscribe-form .success .message-success {
     }
 }
 
-.product-header #main-menu .drop-content .columns h3 {
+.product-header #main-menu .drop-content .columns h3,
+.product-header #main-menu .drop-content .columns .col-title {
+    display: block;
     margin: 0 0 1.8rem;
     font: 600 1.8rem/1.2 InterSemiBold, sans-serif;
 }
 
 @media only screen and (max-width: 1023px) {
-    .product-header #main-menu .drop-content .columns h3 {
+    .product-header #main-menu .drop-content .columns h3,
+    .product-header #main-menu .drop-content .columns .col-title {
         margin-bottom: 1rem;
     }
 }
