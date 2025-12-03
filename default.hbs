@@ -9,6 +9,15 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    {{!-- Google tag (gtag.js) --}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-66EFKVJKC5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-66EFKVJKC5');
+    </script>
+
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
@@ -66,26 +75,26 @@
                                     <div class="tab-content">
                                         <div id="productAppsTab" class="tab-pane fade show active">
                                             <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
-                                            <h3 class="mobile-title">Apps</h3>
+                                            <strong class="mobile-title">Apps</strong>
                                             <ul class="drop-apps-list">
                                                 <li>
                                                     <a href="https://tmetric.com/download#browser-extensions-section">
                                                         {{> "icons/v4/icon-extensions"}}
-                                                        <h4>Browser Extensions</h4>
+                                                        <strong class="nav-title">Browser Extensions</strong>
                                                         <p>Simple time tracking extension which helps you be more productive.</p>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/download#mobile-apps-section">
                                                         {{> "icons/v4/icon-mobile"}}
-                                                        <h4>Mobile apps</h4>
+                                                        <strong class="nav-title">Mobile apps</strong>
                                                         <p>Install TMetric app to your phone or a tablet device. Android and iOS platforms are supported.</p>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/download">
                                                         {{> "icons/v4/icon-desktop"}}
-                                                        <h4>Desktop apps</h4>
+                                                        <strong class="nav-title">Desktop apps</strong>
                                                         <p>Download TMetric app for your desktop computer or a laptop.</p>
                                                     </a>
                                                 </li>
@@ -96,7 +105,7 @@
                                                         <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
                                                     </div>
                                                     <div class="text">
-                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <strong class="nav-title">Time tracking solution for any business specifics</strong>
                                                         <p>TMetric is developed to help any business to achieve better results.</p>
                                                     </div>
                                                 </div>
@@ -104,7 +113,7 @@
                                         </div>
                                         <div id="productIntegrationsTab" class="tab-pane fade">
                                             <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
-                                            <h3 class="mobile-title">Integrations</h3>
+                                            <strong class="mobile-title">Integrations</strong>
                                             <div>
                                                 <ul class="drop-integration-list">
                                                     <li>
@@ -214,76 +223,76 @@
                                         </div>
                                         <div id="productFeaturesTab" class="tab-pane fade">
                                             <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
-                                            <h3 class="mobile-title">Features</h3>
+                                            <strong class="mobile-title">Features</strong>
                                             <div>
                                                 <ul class="drop-apps-list features">
                                                     <li>
                                                         <a href="https://tmetric.com/free-time-tracking">
                                                             {{> "icons/v4/icon-time-tracking"}}
-                                                            <h4>Time Tracking</h4>
+                                                            <strong class="nav-title">Time Tracking</strong>
                                                             <p>Effortlessly track work hours online.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/feature-reporting">
                                                             {{> "icons/v4/icon-time-reporting"}}
-                                                            <h4>Time Reporting</h4>
+                                                            <strong class="nav-title">Time Reporting</strong>
                                                             <p>Create detailed and actionable time reports.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/automated-employee-timesheet-app">
                                                             {{> "icons/v4/icon-team-timesheets"}}
-                                                            <h4>Team Timesheets</h4>
+                                                            <strong class="nav-title">Team Timesheets</strong>
                                                             <p>Automate and manage team timesheets.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/attendance-tracking-software">
                                                             {{> "icons/v4/icon-attendance-tracking"}}
-                                                            <h4>Attendance Tracking</h4>
+                                                            <strong class="nav-title">Attendance Tracking</strong>
                                                             <p>Monitor employee attendance with ease.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/feature-time-off">
                                                             {{> "icons/v4/icon-pto-tracking"}}
-                                                            <h4>PTO Tracking</h4>
+                                                            <strong class="nav-title">PTO Tracking</strong>
                                                             <p>Simplify paid time-off management.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/feature-billing">
                                                             {{> "icons/v4/icon-billing-invoicing"}}
-                                                            <h4>Billing &amp; Invoicing</h4>
+                                                            <strong class="nav-title">Billing &amp; Invoicing</strong>
                                                             <p>Manage invoices and convenient billing</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/task-management">
                                                             {{> "icons/v4/icon-task-management"}}
-                                                            <h4>Task Management</h4>
+                                                            <strong class="nav-title">Task Management</strong>
                                                             <p>Organize tasks and track progress.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/employee-monitoring">
                                                             {{> "icons/v4/icon-employee-monitoring"}}
-                                                            <h4>Employee Monitoring</h4>
+                                                            <strong class="nav-title">Employee Monitoring</strong>
                                                             <p>Track activity levels and work habits.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/team-dashboard">
                                                             {{> "icons/v4/icon-team-dashboard"}}
-                                                            <h4>Team Dashboard</h4>
+                                                            <strong class="nav-title">Team Dashboard</strong>
                                                             <p>Visualize team performance at a glance.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/employee-scheduling-software">
                                                             {{> "icons/v4/icon-scheduling"}}
-                                                            <h4>Scheduling</h4>
+                                                            <strong class="nav-title">Scheduling</strong>
                                                             <p>Plan and optimize employee schedules.</p>
                                                         </a>
                                                     </li>
@@ -328,30 +337,30 @@
                                     <div class="tab-content">
                                         <div id="solutionsCasesTab" class="tab-pane fade show active">
                                             <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
-                                            <h3 class="mobile-title">Use Cases</h3>
+                                            <strong class="mobile-title">Use Cases</strong>
                                             <ul class="drop-apps-list">
                                                 <li>
                                                     <a href="https://tmetric.com/feature-time-tracking">
                                                         {{> "icons/v4/icon-time-tracking"}}
-                                                        <h4>Time Tracking</h4>
+                                                        <strong class="nav-title">Time Tracking</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/feature-projects">
                                                         {{> "icons/v4/icon-task-management"}}
-                                                        <h4>Project Management</h4>
+                                                        <strong class="nav-title">Project Management</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/productivity-tracker">
                                                         {{> "icons/v4/icon-productivity-tracking"}}
-                                                        <h4>Productivity Tracking</h4>
+                                                        <strong class="nav-title">Productivity Tracking</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/feature-team-management">
                                                         {{> "icons/v4/icon-workforce-management"}}
-                                                        <h4>Workforce Management</h4>
+                                                        <strong class="nav-title">Workforce Management</strong>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -361,7 +370,7 @@
                                                         <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
                                                     </div>
                                                     <div class="text">
-                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <strong class="nav-title">Time tracking solution for any business specifics</strong>
                                                         <p>TMetric is developed to help any business to achieve better results.</p>
                                                     </div>
                                                 </div>
@@ -369,69 +378,69 @@
                                         </div>
                                         <div id="solutionsIndustriesTab" class="tab-pane fade">
                                             <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
-                                            <h3 class="mobile-title">Industries</h3>
+                                            <strong class="mobile-title">Industries</strong>
                                             <div>
                                                 <ul class="drop-apps-list features">
                                                     <li>
                                                         <a href="https://tmetric.com/developer-time-tracking">
                                                             {{> "icons/v4/icon-software-developers"}}
-                                                            <h4>Software Developers</h4>
+                                                            <strong class="nav-title">Software Developers</strong>
                                                             <p>Measure project progress, set billable rates, send detailed reports and invoice clients.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/marketing-time-tracking">
                                                             {{> "icons/v4/icon-marketing-agencies"}}
-                                                            <h4>Marketing Agencies</h4>
+                                                            <strong class="nav-title">Marketing Agencies</strong>
                                                             <p>Free yourself from issues of remote teams/freelancers management, complete any project in time and get paid.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/designer-time-tracking">
                                                             {{> "icons/v4/icon-designers"}}
-                                                            <h4>Designers</h4>
+                                                            <strong class="nav-title">Designers</strong>
                                                             <p>Concentrate on making great designs and leave time management issues to TMetric.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/support-staff-time-tracking">
                                                             {{> "icons/v4/icon-customer-support"}}
-                                                            <h4>Customer Support</h4>
+                                                            <strong class="nav-title">Customer Support</strong>
                                                             <p>Track time allocated by engineers to their support tickets, categorize time spent on various support activities.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/consultant-time-tracking">
                                                             {{> "icons/v4/icon-consultants"}}
-                                                            <h4>Consultants</h4>
+                                                            <strong class="nav-title">Consultants</strong>
                                                             <p>Automate tracking time for consulting services and generate invoices for clients.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/lawyer-time-tracking">
                                                             {{> "icons/v4/icon-lawyers"}}
-                                                            <h4>Lawyers</h4>
+                                                            <strong class="nav-title">Lawyers</strong>
                                                             <p>Accurately track billable hours and streamline case management time tracking.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/accountant-time-tracking-software">
                                                             {{> "icons/v4/icon-accountants"}}
-                                                            <h4>Accountants</h4>
+                                                            <strong class="nav-title">Accountants</strong>
                                                             <p>Simplify time tracking and automate billing for financial services.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/contractor-time-tracking">
                                                             {{> "icons/v4/icon-contractors"}}
-                                                            <h4>Contractors</h4>
+                                                            <strong class="nav-title">Contractors</strong>
                                                             <p>Manage project hours, track expenses, and ensure accurate client invoicing.</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="https://tmetric.com/nonprofit-time-tracking">
                                                             {{> "icons/v4/icon-non-profit"}}
-                                                            <h4>Non-profit</h4>
+                                                            <strong class="nav-title">Non-profit</strong>
                                                             <p>Efficiently track nonprofit mission-driven work.</p>
                                                         </a>
                                                     </li>
@@ -446,19 +455,19 @@
                                         </div>
                                         <div id="solutionsSizeTab" class="tab-pane fade">
                                             <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
-                                            <h3 class="mobile-title">Company Size</h3>
+                                            <strong class="mobile-title">Company Size</strong>
                                             <ul class="drop-apps-list">
                                                 <li>
                                                     <a href="https://tmetric.com/freelance-time-tracking">
                                                         {{> "icons/v4/icon-contractors"}}
-                                                        <h4>For freelancers and solo users</h4>
+                                                        <strong class="nav-title">For freelancers and solo users</strong>
                                                         <p>For solo entrepreneurs with a growing list of clients.</p>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/employee-monitoring">
                                                         {{> "icons/v4/icon-workforce-management"}}
-                                                        <h4>For small teams</h4>
+                                                        <strong class="nav-title">For small teams</strong>
                                                         <p>For teams of less than 10 that need to track projects and bill clients.</p>
                                                     </a>
                                                 </li>
@@ -469,7 +478,7 @@
                                                         <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
                                                     </div>
                                                     <div class="text">
-                                                        <h4>Time tracking solution for any business specifics</h4>
+                                                        <strong class="nav-title">Time tracking solution for any business specifics</strong>
                                                         <p>TMetric is developed to help any business to achieve better results.</p>
                                                     </div>
                                                 </div>
@@ -500,19 +509,19 @@
                                                 <li>
                                                     <a href="https://tmetric.com/user-guide">
                                                         {{> "icons/v4/icon-user-guide"}}
-                                                        <h4>User Guide</h4>
+                                                        <strong class="nav-title">User Guide</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/admin-guide">
                                                         {{> "icons/v4/icon-admin-guide"}}
-                                                        <h4>Admin Guide</h4>
+                                                        <strong class="nav-title">Admin Guide</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/quick-start-videos">
                                                         {{> "icons/v4/icon-videos"}}
-                                                        <h4>How to Videos</h4>
+                                                        <strong class="nav-title">How to Videos</strong>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -523,25 +532,25 @@
                                                 <li>
                                                     <a href="https://tmetric.com/help">
                                                         {{> "icons/v4/icon-blog"}}
-                                                        <h4>TMetric Help</h4>
+                                                        <strong class="nav-title">TMetric Help</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a id="zf_button_420282" href="#" style="display: block;">
                                                         {{> "icons/v4/icon-contact-support"}}
-                                                        <h4>Contact Support</h4>
+                                                        <strong class="nav-title">Contact Support</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/privacy-policy">
                                                         {{> "icons/v4/icon-security-privacy"}}
-                                                        <h4>Security &amp; Privacy</h4>
+                                                        <strong class="nav-title">Security &amp; Privacy</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/referral-program">
                                                         {{> "icons/v4/icon-referral"}}
-                                                        <h4>Referral Program</h4>
+                                                        <strong class="nav-title">Referral Program</strong>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -552,25 +561,25 @@
                                                 <li>
                                                     <a href="https://blog.tmetric.com/">
                                                         {{> "icons/v4/icon-blog"}}
-                                                        <h4>Blog</h4>
+                                                        <strong class="nav-title">Blog</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/customer-stories">
                                                         {{> "icons/v4/icon-success-stories"}}
-                                                        <h4>Success Stories</h4>
+                                                        <strong class="nav-title">Success Stories</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/glossary">
                                                         {{> "icons/v4/icon-task-management"}}
-                                                        <h4>Glossary</h4>
+                                                        <strong class="nav-title">Glossary</strong>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="https://tmetric.com/best-software">
                                                         {{> "icons/v4/icon-soft"}}
-                                                        <h4>Best Software</h4>
+                                                        <strong class="nav-title">Best Software</strong>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -582,7 +591,7 @@
                                                 <img src={{asset "image-menu-time-tracking-solution.svg"}}" alt="Time tracking solution for any business specifics">
                                             </div>
                                             <div class="text">
-                                                <h4>Time tracking solution for any business specifics</h4>
+                                                <strong class="nav-title">Time tracking solution for any business specifics</strong>
                                                 <p>TMetric is developed to help any business to achieve better results.</p>
                                             </div>
                                         </div>
