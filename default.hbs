@@ -63,17 +63,101 @@
                                 <div class="drop-content tabs-row">
                                     <ul class="nav nav-tabs drop-tabset">
                                         <li class="nav-item">
-                                            <div class="nav-link active" data-toggle="tab" data-target="#productAppsTab">Apps{{> "icons/v4/arrow-right-blue"}}</div>
+                                            <div class="nav-link active" data-toggle="tab" data-target="#productFeaturesTab">Features{{> "icons/v4/arrow-right-blue"}}</div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="nav-link" data-toggle="tab" data-target="#productAppsTab">Apps{{> "icons/v4/arrow-right-blue"}}</div>
                                         </li>
                                         <li class="nav-item">
                                             <div class="nav-link" data-toggle="tab" data-target="#productIntegrationsTab">Integrations{{> "icons/v4/arrow-right-blue"}}</div>
                                         </li>
-                                        <li class="nav-item">
-                                            <div class="nav-link" data-toggle="tab" data-target="#productFeaturesTab">Features{{> "icons/v4/arrow-right-blue"}}</div>
-                                        </li>
                                     </ul>
                                     <div class="tab-content">
-                                        <div id="productAppsTab" class="tab-pane fade show active">
+                                        <div id="productFeaturesTab" class="tab-pane fade show active">
+                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
+                                            <strong class="mobile-title">Features</strong>
+                                            <div>
+                                                <ul class="drop-apps-list features">
+                                                    <li>
+                                                        <a href="https://tmetric.com/free-time-tracking">
+                                                            {{> "icons/v4/icon-time-tracking"}}
+                                                            <strong class="nav-title">Time Tracking</strong>
+                                                            <p>Effortlessly track work hours online.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/feature-reporting">
+                                                            {{> "icons/v4/icon-time-reporting"}}
+                                                            <strong class="nav-title">Time Reporting</strong>
+                                                            <p>Create detailed and actionable time reports.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/automated-employee-timesheet-app">
+                                                            {{> "icons/v4/icon-team-timesheets"}}
+                                                            <strong class="nav-title">Team Timesheets</strong>
+                                                            <p>Automate and manage team timesheets.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/attendance-tracking-software">
+                                                            {{> "icons/v4/icon-attendance-tracking"}}
+                                                            <strong class="nav-title">Attendance Tracking</strong>
+                                                            <p>Monitor employee attendance with ease.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/feature-time-off">
+                                                            {{> "icons/v4/icon-pto-tracking"}}
+                                                            <strong class="nav-title">PTO Tracking</strong>
+                                                            <p>Simplify paid time-off management.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/feature-billing">
+                                                            {{> "icons/v4/icon-billing-invoicing"}}
+                                                            <strong class="nav-title">Billing &amp; Invoicing</strong>
+                                                            <p>Manage invoices and convenient billing</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/task-management">
+                                                            {{> "icons/v4/icon-task-management"}}
+                                                            <strong class="nav-title">Task Management</strong>
+                                                            <p>Organize tasks and track progress.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/employee-monitoring">
+                                                            {{> "icons/v4/icon-employee-monitoring"}}
+                                                            <strong class="nav-title">Employee Monitoring</strong>
+                                                            <p>Track activity levels and work habits.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/team-dashboard">
+                                                            {{> "icons/v4/icon-team-dashboard"}}
+                                                            <strong class="nav-title">Team Dashboard</strong>
+                                                            <p>Visualize team performance at a glance.</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://tmetric.com/employee-scheduling-software">
+                                                            {{> "icons/v4/icon-scheduling"}}
+                                                            <strong class="nav-title">Scheduling</strong>
+                                                            <p>Plan and optimize employee schedules.</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="more-link-holder">
+                                                    <a href="https://tmetric.com/features" class="more-link">
+                                                        View All Features{{> "icons/v4/arrow-right-blue"}}
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div id="productAppsTab" class="tab-pane fade">
                                             <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
                                             <strong class="mobile-title">Apps</strong>
                                             <ul class="drop-apps-list">
@@ -216,90 +300,6 @@
                                                 <div class="more-link-holder">
                                                     <a href="https://tmetric.com/integrations" class="more-link">
                                                         View All Integrations{{> "icons/v4/arrow-right-blue"}}
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div id="productFeaturesTab" class="tab-pane fade">
-                                            <button type="button" class="link-back">Back{{> "icons/v4/icon-arrow-down"}}</button>
-                                            <strong class="mobile-title">Features</strong>
-                                            <div>
-                                                <ul class="drop-apps-list features">
-                                                    <li>
-                                                        <a href="https://tmetric.com/free-time-tracking">
-                                                            {{> "icons/v4/icon-time-tracking"}}
-                                                            <strong class="nav-title">Time Tracking</strong>
-                                                            <p>Effortlessly track work hours online.</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="https://tmetric.com/feature-reporting">
-                                                            {{> "icons/v4/icon-time-reporting"}}
-                                                            <strong class="nav-title">Time Reporting</strong>
-                                                            <p>Create detailed and actionable time reports.</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="https://tmetric.com/automated-employee-timesheet-app">
-                                                            {{> "icons/v4/icon-team-timesheets"}}
-                                                            <strong class="nav-title">Team Timesheets</strong>
-                                                            <p>Automate and manage team timesheets.</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="https://tmetric.com/attendance-tracking-software">
-                                                            {{> "icons/v4/icon-attendance-tracking"}}
-                                                            <strong class="nav-title">Attendance Tracking</strong>
-                                                            <p>Monitor employee attendance with ease.</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="https://tmetric.com/feature-time-off">
-                                                            {{> "icons/v4/icon-pto-tracking"}}
-                                                            <strong class="nav-title">PTO Tracking</strong>
-                                                            <p>Simplify paid time-off management.</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="https://tmetric.com/feature-billing">
-                                                            {{> "icons/v4/icon-billing-invoicing"}}
-                                                            <strong class="nav-title">Billing &amp; Invoicing</strong>
-                                                            <p>Manage invoices and convenient billing</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="https://tmetric.com/task-management">
-                                                            {{> "icons/v4/icon-task-management"}}
-                                                            <strong class="nav-title">Task Management</strong>
-                                                            <p>Organize tasks and track progress.</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="https://tmetric.com/employee-monitoring">
-                                                            {{> "icons/v4/icon-employee-monitoring"}}
-                                                            <strong class="nav-title">Employee Monitoring</strong>
-                                                            <p>Track activity levels and work habits.</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="https://tmetric.com/team-dashboard">
-                                                            {{> "icons/v4/icon-team-dashboard"}}
-                                                            <strong class="nav-title">Team Dashboard</strong>
-                                                            <p>Visualize team performance at a glance.</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="https://tmetric.com/employee-scheduling-software">
-                                                            {{> "icons/v4/icon-scheduling"}}
-                                                            <strong class="nav-title">Scheduling</strong>
-                                                            <p>Plan and optimize employee schedules.</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <div class="more-link-holder">
-                                                    <a href="https://tmetric.com/features" class="more-link">
-                                                        View All Features{{> "icons/v4/arrow-right-blue"}}
                                                     </a>
                                                 </div>
 
